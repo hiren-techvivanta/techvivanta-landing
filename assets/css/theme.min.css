@@ -1,3 +1,5 @@
+@import "./customFont.css";
+
 :root {
   --ar-primary: #34a853 !important;
   --ar-primary-rgb: 52, 168, 83 !important;
@@ -14,18 +16,19 @@
   --ar-btn-disabled-bg: #34a853 !important;
   --ar-btn-disabled-border-color: #34a853 !important;
 }
-.btn-outline-primary {
-  --ar-btn-color: #34a853 !important;
-  --ar-btn-border-color: #34a853 !important;
-  --ar-btn-hover-bg: #34a853 !important;
-  --ar-btn-hover-border-color: #34a853 !important;
-  --ar-btn-active-bg: #34a853 !important;
-  --ar-btn-active-border-color: #34a853 !important;
-  --ar-btn-disabled-color: #34a853 !important;
-  --ar-btn-disabled-border-color: #34a853 !important;
-}
+
 .accordion-button:not(.collapsed)::after {
   --ar-accordion-btn-active-icon: url("data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2024%2024'%20fill='%2334A853'%3e%3cpath%20d='M.5%206.3c.6-.6%201.6-.6%202.3%200l9.3%209.3%209.3-9.3c.6-.6%201.6-.6%202.3%200%20.6.6.6%201.6%200%202.3L13.3%2018.8c-.6.6-1.6.6-2.3%200L.8%208.5c-.9-.8-.9-1.6-.3-2.2z'/%3e%3c/svg%3e");
+}
+
+.custom-font {
+  /* font-family: "Roobert", sans-serif !important;
+  word-spacing: -20px;
+  letter-spacing: -3px; */
+
+  font-family: "Roobert-trial", sans-serif !important;
+  word-spacing: 0px;
+  letter-spacing: 0px;
 }
 
 .text-gradient {
@@ -2325,8 +2328,8 @@ textarea.form-control-lg {
   --ar-form-check-bg-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='2' fill='%23fff'/%3e%3c/svg%3e");
 }
 .form-check-input[type="checkbox"]:indeterminate {
-  background-color: #448c74;
-  border-color: #448c74;
+  background-color: #34a853;
+  border-color: #34a853;
   --ar-form-check-bg-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='M6 10h8'/%3e%3c/svg%3e");
 }
 .form-check-input:disabled {
@@ -2981,8 +2984,8 @@ fieldset:disabled .btn {
 }
 .btn-primary {
   --ar-btn-color: #fff;
-  --ar-btn-bg: #448c74;
-  --ar-btn-border-color: #448c74;
+  --ar-btn-bg: #34a853;
+  --ar-btn-border-color: #34a853;
   --ar-btn-hover-color: #fff;
   --ar-btn-hover-bg: #3a7763;
   --ar-btn-hover-border-color: #36705d;
@@ -2992,8 +2995,8 @@ fieldset:disabled .btn {
   --ar-btn-active-border-color: #336957;
   --ar-btn-active-shadow: unset;
   --ar-btn-disabled-color: #fff;
-  --ar-btn-disabled-bg: #448c74;
-  --ar-btn-disabled-border-color: #448c74;
+  --ar-btn-disabled-bg: #34a853;
+  --ar-btn-disabled-border-color: #34a853;
 }
 .btn-secondary {
   --ar-btn-color: #000;
@@ -3110,19 +3113,19 @@ fieldset:disabled .btn {
   --ar-btn-disabled-border-color: #121519;
 }
 .btn-outline-primary {
-  --ar-btn-color: #448c74;
-  --ar-btn-border-color: #448c74;
+  --ar-btn-color: #34a853;
+  --ar-btn-border-color: #34a853;
   --ar-btn-hover-color: #fff;
-  --ar-btn-hover-bg: #448c74;
-  --ar-btn-hover-border-color: #448c74;
+  --ar-btn-hover-bg: #34a853;
+  --ar-btn-hover-border-color: #34a853;
   --ar-btn-focus-shadow-rgb: 68, 140, 116;
   --ar-btn-active-color: #fff;
-  --ar-btn-active-bg: #448c74;
-  --ar-btn-active-border-color: #448c74;
+  --ar-btn-active-bg: #34a853;
+  --ar-btn-active-border-color: #34a853;
   --ar-btn-active-shadow: unset;
-  --ar-btn-disabled-color: #448c74;
+  --ar-btn-disabled-color: #34a853;
   --ar-btn-disabled-bg: transparent;
-  --ar-btn-disabled-border-color: #448c74;
+  --ar-btn-disabled-border-color: #34a853;
   --ar-gradient: none;
 }
 .btn-outline-secondary {
@@ -4637,7 +4640,7 @@ fieldset:disabled .btn {
   --ar-pagination-focus-box-shadow: 0 0 0 0.25rem rgba(68, 140, 116, 0.25);
   --ar-pagination-active-color: var(--ar-gray-900);
   --ar-pagination-active-bg: transparent;
-  --ar-pagination-active-border-color: #448c74;
+  --ar-pagination-active-border-color: #34a853;
   --ar-pagination-disabled-color: var(--ar-gray-500);
   --ar-pagination-disabled-bg: transparent;
   --ar-pagination-disabled-border-color: var(--ar-border-color);
@@ -16319,7 +16322,7 @@ span.flatpickr-weekday,
 .flatpickr-day.selected.startRange + .endRange:not(:nth-child(7n + 1)),
 .flatpickr-day.startRange.startRange + .endRange:not(:nth-child(7n + 1)),
 .flatpickr-day.endRange.startRange + .endRange:not(:nth-child(7n + 1)) {
-  box-shadow: -10px 0 0 #448c74;
+  box-shadow: -10px 0 0 #34a853;
 }
 .flatpickr-time {
   margin-bottom: 0.5rem;

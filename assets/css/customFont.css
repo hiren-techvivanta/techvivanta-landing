@@ -1,0 +1,98 @@
+/* === Roobert Font Family === */
+@font-face {
+  font-family: 'Roobert';
+  src: url('../font/RoobertMonoTRIAL-Light-BF67243fd27eae5.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Roobert';
+  src: url('../font/RoobertMonoTRIAL-Regular-BF67243fd29a433.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Roobert';
+  src: url('../font/RoobertMonoTRIAL-Medium-BF67243fd28915a.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Roobert';
+  src: url('../font/RoobertMonoTRIAL-SemiBold-BF67243fd2c0028.otf') format('opentype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Roobert';
+  src: url('../font/RoobertMonoTRIAL-Bold-BF67243fd2cfa56.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Roobert';
+  src: url('../font/RoobertMonoTRIAL-Heavy-BF67243fd243d39.otf') format('opentype');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* === Roobert Font Family === */
+@font-face {
+  font-family: 'Roobert-trial';
+  src: url('../font/RoobertTRIAL-Light-BF67243fd502239.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Roobert-trial';
+  src: url('../font/RoobertTRIAL-Regular-BF67243fd53fdf2.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Roobert-trial';
+  src: url('../font/RoobertTRIAL-Medium-BF67243fd53e059.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Roobert-trial';
+  src: url('../font/RoobertTRIAL-SemiBold-BF67243fd54213d.otf') format('opentype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Roobert-trial';
+  src: url('../font/RoobertTRIAL-Bold-BF67243fd540abb.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Roobert-trial';
+  src: url('../font/RoobertTRIAL-Heavy-BF67243fd53e164.otf') format('opentype');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+

@@ -1,0 +1,1184 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+  <head>
+    <meta charset="utf-8" />
+
+    <!-- Viewport -->
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover"
+    />
+
+    <!-- SEO meta tags -->
+    <title>Around | About - Agency</title>
+    <meta
+      name="description"
+      content="Around - Multipurpose Bootstrap HTML Template"
+    />
+    <meta
+      name="keywords"
+      content="bootstrap, business, corporate, coworking space, services, creative agency, dashboard, e-commerce, mobile app showcase, saas, multipurpose, product landing, shop, software, ui kit, web studio, landing, light and dark mode, html5, css3, javascript, gallery, slider, touch, creative"
+    />
+    <meta name="author" content="Createx Studio" />
+
+    <!-- Webmanifest + Favicon / App icons -->
+    <link rel="manifest" href="/manifest.json" />
+    <link
+      rel="icon"
+      type="image/png"
+      href="assets/app-icons/icon-32x32.png"
+      sizes="32x32"
+    />
+    <link rel="apple-touch-icon" href="assets/app-icons/icon-180x180.png" />
+
+    <!-- Theme switcher (color modes) -->
+    <script src="assets/js/theme-switcher.js"></script>
+
+    <!-- Import Google font (Inter) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap"
+      rel="stylesheet"
+      id="google-font"
+    />
+
+    <!-- Vendor styles -->
+    <link
+      rel="stylesheet"
+      media="screen"
+      href="assets/vendor/swiper/swiper-bundle.min.css"
+    />
+    <link
+      rel="stylesheet"
+      media="screen"
+      href="assets/vendor/lightgallery/css/lightgallery-bundle.min.css"
+    />
+
+    <!-- Font icons -->
+    <link rel="stylesheet" href="assets/icons/around-icons.min.css" />
+
+    <!-- Theme styles + Bootstrap -->
+    <link rel="stylesheet" media="screen" href="assets/css/theme.min.css" />
+
+    <!-- Customizer generated styles -->
+    <style id="customizer-styles"></style>
+
+    <!-- Page loading styles -->
+    <style>
+      .page-loading {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        -webkit-transition: all 0.4s 0.2s ease-in-out;
+        transition: all 0.4s 0.2s ease-in-out;
+        background-color: #fff;
+        opacity: 0;
+        visibility: hidden;
+        z-index: 9999;
+      }
+      [data-bs-theme="dark"] .page-loading {
+        background-color: #121519;
+      }
+      .page-loading.active {
+        opacity: 1;
+        visibility: visible;
+      }
+      .page-loading-inner {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        -webkit-transform: translateY(-50%);
+        transform: translateY(-50%);
+        -webkit-transition: opacity 0.2s ease-in-out;
+        transition: opacity 0.2s ease-in-out;
+        opacity: 0;
+      }
+      .page-loading.active > .page-loading-inner {
+        opacity: 1;
+      }
+      .page-loading-inner > span {
+        display: block;
+        font-family: "Inter", sans-serif;
+        font-size: 1rem;
+        font-weight: normal;
+        color: #6f788b;
+      }
+      [data-bs-theme="dark"] .page-loading-inner > span {
+        color: #fff;
+        opacity: 0.6;
+      }
+      .page-spinner {
+        display: inline-block;
+        width: 2.75rem;
+        height: 2.75rem;
+        margin-bottom: 0.75rem;
+        vertical-align: text-bottom;
+        background-color: #d7dde2;
+        border-radius: 50%;
+        opacity: 0;
+        -webkit-animation: spinner 0.75s linear infinite;
+        animation: spinner 0.75s linear infinite;
+      }
+      [data-bs-theme="dark"] .page-spinner {
+        background-color: rgba(255, 255, 255, 0.25);
+      }
+      @-webkit-keyframes spinner {
+        0% {
+          -webkit-transform: scale(0);
+          transform: scale(0);
+        }
+        50% {
+          opacity: 1;
+          -webkit-transform: none;
+          transform: none;
+        }
+      }
+      @keyframes spinner {
+        0% {
+          -webkit-transform: scale(0);
+          transform: scale(0);
+        }
+        50% {
+          opacity: 1;
+          -webkit-transform: none;
+          transform: none;
+        }
+      }
+    </style>
+
+    <!-- Page loading scripts -->
+    <script>
+      (function () {
+        window.onload = function () {
+          const preloader = document.querySelector(".page-loading");
+          preloader.classList.remove("active");
+          setTimeout(function () {
+            preloader.remove();
+          }, 1500);
+        };
+      })();
+    </script>
+  </head>
+
+  <!-- Body -->
+  <body>
+    <!-- Page loading spinner -->
+    <div class="page-loading active">
+      <div class="page-loading-inner">
+        <div class="page-spinner"></div>
+        <span>Loading...</span>
+      </div>
+    </div>
+
+    <!-- Page wrapper -->
+    <main class="page-wrapper">
+      <header data-bs-theme="dark">
+        <!-- Navbar. Remove 'fixed-top' class to make the navigation bar scrollable with the page -->
+        <div class="navbar navbar-expand-lg fixed-top">
+          <div class="container">
+            <!-- Navbar brand (Logo) -->
+            <a class="navbar-brand pe-sm-3" href="index.html">
+              <span class="text-primary me-2">
+                <svg
+                  width="35"
+                  height="32"
+                  viewBox="0 0 36 33"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill="currentColor"
+                    d="M35.6,29c-1.1,3.4-5.4,4.4-7.9,1.9c-2.3-2.2-6.1-3.7-9.4-3.7c-3.1,0-7.5,1.8-10,4.1c-2.2,2-5.8,1.5-7.3-1.1c-1-1.8-1.2-4.1,0-6.2l0.6-1.1l0,0c0.6-0.7,4.4-5.2,12.5-5.7c0.5,1.8,2,3.1,3.9,3.1c2.2,0,4.1-1.9,4.1-4.2s-1.8-4.2-4.1-4.2c-2,0-3.6,1.4-4,3.3H7.7c-0.8,0-1.3-0.9-0.9-1.6l5.6-9.8c2.5-4.5,8.8-4.5,11.3,0L35.1,24C36,25.7,36.1,27.5,35.6,29z"
+                  ></path>
+                </svg>
+              </span>
+              Around
+            </a>
+
+            <!-- Theme switcher -->
+            <div
+              class="form-check form-switch mode-switch order-lg-2 me-3 me-lg-4 ms-auto"
+              data-bs-toggle="mode"
+            >
+              <input class="form-check-input" type="checkbox" id="theme-mode" />
+              <label class="form-check-label" for="theme-mode">
+                <i class="ai-sun fs-lg"></i>
+              </label>
+              <label class="form-check-label" for="theme-mode">
+                <i class="ai-moon fs-lg"></i>
+              </label>
+            </div>
+
+            <a
+              class="btn btn-primary btn-sm fs-sm order-lg-3 d-none d-sm-inline-flex"
+              href="./contact.html"
+            >
+              <i class="ai-cart fs-xl me-2 ms-n1"></i>
+              Buy now
+            </a>
+
+            <!-- Mobile menu toggler (Hamburger) -->
+            <button
+              class="navbar-toggler ms-sm-3"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarNav"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Navbar collapse (Main navigation) -->
+            <nav class="collapse navbar-collapse" id="navbarNav">
+              <ul
+                class="navbar-nav navbar-nav-scroll mx-auto"
+                style="--ar-scroll-height: 520px"
+              >
+                <li class="nav-item">
+                  <a class="nav-link" href="./index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active" href="./about.html">About</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="./service.html">Service</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="./contact.html">Contact</a>
+                </li>
+              </ul>
+              <div class="d-sm-none p-3 mt-n3">
+                <a class="btn btn-primary w-100 mb-1" href="./contact.html">
+                  <i class="ai-cart fs-xl me-2 ms-n1"></i>
+                  Buy now
+                </a>
+              </div>
+            </nav>
+          </div>
+        </div>
+      </header>
+
+      <!-- Hero -->
+      <section class="bg-dark position-relative py-5">
+        <div
+          class="d-none d-dark-mode-block position-absolute top-0 start-0 w-100 h-100"
+          style="background-color: rgba(255, 255, 255, 0.03)"
+        ></div>
+        <div
+          class="container position-relative z-2 py-5 mb-4 mb-sm-5"
+          data-bs-theme="dark"
+        >
+          <div class="row pb-5 mb-2 mb-sm-0 mb-lg-3">
+            <div class="col-lg-10 col-xl-9">
+              <h1 class="display-2 pb-2 pb-sm-3">
+                Empowering businesses to grow smarter and faster
+              </h1>
+              <ul class="list-unstyled d-flex flex-wrap mb-0">
+                <li class="d-flex text-body py-1 me-4">
+                  <i class="ai-check-alt text-primary lead me-2"></i>
+                  Smart plans built on data
+                </li>
+                <li class="d-flex text-body py-1 me-4">
+                  <i class="ai-check-alt text-primary lead me-2"></i>
+                  Fast, automated workflows
+                </li>
+                <li class="d-flex text-body py-1">
+                  <i class="ai-check-alt text-primary lead me-2"></i>
+                  Flexible tools for every business
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- About -->
+      <section
+        class="container position-relative z-3"
+        style="margin-top: -135px"
+      >
+        <div class="rounded-5 overflow-hidden">
+          <div class="jarallax ratio ratio-16x9" data-jarallax data-speed="0.6">
+            <div
+              class="jarallax-img"
+              style="
+                background-image: url(assets/img/about/agency/parallax-image.jpg);
+              "
+            ></div>
+          </div>
+        </div>
+        <div class="row pt-5 mt-n2 mt-sm-0 mt-md-2 mt-lg-4 mt-xl-5">
+          <div class="col-md-6 col-lg-5">
+            <div class="fs-sm text-uppercase mb-3">What we do</div>
+            <h2 class="display-6">
+              We are a team that builds digital solutions for the future
+            </h2>
+          </div>
+          <div
+            class="col-md-6 col-xl-6 offset-lg-1 offset-xl-1 pt-1 pt-sm-2 pt-md-5"
+          >
+            <p class="fs-xl" style="text-align: justify">
+              Our team of
+              <strong>software engineers, designers, and strategists</strong>
+              works together to craft innovative IT solutions that help
+              businesses scale efficiently. From web platforms to enterprise
+              applications, we deliver products that merge technology with
+              purpose.
+            </p>
+            <p class="fs-xl" style="text-align: justify">
+              We specialize in
+              <strong
+                >custom software development, cloud integration, and automation
+                solutions</strong
+              >
+              designed to streamline operations and accelerate digital
+              transformation. Our approach focuses on reliability, scalability,
+              and user-centric design.
+            </p>
+            <p class="fs-xl mb-0" style="text-align: justify">
+              Whether you’re a startup or an enterprise, we help you
+              <strong>innovate, adapt, and lead</strong> in a rapidly evolving
+              digital landscape — turning ideas into impactful software that
+              drives growth.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Approach -->
+      <section class="pt-5 mt-md-2 mt-xl-4 mt-xxl-5">
+        <div class="container pt-2 pt-sm-4 pt-lg-5 mt-xxl-2">
+          <div class="fs-sm text-uppercase mb-3">Our Mission</div>
+          <h2 class="display-6 pb-3 mb-lg-4">Professional approach</h2>
+
+          <div
+            class="swiper"
+            data-swiper-options='{
+        "spaceBetween": 24,
+        "pagination": {
+          "el": ".swiper-pagination",
+          "clickable": true
+        },
+        "breakpoints": {
+          "576": { "slidesPerView": 2 },
+          "992": { "slidesPerView": 3 }
+        }
+      }'
+          >
+            <div class="swiper-wrapper">
+              <!-- Item 1 -->
+              <div class="swiper-slide h-auto">
+                <div class="card border-0 bg-secondary rounded-5 h-100">
+                  <div class="card-body">
+                    <svg
+                      class="d-block mt-1 mt-sm-0 mb-4"
+                      width="40"
+                      height="40"
+                      viewBox="0 0 40 40"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <g class="text-info">
+                        <path
+                          d="M20.0004 36.0226L10.982 21.3535C9.42594 23.3156 8.49609 25.7968 8.49609 28.4955C8.49609 34.8492 13.6467 39.9998 20.0004 39.9998C26.3541 39.9998 31.5047 34.8492 31.5047 28.4955C31.5047 25.7969 30.5749 23.3156 29.0188 21.3535L20.0004 36.0226Z"
+                          fill="currentColor"
+                        ></path>
+                      </g>
+                      <g class="text-primary">
+                        <path
+                          d="M39.3962 0H0.605469L20.0009 31.5477L39.3962 0ZM25.7601 7.62359L20.0009 16.9914L14.2416 7.62359H25.7601Z"
+                          fill="currentColor"
+                        ></path>
+                      </g>
+                    </svg>
+                    <h3 class="h4">Client-Centric Solutions</h3>
+                    <p class="mb-0">
+                      We understand that every business has unique challenges.
+                      Our experts take a
+                      <strong>personalized approach</strong> to craft scalable
+                      IT solutions that align with your goals and deliver
+                      measurable results.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Item 2 -->
+              <div class="swiper-slide h-auto">
+                <div class="card border-0 bg-secondary rounded-5 h-100">
+                  <div class="card-body">
+                    <svg
+                      class="d-block mt-1 mt-sm-0 mb-4"
+                      width="40"
+                      height="40"
+                      viewBox="0 0 40 40"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <g class="text-info">
+                        <path
+                          d="M26.307 23.1116C26.307 28.3136 22.09 32.5307 16.888 32.5307C11.6859 32.5307 7.46891 28.3136 7.46891 23.1116C7.46891 17.9096 11.6859 13.6925 16.888 13.6925C17.1467 13.6925 17.4028 13.7038 17.6562 13.7243V6.24121C17.4016 6.22973 17.1455 6.22363 16.888 6.22363C7.56102 6.22363 0 13.7846 0 23.1116C0 32.4386 7.56102 39.9996 16.888 39.9996C26.2149 39.9996 33.7759 32.4386 33.7759 23.1116C33.7759 22.8541 33.7698 22.598 33.7584 22.3433H26.2753C26.2958 22.5968 26.307 22.8529 26.307 23.1116Z"
+                          fill="currentColor"
+                        ></path>
+                      </g>
+                      <g class="text-primary">
+                        <path
+                          d="M40 20C40 8.9543 31.0457 0 20 0V20H40Z"
+                          fill="currentColor"
+                        ></path>
+                      </g>
+                    </svg>
+                    <h3 class="h4">Data-Driven Insights</h3>
+                    <p class="mb-0">
+                      We integrate
+                      <strong>advanced analytics and automation</strong>
+                      into your workflows to help you make smarter decisions,
+                      optimize processes, and gain a competitive edge in your
+                      digital journey.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Item 3 -->
+              <div class="swiper-slide h-auto">
+                <div class="card border-0 bg-secondary rounded-5 h-100">
+                  <div class="card-body">
+                    <svg
+                      class="d-block mt-1 mt-sm-0 mb-4"
+                      width="40"
+                      height="40"
+                      viewBox="0 0 40 40"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <g class="text-primary">
+                        <path
+                          d="M25.2791 12.7502C28.1954 9.83389 28.1954 5.10556 25.2791 2.18921C22.3627 -0.727136 17.6344 -0.727137 14.718 2.18921C11.8017 5.10556 11.8017 9.83389 14.718 12.7502C17.6344 15.6666 22.3627 15.6666 25.2791 12.7502Z"
+                          fill="currentColor"
+                        ></path>
+                      </g>
+                      <g class="text-info">
+                        <path
+                          d="M14.6859 29.3056C15.6559 27.0123 16.9202 24.8838 18.4577 22.9467C13.8666 17.9802 7.29664 14.8701 0 14.8701V40.0004H12.5259C12.5259 36.2925 13.2527 32.6942 14.6859 29.3056Z"
+                          fill="currentColor"
+                        ></path>
+                      </g>
+                      <g class="text-primary">
+                        <path
+                          d="M40.0014 40.0004V14.8701C26.1223 14.8701 14.8711 26.1214 14.8711 40.0004H40.0014Z"
+                          fill="currentColor"
+                        ></path>
+                      </g>
+                    </svg>
+                    <h3 class="h4">Agile Execution</h3>
+                    <p class="mb-0">
+                      Our team follows a
+                      <strong>step-by-step agile workflow</strong>
+                      that ensures transparency, speed, and adaptability —
+                      delivering high-quality results at every milestone of your
+                      IT project.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Pagination -->
+            <div
+              class="swiper-pagination position-relative bottom-0 mt-2 pt-4 d-lg-none"
+            ></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- How we work (Steps) -->
+      <section class="container pt-5 mt-1 mt-sm-2 mt-xl-4 mt-xxl-5">
+        <div
+          class="row align-items-center pt-2 pt-sm-3 pt-md-4 pt-lg-5 mt-xl-2 mt-xxl-3"
+        >
+          <div class="col-md-6 col-xl-5 pb-3 pb-md-0 mb-4 mb-md-0">
+            <div
+              class="ratio ratio-1x1 d-flex align-items-center position-relative rounded-circle overflow-hidden bg-size-cover mx-auto"
+              style="
+                max-width: 530px;
+                background-image: url(assets/img/about/agency/steps-image.jpg);
+              "
+            >
+              <div
+                class="bg-black position-absolute top-0 start-0 w-100 h-100 opacity-50"
+              ></div>
+              <div class="position-relative z-2 p-4" data-bs-theme="dark">
+                <div class="text-center mx-auto" style="max-width: 275px">
+                  <span class="d-block text-body fs-sm text-uppercase mb-3"
+                    >How we work</span
+                  >
+                  <h2 class="display-6 mb-0">Our Process to Success</h2>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-xl-5 offset-xl-1">
+            <div class="ps-md-4 ps-xl-0">
+              <div class="steps steps-hoverable">
+                <!-- Step 1 -->
+                <div class="step py-3 py-xl-4">
+                  <div class="step-number">
+                    <div class="step-number-inner">01</div>
+                  </div>
+                  <div class="step-body">
+                    <h3 class="h5 pb-1 mb-2">Understanding Requirements</h3>
+                    <p class="mb-0">
+                      We begin by analyzing your goals and challenges to create
+                      a clear understanding of the project’s vision and
+                      technical needs.
+                    </p>
+                  </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="step py-3 py-xl-4">
+                  <div class="step-number">
+                    <div class="step-number-inner">02</div>
+                  </div>
+                  <div class="step-body">
+                    <h3 class="h5 pb-1 mb-2">Planning and Architecture</h3>
+                    <p class="mb-0">
+                      Our team designs a strategic roadmap and defines the
+                      system architecture, ensuring scalability, performance,
+                      and security.
+                    </p>
+                  </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="step py-3 py-xl-4">
+                  <div class="step-number">
+                    <div class="step-number-inner">03</div>
+                  </div>
+                  <div class="step-body">
+                    <h3 class="h5 pb-1 mb-2">Development and Testing</h3>
+                    <p class="mb-0">
+                      Using modern tools and agile practices, we build and test
+                      your solution with a focus on quality, performance, and
+                      user experience.
+                    </p>
+                  </div>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="step py-3 py-xl-4">
+                  <div class="step-number">
+                    <div class="step-number-inner">04</div>
+                  </div>
+                  <div class="step-body">
+                    <h3 class="h5 pb-1 mb-2">Deployment and Support</h3>
+                    <p class="mb-0">
+                      Once deployed, we provide continuous monitoring, updates,
+                      and technical support to keep your digital ecosystem
+                      running smoothly.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Testimonials -->
+      <section class="pt-5 mt-1 mt-sm-2 mt-xl-4 mt-xxl-5">
+        <div class="container pt-3 pt-md-4 pt-lg-5 mt-xl-2 mt-xxl-3">
+          <div class="fs-sm text-uppercase mb-3">Testimonials</div>
+          <h2 class="display-6 pb-3 mb-lg-4">What our clients say</h2>
+          <div class="card border-0 bg-secondary overflow-hidden">
+            <div class="card-body position-relative z-2 px-lg-0 py-lg-5">
+              <div class="row py-2 py-sm-1 py-md-3 py-lg-4 py-xl-5">
+                <div class="col-md-4 col-lg-3 offset-lg-1 mb-3 mb-md-0">
+                  <!-- Binded items -->
+                  <div class="binded-content">
+                    <!-- Item -->
+                    <div class="binded-item active" id="author1">
+                      <img
+                        class="d-block rounded-circle mb-3"
+                        src="assets/img/avatar/21.jpg"
+                        width="86"
+                        alt="Lilianna Bocouse"
+                      />
+                      <h4 class="mb-0">Lilianna Bocouse</h4>
+                      <p class="fs-lg text-body-secondary mb-0">
+                        Head of Marketing
+                      </p>
+                    </div>
+
+                    <!-- Item -->
+                    <div class="binded-item" id="author2">
+                      <img
+                        class="d-block rounded-circle mb-3"
+                        src="assets/img/avatar/33.jpg"
+                        width="86"
+                        alt="Darell Steward"
+                      />
+                      <h4 class="mb-0">Darell Steward</h4>
+                      <p class="fs-lg text-body-secondary mb-0">
+                        Project Manager
+                      </p>
+                    </div>
+
+                    <!-- Item -->
+                    <div class="binded-item" id="author3">
+                      <img
+                        class="d-block rounded-circle mb-3"
+                        src="assets/img/avatar/34.jpg"
+                        width="86"
+                        alt="Annette Black"
+                      />
+                      <h4 class="mb-0">Annette Black</h4>
+                      <p class="fs-lg text-body-secondary mb-0">
+                        Lead Designer
+                      </p>
+                    </div>
+
+                    <!-- Item -->
+                    <div class="binded-item" id="author4">
+                      <img
+                        class="d-block rounded-circle mb-3"
+                        src="assets/img/avatar/35.jpg"
+                        width="86"
+                        alt="Ralph Edwards"
+                      />
+                      <h4 class="mb-0">Ralph Edwards</h4>
+                      <p class="fs-lg text-body-secondary mb-0">
+                        CEO, Co-Founder
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-8 col-lg-7">
+                  <!-- Swiper slider -->
+                  <div
+                    class="swiper"
+                    data-swiper-options='{
+                "spaceBetween": 40,
+                "loop": true,
+                "autoHeight": true,
+                "bindedContent": true,
+                "pagination": {
+                  "el": "#testimonials-bullets",
+                  "clickable": true
+                }
+              }'
+                  >
+                    <div class="swiper-wrapper">
+                      <!-- Item -->
+                      <div class="swiper-slide" data-swiper-binded="#author1">
+                        <p class="text-dark lead mb-0">
+                          “Working with <strong>TechVivanta</strong> for our
+                          corporate website was a smooth and professional
+                          experience. Their web development team delivered a
+                          fast, responsive, and visually refined solution that
+                          perfectly represents our brand.”
+                        </p>
+                      </div>
+
+                      <!-- Item -->
+                      <div class="swiper-slide" data-swiper-binded="#author2">
+                        <p class="text-dark lead mb-0">
+                          “<strong>TechVivanta</strong> built our mobile app
+                          with outstanding precision. The interface is intuitive
+                          and performance-driven — our users love it. Their
+                          communication and delivery timeline were exceptional.”
+                        </p>
+                      </div>
+
+                      <!-- Item -->
+                      <div class="swiper-slide" data-swiper-binded="#author3">
+                        <p class="text-dark lead mb-0">
+                          “The design and development expertise from
+                          <strong>TechVivanta</strong> helped us transform our
+                          vision into a user-friendly web platform. Their team
+                          handled every detail with creativity and technical
+                          excellence.”
+                        </p>
+                      </div>
+
+                      <!-- Item -->
+                      <div class="swiper-slide" data-swiper-binded="#author4">
+                        <p class="text-dark lead mb-0">
+                          “We partnered with <strong>TechVivanta</strong> for
+                          both web and mobile app development. The results
+                          exceeded our expectations — sleek design, smooth
+                          functionality, and reliable ongoing support.”
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Swiper pagination (bullets) -->
+          <div
+            class="swiper-pagination position-relative bottom-0 pt-4 mt-2 mt-md-3"
+            id="testimonials-bullets"
+          ></div>
+        </div>
+      </section>
+
+      <!-- Gallery (Carousel) -->
+      <section class="position-relative pt-5 mt-2 mt-xl-4 mt-xxl-5">
+        <div
+          class="bg-secondary position-absolute start-0 bottom-0 w-100"
+          style="height: 252px"
+        ></div>
+        <div
+          class="container py-3 pt-sm-4 pt-lg-5 mt-xl-2 mt-xxl-3 mb-3 mb-lg-4"
+        >
+          <div class="fs-sm text-uppercase mb-3">Where</div>
+          <div class="d-sm-flex align-items-center justify-content-between">
+            <h2 class="display-6 mb-0 me-sm-4">We are located in London</h2>
+
+            <!-- Swiper controls (Prev/next buttons) visible on screens > 576px -->
+            <div class="d-none d-sm-flex">
+              <button
+                class="prev-gallery btn btn-icon btn-outline-primary rounded-circle me-3"
+                type="button"
+                aria-label="Prev"
+              >
+                <i class="ai-arrow-left"></i>
+              </button>
+              <button
+                class="next-gallery btn btn-icon btn-outline-primary rounded-circle"
+                type="button"
+                aria-label="Next"
+              >
+                <i class="ai-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Swiper slider -->
+        <div class="container-start position-relative z-2 pe-0">
+          <div
+            class="swiper"
+            data-swiper-options='{
+            "slidesPerView": "auto",
+            "spaceBetween": 24,
+            "loop": true,
+            "navigation": {
+              "prevEl": ".prev-gallery",
+              "nextEl": ".next-gallery"
+            }
+          }'
+          >
+            <div class="swiper-wrapper gallery align-items-end">
+              <!-- Item -->
+              <div class="swiper-slide w-auto">
+                <a
+                  class="d-block gallery-item card-hover zoom-effect"
+                  href="assets/img/about/agency/gallery/01.jpg"
+                  style="max-width: 416px"
+                >
+                  <div
+                    class="d-flex justify-content-center align-items-center position-absolute top-0 start-0 w-100 h-100 rounded-5 overflow-hidden z-2 opacity-0"
+                  >
+                    <i
+                      class="ai-zoom-in fs-2 text-white position-relative z-2"
+                    ></i>
+                    <div
+                      class="position-absolute top-0 start-0 w-100 h-100 bg-black opacity-40"
+                    ></div>
+                  </div>
+                  <div class="zoom-effect-wrapper rounded-5">
+                    <div class="zoom-effect-img">
+                      <img
+                        src="assets/img/about/agency/gallery/01.jpg"
+                        alt="Gallery image #1"
+                      />
+                    </div>
+                  </div>
+                </a>
+              </div>
+
+              <!-- Item -->
+              <div class="swiper-slide w-auto">
+                <a
+                  class="d-block gallery-item card-hover zoom-effect"
+                  href="assets/img/about/agency/gallery/02.jpg"
+                  style="max-width: 526px"
+                >
+                  <div
+                    class="d-flex justify-content-center align-items-center position-absolute top-0 start-0 w-100 h-100 rounded-5 overflow-hidden z-2 opacity-0"
+                  >
+                    <i
+                      class="ai-zoom-in fs-2 text-white position-relative z-2"
+                    ></i>
+                    <div
+                      class="position-absolute top-0 start-0 w-100 h-100 bg-black opacity-40"
+                    ></div>
+                  </div>
+                  <div class="zoom-effect-wrapper rounded-5">
+                    <div class="zoom-effect-img">
+                      <img
+                        src="assets/img/about/agency/gallery/02.jpg"
+                        alt="Gallery image #2"
+                      />
+                    </div>
+                  </div>
+                </a>
+              </div>
+
+              <!-- Item -->
+              <div class="swiper-slide w-auto">
+                <a
+                  class="d-block gallery-item card-hover zoom-effect"
+                  href="assets/img/about/agency/gallery/03.jpg"
+                  style="max-width: 306px"
+                >
+                  <div
+                    class="d-flex justify-content-center align-items-center position-absolute top-0 start-0 w-100 h-100 rounded-5 overflow-hidden z-2 opacity-0"
+                  >
+                    <i
+                      class="ai-zoom-in fs-2 text-white position-relative z-2"
+                    ></i>
+                    <div
+                      class="position-absolute top-0 start-0 w-100 h-100 bg-black opacity-40"
+                    ></div>
+                  </div>
+                  <div class="zoom-effect-wrapper rounded-5">
+                    <div class="zoom-effect-img">
+                      <img
+                        src="assets/img/about/agency/gallery/03.jpg"
+                        alt="Gallery image #3"
+                      />
+                    </div>
+                  </div>
+                </a>
+              </div>
+
+              <!-- Item -->
+              <div class="swiper-slide w-auto">
+                <a
+                  class="d-block gallery-item card-hover zoom-effect"
+                  href="assets/img/about/agency/gallery/04.jpg"
+                  style="max-width: 367px"
+                >
+                  <div
+                    class="d-flex justify-content-center align-items-center position-absolute top-0 start-0 w-100 h-100 rounded-5 overflow-hidden z-2 opacity-0"
+                  >
+                    <i
+                      class="ai-zoom-in fs-2 text-white position-relative z-2"
+                    ></i>
+                    <div
+                      class="position-absolute top-0 start-0 w-100 h-100 bg-black opacity-40"
+                    ></div>
+                  </div>
+                  <div class="zoom-effect-wrapper rounded-5">
+                    <div class="zoom-effect-img">
+                      <img
+                        src="assets/img/about/agency/gallery/04.jpg"
+                        alt="Gallery image #4"
+                      />
+                    </div>
+                  </div>
+                </a>
+              </div>
+
+              <!-- Item -->
+              <div class="swiper-slide w-auto">
+                <a
+                  class="d-block gallery-item card-hover zoom-effect"
+                  href="assets/img/about/agency/gallery/05.jpg"
+                  style="max-width: 526px"
+                >
+                  <div
+                    class="d-flex justify-content-center align-items-center position-absolute top-0 start-0 w-100 h-100 rounded-5 overflow-hidden z-2 opacity-0"
+                  >
+                    <i
+                      class="ai-zoom-in fs-2 text-white position-relative z-2"
+                    ></i>
+                    <div
+                      class="position-absolute top-0 start-0 w-100 h-100 bg-black opacity-40"
+                    ></div>
+                  </div>
+                  <div class="zoom-effect-wrapper rounded-5">
+                    <div class="zoom-effect-img">
+                      <img
+                        src="assets/img/about/agency/gallery/05.jpg"
+                        alt="Gallery image #5"
+                      />
+                    </div>
+                  </div>
+                </a>
+              </div>
+
+              <!-- Item -->
+              <div class="swiper-slide w-auto">
+                <a
+                  class="d-block gallery-item card-hover zoom-effect"
+                  href="assets/img/about/agency/gallery/06.jpg"
+                  style="max-width: 416px"
+                >
+                  <div
+                    class="d-flex justify-content-center align-items-center position-absolute top-0 start-0 w-100 h-100 rounded-5 overflow-hidden z-2 opacity-0"
+                  >
+                    <i
+                      class="ai-zoom-in fs-2 text-white position-relative z-2"
+                    ></i>
+                    <div
+                      class="position-absolute top-0 start-0 w-100 h-100 bg-black opacity-40"
+                    ></div>
+                  </div>
+                  <div class="zoom-effect-wrapper rounded-5">
+                    <div class="zoom-effect-img">
+                      <img
+                        src="assets/img/about/agency/gallery/06.jpg"
+                        alt="Gallery image #6"
+                      />
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Swiper controls (Prev/next buttons) visible on screens < 576px -->
+          <div class="d-flex d-sm-none pt-4">
+            <button
+              class="prev-gallery btn btn-icon btn-outline-primary rounded-circle me-3"
+              type="button"
+              aria-label="Prev"
+            >
+              <i class="ai-arrow-left"></i>
+            </button>
+            <button
+              class="next-gallery btn btn-icon btn-outline-primary rounded-circle"
+              type="button"
+              aria-label="Next"
+            >
+              <i class="ai-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer bg-secondary pt-4 pb-2 pb-md-5 pt-sm-5">
+      <div class="container-fluid pb-1 pb-md-0 px-md-5">
+        <div
+          class="bg-dark rounded-5 position-relative overflow-hidden w-100 py-5 px-3 px-sm-4 px-xl-5 mx-auto"
+          style="max-width: 1660px"
+          data-bs-theme="dark"
+        >
+          <div
+            class="position-absolute top-50 start-50 translate-middle"
+            style="width: 1664px"
+          >
+            <img
+              src="assets/img/landing/web-studio/footer-wave.png"
+              alt="Wave"
+            />
+          </div>
+          <div
+            class="container position-relative z-2 pt-md-3 pt-lg-4 pt-xl-5 pb-2"
+          >
+            <div class="row pb-2">
+              <div class="col-lg-4 col-xxl-3 pb-2 pb-lg-0 mb-4 mb-lg-0">
+                <div class="navbar-brand text-light py-0 me-0 pb-1 mb-3">
+                  <span class="text-primary me-2">
+                    <svg
+                      version="1.1"
+                      width="35"
+                      height="32"
+                      viewBox="0 0 36 33"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        fill="currentColor"
+                        d="M35.6,29c-1.1,3.4-5.4,4.4-7.9,1.9c-2.3-2.2-6.1-3.7-9.4-3.7c-3.1,0-7.5,1.8-10,4.1c-2.2,2-5.8,1.5-7.3-1.1c-1-1.8-1.2-4.1,0-6.2l0.6-1.1l0,0c0.6-0.7,4.4-5.2,12.5-5.7c0.5,1.8,2,3.1,3.9,3.1c2.2,0,4.1-1.9,4.1-4.2s-1.8-4.2-4.1-4.2c-2,0-3.6,1.4-4,3.3H7.7c-0.8,0-1.3-0.9-0.9-1.6l5.6-9.8c2.5-4.5,8.8-4.5,11.3,0L35.1,24C36,25.7,36.1,27.5,35.6,29z"
+                      ></path>
+                    </svg>
+                  </span>
+                  <span class="text-white opacity-90">Around</span>
+                </div>
+                <p class="text-body fs-sm mb-4">
+                  Tellus non diam morbi quam vel venenatis proin sed dolor
+                  elementum nunc
+                </p>
+                <div class="input-group input-group-sm rounded-pill">
+                  <input
+                    class="form-control"
+                    type="text"
+                    placeholder="Email address"
+                  />
+                  <button class="btn btn-primary rounded-pill" type="button">
+                    Subscribe
+                  </button>
+                </div>
+              </div>
+              <div
+                class="col-sm-4 col-lg-2 offset-lg-1 offset-xl-2 offset-xxl-3 mb-4 mb-sm-0"
+              >
+                <h6 class="fw-bold">Company</h6>
+                <ul class="nav flex-column fs-sm">
+                  <li class="nav-item">
+                    <a class="nav-link fw-normal px-0 py-1" href="#">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link fw-normal px-0 py-1" href="#"
+                      >Services</a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link fw-normal px-0 py-1" href="#"
+                      >Projects</a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link fw-normal px-0 py-1" href="#">Blog</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="col-sm-4 col-lg-2 mb-4 mb-sm-0">
+                <h6 class="fw-bold">Support</h6>
+                <ul class="nav flex-column fs-sm">
+                  <li class="nav-item">
+                    <a class="nav-link fw-normal px-0 py-1" href="#"
+                      >Help center</a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link fw-normal px-0 py-1" href="#"
+                      >Terms of service</a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link fw-normal px-0 py-1" href="#">Legal</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link fw-normal px-0 py-1" href="#"
+                      >Privacy policy</a
+                    >
+                  </li>
+                </ul>
+              </div>
+              <div class="col-sm-4 col-lg-3 col-xl-2">
+                <h6 class="fw-bold">Contact us</h6>
+                <ul class="nav flex-column fs-sm">
+                  <li class="nav-item">
+                    <a
+                      class="nav-link fw-normal px-0 py-1"
+                      href="mailto:email@example.com"
+                      >email@example.com</a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a
+                      class="nav-link fw-normal px-0 py-1"
+                      href="tel:+15262200459"
+                      >+&nbsp;1&nbsp;526&nbsp;220&nbsp;0459</a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a
+                      class="nav-link fw-normal px-0 py-1"
+                      href="tel:+15262200444"
+                      >+&nbsp;1&nbsp;526&nbsp;220&nbsp;0444</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div
+              class="d-sm-flex align-items-center justify-content-between pt-4 pt-md-5 mt-2 mt-md-0 mt-lg-2 mt-xl-4"
+            >
+              <div class="d-flex justify-content-center order-sm-2 me-md-n2">
+                <a
+                  class="btn btn-icon btn-sm btn-secondary btn-instagram rounded-circle mx-2"
+                  href="#"
+                  aria-label="Instagram"
+                >
+                  <i class="ai-instagram"></i>
+                </a>
+                <a
+                  class="btn btn-icon btn-sm btn-secondary btn-facebook rounded-circle mx-2"
+                  href="#"
+                  aria-label="Facebook"
+                >
+                  <i class="ai-facebook"></i>
+                </a>
+                <a
+                  class="btn btn-icon btn-sm btn-secondary btn-linkedin rounded-circle mx-2"
+                  href="#"
+                  aria-label="LinkedIn"
+                >
+                  <i class="ai-linkedin"></i>
+                </a>
+              </div>
+              <p
+                class="nav fs-sm order-sm-1 text-center text-sm-start pt-4 pt-sm-0 mb-0 me-4"
+              >
+                <span class="text-body-secondary"
+                  >&copy; All rights reserved. Made by</span
+                >
+                <a
+                  class="nav-link fw-normal p-0 ms-1"
+                  href="https://createx.studio/"
+                  target="_blank"
+                  rel="noopener"
+                  >Createx Studio</a
+                >
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Back to top button -->
+    <a
+      class="btn-scroll-top"
+      href="#top"
+      data-scroll
+      aria-label="Scroll back to top"
+    >
+      <svg
+        viewBox="0 0 40 40"
+        fill="currentColor"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <circle
+          cx="20"
+          cy="20"
+          r="19"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.5"
+          stroke-miterlimit="10"
+        ></circle>
+      </svg>
+      <i class="ai-arrow-up"></i>
+    </a>
+
+    <!-- Vendor scripts: JS libraries and plugins -->
+    <script src="assets/vendor/jarallax/dist/jarallax.min.js"></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="assets/vendor/lightgallery/lightgallery.min.js"></script>
+    <script src="assets/vendor/lightgallery/plugins/fullscreen/lg-fullscreen.min.js"></script>
+    <script src="assets/vendor/lightgallery/plugins/zoom/lg-zoom.min.js"></script>
+
+    <!-- Bootstrap + Theme scripts -->
+    <script src="assets/js/theme.min.js"></script>
+
+    <!-- Customizer -->
+    <script src="assets/js/customizer.min.js"></script>
+  </body>
+</html>

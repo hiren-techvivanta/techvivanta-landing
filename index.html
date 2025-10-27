@@ -54,7 +54,11 @@
       media="screen"
       href="assets/vendor/aos/dist/aos.css"
     />
-     <link rel="stylesheet" media="screen" href="assets/vendor/swiper/swiper-bundle.min.css">
+    <link
+      rel="stylesheet"
+      media="screen"
+      href="assets/vendor/swiper/swiper-bundle.min.css"
+    />
 
     <!-- Font icons -->
     <link rel="stylesheet" href="assets/icons/around-icons.min.css" />
@@ -166,439 +170,15 @@
         };
       })();
     </script>
-
-    <!-- Google Tag Manager -->
-   
   </head>
 
   <!-- Body -->
   <body>
-    <!-- Google Tag Manager (noscript) -->
-    <noscript>
-      <iframe
-        src="//www.googletagmanager.com/ns.html?id=GTM-WKV3GT5"
-        height="0"
-        width="0"
-        style="display: none; visibility: hidden"
-        title="Google Tag Manager"
-      ></iframe>
-    </noscript>
-
     <!-- Page loading spinner -->
     <div class="page-loading active">
       <div class="page-loading-inner">
         <div class="page-spinner"></div>
         <span>Loading...</span>
-      </div>
-    </div>
-
-    <!-- Customizer modal -->
-    <div class="modal fade" id="customizer-modal" tabindex="-1" role="dialog">
-      <div
-        class="modal-dialog modal-lg modal-dialog-scrollable"
-        role="document"
-      >
-        <div class="modal-content">
-          <div class="modal-header">
-            <h4 class="modal-title">Your custom styles</h4>
-            <button
-              class="btn-close"
-              type="button"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-            ></button>
-          </div>
-          <div class="modal-body py-4">
-            <p class="mb-3">
-              Grab the generated styles below. Wrap them inside
-              <code>&lt;style&gt;</code> tag and put in the
-              <code>&lt;head&gt;</code> section of your HTML document.
-            </p>
-            <p class="mb-4">
-              <span class="fw-medium">IMPORTANT:</span> In order for these
-              styles to take effect you have to placed them below:<br /><code
-                >&lt;link rel=&quot;stylesheet&quot; media=&quot;screen&quot;
-                href=&quot;assets/css/theme.min.css&quot;&gt;</code
-              >
-            </p>
-            <div class="bg-secondary overflow-hidden rounded-4">
-              <pre
-                class="text-wrap bg-transparent border-0 text-dark p-4"
-                id="custom-generated-styles"
-              ></pre>
-            </div>
-          </div>
-          <div class="modal-footer">
-            <button
-              class="btn btn-secondary w-100 w-sm-auto mb-3 mb-sm-0"
-              type="button"
-              data-bs-dismiss="modal"
-            >
-              Close
-            </button>
-            <button
-              class="btn btn-primary w-100 w-sm-auto ms-sm-3"
-              type="button"
-              id="copy-styles-btn"
-            >
-              <i class="ai-copy me-2 ms-n1"></i>
-              Copy styles
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Customizer offcanvas -->
-    <div
-      class="offcanvas offcanvas-end"
-      id="customizer"
-      data-bs-scroll="true"
-      data-bs-backdrop="false"
-      tabindex="-1"
-    >
-      <div class="offcanvas-header border-bottom">
-        <h4 class="offcanvas-title">Customize theme</h4>
-        <button
-          class="btn-close"
-          type="button"
-          data-bs-dismiss="offcanvas"
-          aria-label="Close"
-        ></button>
-      </div>
-      <div class="offcanvas-body">
-        <div class="d-flex align-items-center mb-3">
-          <i class="ai-paint-roll text-body-secondary fs-4 me-2"></i>
-          <h5 class="mb-0">Colors</h5>
-        </div>
-        <div class="row row-cols-3 g-3 mb-5" id="theme-colors">
-          <div class="col">
-            <div class="text-dark fs-sm fw-medium mb-2">Primary</div>
-            <div
-              class="color-swatch"
-              id="theme-primary"
-              data-color-labels='["theme-primary", "primary", "primary-rgb"]'
-            >
-              <label
-                class="ratio ratio-4x3 border rounded-1 cursor-pointer mb-1"
-                for="primary"
-                style="background-color: #448c74"
-                role="button"
-              ></label>
-              <input
-                class="form-control form-control-sm"
-                type="text"
-                value="#448c74"
-              />
-              <input
-                class="visually-hidden"
-                type="color"
-                id="primary"
-                value="#448c74"
-              />
-            </div>
-          </div>
-          <div class="col">
-            <div class="text-dark fs-sm fw-medium mb-2">Warning</div>
-            <div
-              class="color-swatch"
-              id="theme-warning"
-              data-color-labels='["theme-warning", "warning", "warning-rgb"]'
-            >
-              <label
-                class="ratio ratio-4x3 border rounded-1 cursor-pointer mb-1"
-                for="warning"
-                style="background-color: #edcb50"
-                role="button"
-              ></label>
-              <input
-                class="form-control form-control-sm"
-                type="text"
-                value="#edcb50"
-              />
-              <input
-                class="visually-hidden"
-                type="color"
-                id="warning"
-                value="#edcb50"
-              />
-            </div>
-          </div>
-          <div class="col">
-            <div class="text-dark fs-sm fw-medium mb-2">Info</div>
-            <div
-              class="color-swatch"
-              id="theme-info"
-              data-color-labels='["theme-info", "info", "info-rgb"]'
-            >
-              <label
-                class="ratio ratio-4x3 border rounded-1 cursor-pointer mb-1"
-                for="info"
-                style="background-color: #3f7fca"
-                role="button"
-              ></label>
-              <input
-                class="form-control form-control-sm"
-                type="text"
-                value="#3f7fca"
-              />
-              <input
-                class="visually-hidden"
-                type="color"
-                id="info"
-                value="#3f7fca"
-              />
-            </div>
-          </div>
-          <div class="col">
-            <div class="text-dark fs-sm fw-medium pt-1 mb-2">Success</div>
-            <div
-              class="color-swatch"
-              id="theme-success"
-              data-color-labels='["theme-success", "success", "success-rgb"]'
-            >
-              <label
-                class="ratio ratio-4x3 border rounded-1 cursor-pointer mb-1"
-                for="success"
-                style="background-color: #3fca90"
-                role="button"
-              ></label>
-              <input
-                class="form-control form-control-sm"
-                type="text"
-                value="#3fca90"
-              />
-              <input
-                class="visually-hidden"
-                type="color"
-                id="success"
-                value="#3fca90"
-              />
-            </div>
-          </div>
-          <div class="col">
-            <div class="text-dark fs-sm fw-medium pt-1 mb-2">Danger</div>
-            <div
-              class="color-swatch"
-              id="theme-danger"
-              data-color-labels='["theme-danger", "danger", "danger-rgb"]'
-            >
-              <label
-                class="ratio ratio-4x3 border rounded-1 cursor-pointer mb-1"
-                for="danger"
-                style="background-color: #ed5050"
-                role="button"
-              ></label>
-              <input
-                class="form-control form-control-sm"
-                type="text"
-                value="#ed5050"
-              />
-              <input
-                class="visually-hidden"
-                type="color"
-                id="danger"
-                value="#ed5050"
-              />
-            </div>
-          </div>
-        </div>
-        <div class="d-flex align-items-center mb-3">
-          <i class="ai-align-left text-body-secondary fs-4 me-2"></i>
-          <h5 class="mb-0">
-            Typography
-            <span class="text-body-secondary fs-sm fw-normal"
-              >(1rem = 16px)</span
-            >
-          </h5>
-        </div>
-        <div class="mb-5">
-          <div class="mb-3">
-            <label class="text-dark fs-sm fw-medium pt-1 mb-2" for="font-url"
-              >Google font URL</label
-            >
-            <input
-              class="form-control"
-              type="url"
-              value="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap"
-              id="font-url"
-            />
-          </div>
-          <div class="mb-3">
-            <label
-              class="text-dark fs-sm fw-medium pt-1 mb-2"
-              for="body-font-family"
-              >Font family</label
-            >
-            <input
-              class="form-control"
-              type="text"
-              value="'Inter', sans-serif"
-              id="body-font-family"
-            />
-          </div>
-          <div class="row row-cols-2">
-            <div class="col mb-3">
-              <label
-                class="d-flex w-100 text-dark fs-sm fw-medium pt-1 mb-2"
-                for="root-font-size"
-                >Root font size, rem</label
-              >
-              <select class="form-select" id="root-font-size">
-                <option value=".75rem">.75</option>
-                <option value=".875rem">.875</option>
-                <option value="1rem" selected>1</option>
-                <option value="1.05rem">1.05</option>
-                <option value="1.1rem">1.1</option>
-                <option value="1.15rem">1.15</option>
-                <option value="1.25rem">1.25</option>
-                <option value="1.375rem">1.375</option>
-              </select>
-            </div>
-            <div class="col mb-3">
-              <label
-                class="d-flex w-100 text-dark fs-sm fw-medium pt-1 mb-2"
-                for="body-font-size"
-                >Body font size, rem</label
-              >
-              <select class="form-select" id="body-font-size">
-                <option value=".75rem">.75</option>
-                <option value=".875rem">.875</option>
-                <option value="1rem" selected>1</option>
-                <option value="1.15rem">1.15</option>
-                <option value="1.25rem">1.25</option>
-                <option value="1.375rem">1.375</option>
-              </select>
-            </div>
-          </div>
-        </div>
-        <div class="d-flex align-items-center mt-n2 mb-3">
-          <i class="ai-maximize text-body-secondary fs-5 me-2"></i>
-          <h5 class="mb-0">Borders / Rounding</h5>
-        </div>
-        <div class="mb-3">
-          <label
-            class="d-flex w-100 text-dark fs-sm fw-medium pt-1 mb-2"
-            for="border-width"
-            >Border width, px</label
-          >
-          <input
-            class="form-control"
-            type="number"
-            min="0"
-            step="1"
-            value="1"
-            id="border-width"
-          />
-        </div>
-        <div class="mb-3">
-          <label
-            class="d-flex w-100 text-dark fs-sm fw-medium pt-1 mb-2"
-            for="border-radius"
-            >Rounded base, rem</label
-          >
-          <input
-            class="form-control"
-            type="number"
-            min="0"
-            step=".05"
-            value="1"
-            id="border-radius"
-          />
-        </div>
-        <div id="theme-border-radiuses">
-          <div class="mb-3">
-            <label
-              class="d-flex w-100 text-dark fs-sm fw-medium pt-1 mb-2"
-              for="border-radius-sm"
-            >
-              Rounded SM<span class="text-body-secondary fw-normal ms-1">
-                = Rounded base multiplied by</span
-              ></label
-            >
-            <input
-              class="form-control"
-              type="number"
-              min="0"
-              step=".05"
-              value=".75"
-              id="border-radius-sm"
-            />
-          </div>
-          <div class="mb-3">
-            <label
-              class="d-flex w-100 text-dark fs-sm fw-medium pt-1 mb-2"
-              for="border-radius-lg"
-            >
-              Rounded LG<span class="text-body-secondary fw-normal ms-1">
-                = Rounded base multiplied by</span
-              ></label
-            >
-            <input
-              class="form-control"
-              type="number"
-              min="0"
-              step=".05"
-              value="1.125"
-              id="border-radius-lg"
-            />
-          </div>
-          <div class="mb-3">
-            <label
-              class="d-flex w-100 text-dark fs-sm fw-medium pt-1 mb-2"
-              for="border-radius-xl"
-            >
-              Rounded XL<span class="text-body-secondary fw-normal ms-1">
-                = Rounded base multiplied by</span
-              ></label
-            >
-            <input
-              class="form-control"
-              type="number"
-              min="0"
-              step=".05"
-              value="1.5"
-              id="border-radius-xl"
-            />
-          </div>
-          <div class="mb-3">
-            <label
-              class="d-flex w-100 text-dark fs-sm fw-medium pt-1 mb-2"
-              for="border-radius-xxl"
-            >
-              Rounded 2XL<span class="text-body-secondary fw-normal ms-1">
-                = Rounded base multiplied by</span
-              ></label
-            >
-            <input
-              class="form-control"
-              type="number"
-              min="0"
-              step=".05"
-              value="2.25"
-              id="border-radius-xxl"
-            />
-          </div>
-        </div>
-      </div>
-      <div class="offcanvas-header border-top d-none" id="customizer-btns">
-        <button
-          class="btn btn-secondary w-100 me-3"
-          type="button"
-          id="customizer-reset-btn"
-        >
-          <i class="ai-undo fs-lg me-2 ms-n1"></i>
-          Reset
-        </button>
-        <button
-          class="btn btn-primary w-100"
-          type="button"
-          data-bs-toggle="modal"
-          data-bs-target="#customizer-modal"
-        >
-          <i class="ai-code-curly fs-lg me-2 ms-n1"></i>
-          Show styles
-        </button>
       </div>
     </div>
 
@@ -609,7 +189,7 @@
         <div class="container">
           <!-- Navbar brand (Logo) -->
           <a class="navbar-brand pe-sm-3" href="index.html">
-            <span class="text-primary flex-shrink-0 me-2">
+            <span class="text-primary me-2">
               <svg
                 width="35"
                 height="32"
@@ -641,9 +221,7 @@
 
           <a
             class="btn btn-primary btn-sm fs-sm order-lg-3 d-none d-sm-inline-flex"
-            href="https://themes.getbootstrap.com/product/around-multipurpose-template-ui-kit/"
-            target="_blank"
-            rel="noopener"
+            href="./contact.html"
           >
             <i class="ai-cart fs-xl me-2 ms-n1"></i>
             Buy now
@@ -663,613 +241,24 @@
           <!-- Navbar collapse (Main navigation) -->
           <nav class="collapse navbar-collapse" id="navbarNav">
             <ul
-              class="navbar-nav navbar-nav-scroll me-auto"
+              class="navbar-nav navbar-nav-scroll mx-auto"
               style="--ar-scroll-height: 520px"
             >
-              <li class="nav-item dropdown">
-                <a
-                  class="nav-link dropdown-toggle active"
-                  href="#"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                  >Landings</a
-                >
-                <div class="dropdown-menu overflow-hidden p-0">
-                  <div class="d-lg-flex">
-                    <div class="mega-dropdown-column pt-1 pt-lg-3 pb-lg-4">
-                      <ul class="list-unstyled mb-0">
-                        <li>
-                          <a class="dropdown-item" href="index.html"
-                            >Template Intro Page</a
-                          >
-                          <span
-                            class="mega-dropdown-column position-absolute top-0 end-0 h-100 bg-size-cover bg-repeat-0 rounded-3 rounded-start-0"
-                            style="
-                              background-image: url(assets/img/megamenu/landings.jpg);
-                            "
-                          ></span>
-                        </li>
-                        <li>
-                          <a
-                            class="dropdown-item"
-                            href="landing-mobile-app-showcase.html"
-                            >Mobile App Showcase</a
-                          >
-                          <span
-                            class="mega-dropdown-column position-absolute top-0 end-0 h-100 bg-size-cover bg-repeat-0 z-2 opacity-0"
-                            style="
-                              background-image: url(assets/img/megamenu/mobile-app.jpg);
-                            "
-                          ></span>
-                        </li>
-                        <li>
-                          <a class="dropdown-item" href="landing-product.html"
-                            >Product Landing</a
-                          >
-                          <span
-                            class="mega-dropdown-column position-absolute top-0 end-0 h-100 bg-size-cover bg-repeat-0 z-2 opacity-0"
-                            style="
-                              background-image: url(assets/img/megamenu/product-landing.jpg);
-                            "
-                          ></span>
-                        </li>
-                        <li>
-                          <a class="dropdown-item" href="landing-saas-v1.html"
-                            >SaaS v.1</a
-                          >
-                          <span
-                            class="mega-dropdown-column position-absolute top-0 end-0 h-100 bg-size-cover bg-repeat-0 z-2 opacity-0"
-                            style="
-                              background-image: url(assets/img/megamenu/saas-1.jpg);
-                            "
-                          ></span>
-                        </li>
-                        <li>
-                          <a class="dropdown-item" href="landing-saas-v2.html"
-                            >SaaS v.2</a
-                          >
-                          <span
-                            class="mega-dropdown-column position-absolute top-0 end-0 h-100 bg-size-cover bg-repeat-0 z-2 opacity-0"
-                            style="
-                              background-image: url(assets/img/megamenu/saas-2.jpg);
-                            "
-                          ></span>
-                        </li>
-                        <li>
-                          <a class="dropdown-item" href="landing-saas-v3.html"
-                            >SaaS v.3</a
-                          >
-                          <span
-                            class="mega-dropdown-column position-absolute top-0 end-0 h-100 bg-size-cover bg-repeat-0 z-2 opacity-0"
-                            style="
-                              background-image: url(assets/img/megamenu/saas-3.jpg);
-                            "
-                          ></span>
-                        </li>
-                        <li>
-                          <a class="dropdown-item" href="landing-saas-v4.html">
-                            SaaS v.4
-                            <span class="text-danger fs-xs ms-2">New</span>
-                          </a>
-                          <span
-                            class="mega-dropdown-column position-absolute top-0 end-0 h-100 bg-size-cover bg-repeat-0 z-2 opacity-0"
-                            style="
-                              background-image: url(assets/img/megamenu/saas-4.jpg);
-                            "
-                          ></span>
-                        </li>
-                        <li>
-                          <a class="dropdown-item" href="landing-shop-v1.html"
-                            >Shop Homepage v.1</a
-                          >
-                          <span
-                            class="mega-dropdown-column position-absolute top-0 end-0 h-100 bg-size-cover bg-repeat-0 z-2 opacity-0"
-                            style="
-                              background-image: url(assets/img/megamenu/shop-homepage-1.jpg);
-                            "
-                          ></span>
-                        </li>
-                        <li>
-                          <a class="dropdown-item" href="landing-shop-v2.html">
-                            Shop Homepage v.2
-                            <span class="text-danger fs-xs ms-2">New</span>
-                          </a>
-                          <span
-                            class="mega-dropdown-column position-absolute top-0 end-0 h-100 bg-size-cover bg-repeat-0 z-2 opacity-0"
-                            style="
-                              background-image: url(assets/img/megamenu/shop-homepage-2.jpg);
-                            "
-                          ></span>
-                        </li>
-                        <li>
-                          <a
-                            class="dropdown-item"
-                            href="landing-marketing-agency.html"
-                            >Marketing Agency</a
-                          >
-                          <span
-                            class="mega-dropdown-column position-absolute top-0 end-0 h-100 bg-size-cover bg-repeat-0 z-2 opacity-0"
-                            style="
-                              background-image: url(assets/img/megamenu/marketing-agency.jpg);
-                            "
-                          ></span>
-                        </li>
-                      </ul>
-                    </div>
-                    <div class="mega-dropdown-column pb-2 pt-lg-3 pb-lg-4">
-                      <ul class="list-unstyled mb-0">
-                        <li>
-                          <a
-                            class="dropdown-item"
-                            href="landing-creative-agency.html"
-                            >Creative Agency</a
-                          >
-                          <span
-                            class="mega-dropdown-column position-absolute top-0 end-0 h-100 bg-size-cover bg-repeat-0 z-2 opacity-0"
-                            style="
-                              background-image: url(assets/img/megamenu/creative-agency.jpg);
-                            "
-                          ></span>
-                        </li>
-                        <li>
-                          <a
-                            class="dropdown-item"
-                            href="landing-conference.html"
-                            >Conference (Event)</a
-                          >
-                          <span
-                            class="mega-dropdown-column position-absolute top-0 end-0 h-100 bg-size-cover bg-repeat-0 z-2 opacity-0"
-                            style="
-                              background-image: url(assets/img/megamenu/conference.jpg);
-                            "
-                          ></span>
-                        </li>
-                        <li>
-                          <a
-                            class="dropdown-item"
-                            href="landing-web-studio.html"
-                            >Web Studio</a
-                          >
-                          <span
-                            class="mega-dropdown-column position-absolute top-0 end-0 h-100 bg-size-cover bg-repeat-0 z-2 opacity-0"
-                            style="
-                              background-image: url(assets/img/megamenu/web-studio.jpg);
-                            "
-                          ></span>
-                        </li>
-                        <li>
-                          <a class="dropdown-item" href="landing-corporate.html"
-                            >Corporate</a
-                          >
-                          <span
-                            class="mega-dropdown-column position-absolute top-0 end-0 h-100 bg-size-cover bg-repeat-0 z-2 opacity-0"
-                            style="
-                              background-image: url(assets/img/megamenu/corporate.jpg);
-                            "
-                          ></span>
-                        </li>
-                        <li>
-                          <a
-                            class="dropdown-item"
-                            href="landing-insurance.html"
-                          >
-                            Insurance Company
-                            <span class="text-danger fs-xs ms-2">New</span>
-                          </a>
-                          <span
-                            class="mega-dropdown-column position-absolute top-0 end-0 h-100 bg-size-cover bg-repeat-0 z-2 opacity-0"
-                            style="
-                              background-image: url(assets/img/megamenu/insurance.jpg);
-                            "
-                          ></span>
-                        </li>
-                        <li>
-                          <a
-                            class="dropdown-item"
-                            href="landing-business-consulting.html"
-                            >Business Consulting</a
-                          >
-                          <span
-                            class="mega-dropdown-column position-absolute top-0 end-0 h-100 bg-size-cover bg-repeat-0 z-2 opacity-0"
-                            style="
-                              background-image: url(assets/img/megamenu/business-consulting.jpg);
-                            "
-                          ></span>
-                        </li>
-                        <li>
-                          <a
-                            class="dropdown-item"
-                            href="landing-coworking-space.html"
-                            >Coworking Space</a
-                          >
-                          <span
-                            class="mega-dropdown-column position-absolute top-0 end-0 h-100 bg-size-cover bg-repeat-0 z-2 opacity-0"
-                            style="
-                              background-image: url(assets/img/megamenu/coworking.jpg);
-                            "
-                          ></span>
-                        </li>
-                        <li>
-                          <a
-                            class="dropdown-item"
-                            href="landing-yoga-studio.html"
-                            >Yoga Studio</a
-                          >
-                          <span
-                            class="mega-dropdown-column position-absolute top-0 end-0 h-100 bg-size-cover bg-repeat-0 z-2 opacity-0"
-                            style="
-                              background-image: url(assets/img/megamenu/yoga-studio.jpg);
-                            "
-                          ></span>
-                        </li>
-                        <li>
-                          <a
-                            class="dropdown-item"
-                            href="landing-influencer.html"
-                            >Influencer</a
-                          >
-                          <span
-                            class="mega-dropdown-column position-absolute top-0 end-0 h-100 bg-size-cover bg-repeat-0 z-2 opacity-0"
-                            style="
-                              background-image: url(assets/img/megamenu/influencer.jpg);
-                            "
-                          ></span>
-                        </li>
-                        <li>
-                          <a class="dropdown-item" href="landing-blog.html"
-                            >Blog Homepage</a
-                          >
-                          <span
-                            class="mega-dropdown-column position-absolute top-0 end-0 h-100 bg-size-cover bg-repeat-0 z-2 opacity-0"
-                            style="
-                              background-image: url(assets/img/megamenu/blog-homepage.jpg);
-                            "
-                          ></span>
-                        </li>
-                      </ul>
-                    </div>
-                    <div
-                      class="mega-dropdown-column position-relative border-start z-3"
-                    ></div>
-                  </div>
-                </div>
-              </li>
-              <li class="nav-item dropdown">
-                <a
-                  class="nav-link dropdown-toggle"
-                  href="#"
-                  data-bs-toggle="dropdown"
-                  data-bs-auto-close="outside"
-                  aria-expanded="false"
-                  >Pages</a
-                >
-                <ul class="dropdown-menu">
-                  <li class="dropdown">
-                    <a
-                      class="dropdown-item dropdown-toggle"
-                      href="#"
-                      data-bs-toggle="dropdown"
-                      aria-expanded="false"
-                      >Portfolio</a
-                    >
-                    <ul class="dropdown-menu">
-                      <li>
-                        <a class="dropdown-item" href="portfolio-list-v1.html"
-                          >List View v.1</a
-                        >
-                      </li>
-                      <li>
-                        <a class="dropdown-item" href="portfolio-list-v2.html"
-                          >List View v.2</a
-                        >
-                      </li>
-                      <li>
-                        <a class="dropdown-item" href="portfolio-grid-v1.html"
-                          >Grid View v.1</a
-                        >
-                      </li>
-                      <li>
-                        <a class="dropdown-item" href="portfolio-grid-v2.html"
-                          >Grid View v.2</a
-                        >
-                      </li>
-                      <li>
-                        <a class="dropdown-item" href="portfolio-slider.html"
-                          >Slider View</a
-                        >
-                      </li>
-                      <li>
-                        <a class="dropdown-item" href="portfolio-single-v1.html"
-                          >Single Project v.1</a
-                        >
-                      </li>
-                      <li>
-                        <a class="dropdown-item" href="portfolio-single-v2.html"
-                          >Single Project v.2</a
-                        >
-                      </li>
-                    </ul>
-                  </li>
-                  <li class="dropdown">
-                    <a
-                      class="dropdown-item dropdown-toggle"
-                      href="#"
-                      data-bs-toggle="dropdown"
-                      aria-expanded="false"
-                      >Shop</a
-                    >
-                    <ul class="dropdown-menu">
-                      <li>
-                        <a class="dropdown-item" href="shop-catalog.html"
-                          >Catalog (Listing)</a
-                        >
-                      </li>
-                      <li>
-                        <a class="dropdown-item" href="shop-single.html"
-                          >Product Page</a
-                        >
-                      </li>
-                      <li>
-                        <a class="dropdown-item" href="shop-checkout.html"
-                          >Checkout</a
-                        >
-                      </li>
-                    </ul>
-                  </li>
-                  <li class="dropdown">
-                    <a
-                      class="dropdown-item dropdown-toggle"
-                      href="#"
-                      data-bs-toggle="dropdown"
-                      aria-expanded="false"
-                      >Blog</a
-                    >
-                    <ul class="dropdown-menu">
-                      <li>
-                        <a class="dropdown-item" href="blog-grid-sidebar.html"
-                          >Grid View with Sidebar</a
-                        >
-                      </li>
-                      <li>
-                        <a class="dropdown-item" href="blog-grid.html"
-                          >Grid View no Sidebar</a
-                        >
-                      </li>
-                      <li>
-                        <a class="dropdown-item" href="blog-list-sidebar.html"
-                          >List View with Sidebar</a
-                        >
-                      </li>
-                      <li>
-                        <a class="dropdown-item" href="blog-list.html"
-                          >List View no Sidebar</a
-                        >
-                      </li>
-                      <li>
-                        <a class="dropdown-item" href="blog-single-v1.html"
-                          >Single post v.1</a
-                        >
-                      </li>
-                      <li>
-                        <a class="dropdown-item" href="blog-single-v2.html"
-                          >Single post v.2</a
-                        >
-                      </li>
-                      <li>
-                        <a class="dropdown-item" href="blog-single-v3.html"
-                          >Single post v.3</a
-                        >
-                      </li>
-                    </ul>
-                  </li>
-                  <li class="dropdown">
-                    <a
-                      class="dropdown-item dropdown-toggle"
-                      href="#"
-                      data-bs-toggle="dropdown"
-                      aria-expanded="false"
-                      >About</a
-                    >
-                    <ul class="dropdown-menu">
-                      <li>
-                        <a class="dropdown-item" href="about-agency.html"
-                          >About - Agency</a
-                        >
-                      </li>
-                      <li>
-                        <a class="dropdown-item" href="about-product.html"
-                          >About - Product</a
-                        >
-                      </li>
-                    </ul>
-                  </li>
-                  <li class="dropdown">
-                    <a
-                      class="dropdown-item dropdown-toggle"
-                      href="#"
-                      data-bs-toggle="dropdown"
-                      aria-expanded="false"
-                      >Services</a
-                    >
-                    <ul class="dropdown-menu">
-                      <li>
-                        <a class="dropdown-item" href="services-v1.html"
-                          >Services v.1</a
-                        >
-                      </li>
-                      <li>
-                        <a class="dropdown-item" href="services-v2.html"
-                          >Services v.2</a
-                        >
-                      </li>
-                      <li>
-                        <a class="dropdown-item" href="services-v3.html"
-                          >Services v.3</a
-                        >
-                      </li>
-                    </ul>
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="pricing.html">Pricing</a>
-                  </li>
-                  <li class="dropdown">
-                    <a
-                      class="dropdown-item dropdown-toggle"
-                      href="#"
-                      data-bs-toggle="dropdown"
-                      aria-expanded="false"
-                      >Contacts</a
-                    >
-                    <ul class="dropdown-menu">
-                      <li>
-                        <a class="dropdown-item" href="contacts-v1.html"
-                          >Contacts v.1</a
-                        >
-                      </li>
-                      <li>
-                        <a class="dropdown-item" href="contacts-v2.html"
-                          >Contacts v.2</a
-                        >
-                      </li>
-                      <li>
-                        <a class="dropdown-item" href="contacts-v3.html"
-                          >Contacts v.3</a
-                        >
-                      </li>
-                    </ul>
-                  </li>
-                  <li class="dropdown">
-                    <a
-                      class="dropdown-item dropdown-toggle"
-                      href="#"
-                      data-bs-toggle="dropdown"
-                      aria-expanded="false"
-                      >Specialty Pages</a
-                    >
-                    <ul class="dropdown-menu">
-                      <li>
-                        <a class="dropdown-item" href="coming-soon-v1.html"
-                          >Coming Soon v.1</a
-                        >
-                      </li>
-                      <li>
-                        <a class="dropdown-item" href="coming-soon-v2.html"
-                          >Coming Soon v.2</a
-                        >
-                      </li>
-                      <li>
-                        <a class="dropdown-item" href="404-v1.html"
-                          >404 Error v.1</a
-                        >
-                      </li>
-                      <li>
-                        <a class="dropdown-item" href="404-v2.html"
-                          >404 Error v.2</a
-                        >
-                      </li>
-                      <li>
-                        <a class="dropdown-item" href="404-v3.html"
-                          >404 Error v.3</a
-                        >
-                      </li>
-                    </ul>
-                  </li>
-                </ul>
-              </li>
-              <li class="nav-item dropdown">
-                <a
-                  class="nav-link dropdown-toggle"
-                  href="#"
-                  data-bs-toggle="dropdown"
-                  data-bs-auto-close="outside"
-                  aria-expanded="false"
-                  >Account</a
-                >
-                <ul class="dropdown-menu">
-                  <li class="dropdown">
-                    <a
-                      class="dropdown-item dropdown-toggle"
-                      href="#"
-                      data-bs-toggle="dropdown"
-                      aria-expanded="false"
-                      >Auth pages</a
-                    >
-                    <ul class="dropdown-menu">
-                      <li>
-                        <a class="dropdown-item" href="account-signin.html"
-                          >Sign In</a
-                        >
-                      </li>
-                      <li>
-                        <a class="dropdown-item" href="account-signup.html"
-                          >Sign Up</a
-                        >
-                      </li>
-                      <li>
-                        <a class="dropdown-item" href="account-signinup.html"
-                          >Sign In / Up</a
-                        >
-                      </li>
-                      <li>
-                        <a
-                          class="dropdown-item"
-                          href="account-password-recovery.html"
-                          >Password Recovery</a
-                        >
-                      </li>
-                    </ul>
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="account-overview.html"
-                      >Overview</a
-                    >
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="account-settings.html"
-                      >Settings</a
-                    >
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="account-billing.html"
-                      >Billing</a
-                    >
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="account-orders.html"
-                      >Orders</a
-                    >
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="account-earnings.html"
-                      >Earnings</a
-                    >
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="account-chat.html"
-                      >Chat (Messages)</a
-                    >
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="account-favorites.html"
-                      >Favorites (Wishlist)</a
-                    >
-                  </li>
-                </ul>
+              <li class="nav-item">
+                <a class="nav-link active" href="">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="components/typography.html">UI Kit</a>
+                <a class="nav-link" href="./about.html">About</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="docs/getting-started.html">Docs</a>
+                <a class="nav-link" href="./service.html">Service</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./contact.html">Contact</a>
               </li>
             </ul>
             <div class="d-sm-none p-3 mt-n3">
-              <a
-                class="btn btn-primary w-100 mb-1"
-                href="https://themes.getbootstrap.com/product/around-multipurpose-template-ui-kit/"
-                target="_blank"
-                rel="noopener"
-              >
+              <a class="btn btn-primary w-100 mb-1" href="./contact.html">
                 <i class="ai-cart fs-xl me-2 ms-n1"></i>
                 Buy now
               </a>
@@ -1318,13 +307,14 @@
         <div class="container position-relative z-2 pt-5 pb-2 pb-sm-3 pb-lg-0">
           <div
             class="text-center py-5 mt-3 mt-sm-4 mb-md-3 mb-lg-4 mb-xl-5 mx-auto"
-            style="max-width: 840px"
+            style="max-width: 900px"
           >
-            <h1 class="display-3 pb-1 pb-sm-2 pb-md-3">
-              Crafting Technology Today that Powers Tomorrow
+            <h1 class="display-3 pb-1 pb-sm-2 pb-md-3 custom-font">
+              Crafting Technology Today That Powers Tomorrow
             </h1>
             <p class="fs-lg mb-0">
-             Empowering your business with smart, scalable, and future-ready technology.
+              Empowering your business with smart, scalable, and future-ready
+              technology.
             </p>
           </div>
 
@@ -1374,12 +364,7 @@
                 </clipPath>
               </defs>
             </svg>
-            <img
-              class="position-absolute top-0 end-0 z-2 mt-4 me-4"
-              src="assets/img/landing/insurance/hero/award.png"
-              width="132"
-              alt="Award"
-            />
+
             <span
               class="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-25"
             ></span>
@@ -1597,8 +582,8 @@
                   </svg>
                   <h3>Web development</h3>
                   <p class="card-text">
-                    Pellentesque bibendum congue massa urna. Tempus hendrerit
-                    non molestie nulla enim, est vitae nisl amet.
+                    Building secure, efficient websites that align with your
+                    business goals and brand identity.
                   </p>
                 </div>
                 <div class="card-footer border-0 px-0 pt-0 pb-4 mb-3">
@@ -1644,8 +629,8 @@
                   </svg>
                   <h3>Mobile development</h3>
                   <p class="card-text">
-                    Amet, consectetur rhoncus, libero, morbi malesuada feugiat
-                    nulla feugiat mi vitae est pharetra nisi velit tincidunt.
+                    Delivering scalable mobile solutions designed for speed,
+                    usability, and long-term growth.
                   </p>
                 </div>
                 <div class="card-footer border-0 px-0 pt-0 pb-4 mb-3">
@@ -1686,8 +671,8 @@
                   </svg>
                   <h3>Graphic design</h3>
                   <p class="card-text">
-                    Est, nisl, ornare augue maecenas dis vitae tincidunt
-                    interdum tincidunt donec ipsum pellentesque luctus justo.
+                    Creating modern, brand-focused graphics that enhance visual
+                    appeal and audience engagement.
                   </p>
                 </div>
                 <div class="card-footer border-0 px-0 pt-0 pb-4 mb-3">
@@ -1738,10 +723,11 @@
                   data-bs-parent="#industries"
                 >
                   <div class="accordion-body">
-                    Sit purus platea nunc semper auctor integer semper et ac
-                    odio eget a lacus eu duis ante sed molestie varius tempus
-                    gravida libero pretium sit etiam morbi orci et vestibulum
-                    velit.
+                    We help financial institutions and insurance providers
+                    modernize their digital operations through secure,
+                    compliant, and scalable solutions. Our services streamline
+                    transactions, improve customer trust, and optimize
+                    decision-making using data-driven technologies.
                   </div>
                 </div>
               </div>
@@ -1765,10 +751,10 @@
                   data-bs-parent="#industries"
                 >
                   <div class="accordion-body">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Vestibulum posuere finibus dui, eget scelerisque ipsum
-                    suscipit nec. Praesent nec quam in ipsum ultricies ultricies
-                    et sagittis dui.
+                    We empower startups and tech-driven companies with agile,
+                    scalable, and innovative digital solutions. From MVPs to
+                    enterprise systems, we deliver products that adapt quickly
+                    to growth and market needs.
                   </div>
                 </div>
               </div>
@@ -1792,10 +778,10 @@
                   data-bs-parent="#industries"
                 >
                   <div class="accordion-body">
-                    Pellentesque habitant morbi tristique senectus et netus et
-                    malesuada fames ac turpis egestas. Mauris tincidunt
-                    imperdiet hendrerit. Fusce tortor turpis, facilisis ac
-                    efficitur eget.
+                    We provide digital tools for healthcare and beauty brands to
+                    enhance patient engagement, manage appointments, and deliver
+                    seamless online experiences while maintaining full data
+                    privacy compliance.
                   </div>
                 </div>
               </div>
@@ -1819,10 +805,10 @@
                   data-bs-parent="#industries"
                 >
                   <div class="accordion-body">
-                    Curabitur dictum sodales aliquam. Etiam tortor augue,
-                    ultrices in efficitur sit amet, luctus dapibus magna.
-                    Vivamus eu lacus elementum, ultrices massa vitae, elementum
-                    lorem.
+                    Our e-commerce expertise helps businesses build fast,
+                    secure, and conversion-focused online stores. We integrate
+                    modern payment systems, intuitive user flows, and analytics
+                    to maximize customer satisfaction and revenue growth.
                   </div>
                 </div>
               </div>
@@ -2206,19 +1192,20 @@
                 alt="Champion"
               />
               <h2 class="h4">
-                Development of an application for a national bank
+                Development of an application for One Wave platform
               </h2>
               <p class="fs-sm pb-3 pb-lg-4 mb-3">
-                Morbi et massa fames ac scelerisque sit commodo dignissim
-                faucibus vel quisque proin lectus. Morbi et massa fames ac
-                scelerisque sit commodo dignissim.
+                We developed a powerful and user-friendly mobile app for
+                OneWave, enabling seamless crypto payments, wallet management,
+                and smooth transactions within a secure, performance-driven
+                digital ecosystem.
               </p>
-              <a
+              <!-- <a
                 class="btn btn-sm btn-outline-dark rounded-pill"
                 href="portfolio-single-v1.html"
                 >Read the full story</a
-              >
-              <div class="d-flex align-items-center pt-2 pt-lg-3 mt-3">
+              > -->
+              <!-- <div class="d-flex align-items-center pt-2 pt-lg-3 mt-3">
                 <h6 class="text-body mb-0 me-3">Awards:</h6>
                 <img
                   class="d-block d-dark-mode-none me-4"
@@ -2244,7 +1231,7 @@
                   width="95"
                   alt="Deloitte"
                 />
-              </div>
+              </div> -->
             </div>
           </div>
         </div>
@@ -2288,18 +1275,19 @@
                 alt="Foster"
               />
               <h2 class="h4">
-                Design and development of a dashboard for data management
+                Design and development of a webside for ATC chain india
               </h2>
               <p class="fs-sm pb-3 pb-lg-4 mb-3">
-                Feugiat elit tempor, malesuada rutrum amet quis duis facilisi
-                viverra. Quam ut in gravida dignissim eget mauris pretium
-                facilisi dui varius amet et quam massa auctor.
+                We designed a modern, responsive website for ATC Chains India,
+                showcasing their extensive conveyor chain, modular belt and
+                component manufacturing capabilities with clear visuals,
+                seamless navigation and strong brand presence.
               </p>
-              <a
+              <!-- <a
                 class="btn btn-sm btn-outline-dark rounded-pill"
                 href="portfolio-single-v1.html"
                 >Read the full story</a
-              >
+              > -->
             </div>
           </div>
         </div>
@@ -2342,28 +1330,27 @@
                 src="assets/img/portfolio/brands/boost.svg"
                 alt="Boost"
               />
-              <h2 class="h4 mb-lg-4">
-                Landing page for a marketing agency Boost
-              </h2>
+              <h2 class="h4 mb-lg-4">Devlop Mobile app for J.P. hotels</h2>
               <ul class="list-unstyled pb-1 pb-lg-2 mb-3">
                 <li class="d-flex pb-1 mb-2">
                   <i class="ai-check-alt text-primary fs-4 mt-n1 me-2"></i>
-                  Faucibus sit est dui id gravida
+                  Secure login system
                 </li>
                 <li class="d-flex pb-1 mb-2">
                   <i class="ai-check-alt text-primary fs-4 mt-n1 me-2"></i>
-                  Lectus in sem eu facilisis ornare
+                  Fast check-in and check-out
                 </li>
                 <li class="d-flex pb-1 mb-2">
                   <i class="ai-check-alt text-primary fs-4 mt-n1 me-2"></i>
-                  Massa maecenas cras vivamus
+                  Great user experience
                 </li>
               </ul>
-              <a
+
+              <!-- <a
                 class="btn btn-sm btn-outline-dark rounded-pill"
                 href="portfolio-single-v1.html"
                 >Read the full story</a
-              >
+              > -->
             </div>
           </div>
         </div>
@@ -2379,10 +1366,10 @@
                 Morbi et massa fames ac scelerisque sit commodo dignissim
                 faucibus vel quisque proin lectus.
               </p>
-              <h3 class="mb-4">Send your request!</h3>
+              <!-- <h3 class="mb-4">Send your request!</h3> -->
 
               <!-- Contact form -->
-              <form class="needs-validation row g-4" novalidate>
+              <!-- <form class="needs-validation row g-4" novalidate>
                 <div class="col-lg-10">
                   <label class="form-label fs-base" for="name">Name</label>
                   <input
@@ -2428,7 +1415,7 @@
                     Send request
                   </button>
                 </div>
-              </form>
+              </form> -->
             </div>
 
             <!-- Benefits -->
@@ -2463,12 +1450,12 @@
                         ></path>
                       </svg>
                       <h3 class="h4" style="max-width: 180px">
-                        Time zones ain't no thing
+                        Global Collaboration
                       </h3>
                       <p class="card-text fs-sm">
-                        Pharetra in morbi quis is massa maecenas arcu vulputate
-                        pulvinar elit non nullage a, duis tortor mi massa ipsum
-                        in eu eu eget libero.
+                        Our teams work seamlessly across time zones, ensuring
+                        smooth project delivery and constant communication, no
+                        matter where you are.
                       </p>
                     </div>
                   </div>
@@ -2500,12 +1487,12 @@
                         ></path>
                       </svg>
                       <h3 class="h4" style="max-width: 180px">
-                        Flexible work terms
+                        Flexible Engagement
                       </h3>
                       <p class="card-text fs-sm">
-                        Pharetra in morbi quis is massa maecenas arcu vulputate
-                        pulvinar elit non nullage a, duis tortor mi massa ipsum
-                        in eu eu eget libero.
+                        We adapt to your needs with flexible work terms,
+                        transparent processes, and scalable solutions that align
+                        with your business goals.
                       </p>
                     </div>
                   </div>
@@ -2539,12 +1526,12 @@
                         ></path>
                       </svg>
                       <h3 class="h4" style="max-width: 180px">
-                        Full spectrum of services
+                        Complete Solutions
                       </h3>
                       <p class="card-text fs-sm">
-                        Pharetra in morbi quis is massa maecenas arcu vulputate
-                        pulvinar elit non nullage a, duis tortor mi massa ipsum
-                        in eu eu eget libero.
+                        From design to deployment, we provide end-to-end digital
+                        solutions, ensuring quality, innovation, and performance
+                        at every stage.
                       </p>
                     </div>
                   </div>
@@ -2574,12 +1561,12 @@
                         ></path>
                       </svg>
                       <h3 class="h4" style="max-width: 180px">
-                        Impossible? We're on it
+                        Turning Ideas into Reality
                       </h3>
                       <p class="card-text fs-sm">
-                        Pharetra in morbi quis is massa maecenas arcu vulputate
-                        pulvinar elit non nullage a, duis tortor mi massa ipsum
-                        in eu eu eget libero.
+                        Challenges inspire us. We transform complex ideas into
+                        functional, high-performing digital products that drive
+                        real-world impact.
                       </p>
                     </div>
                   </div>
@@ -2614,7 +1601,7 @@
             <div class="row pb-2">
               <div class="col-lg-4 col-xxl-3 pb-2 pb-lg-0 mb-4 mb-lg-0">
                 <div class="navbar-brand text-light py-0 me-0 pb-1 mb-3">
-                  <span class="text-primary flex-shrink-0 me-2">
+                  <span class="text-primary  me-2">
                     <svg
                       version="1.1"
                       width="35"
