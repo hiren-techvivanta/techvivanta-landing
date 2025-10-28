@@ -2,7 +2,7 @@
 
 :root {
   --ar-primary: #34a853 !important;
-  --ar-primary-rgb: 52, 168, 83 !important;
+  --ar-primary-rgb: 52, 168, 83 ;
   --ar-link-color: #34a853 !important;
   --ar-link-hover-color: #1b8f3a !important;
 }
@@ -119,7 +119,7 @@
   --ar-danger: #ed5050;
   --ar-light: #fff;
   --ar-dark: #121519;
-  --ar-primary-rgb: 68, 140, 116;
+  --ar-primary-rgb:  52, 168, 83;
   --ar-secondary-rgb: 237, 241, 245;
   --ar-success-rgb: 63, 202, 144;
   --ar-info-rgb: 63, 127, 202;
@@ -16504,7 +16504,7 @@ tr.event-custom-style {
   --ar-steps-number-color: var(--ar-primary);
   --ar-steps-connect-width: var(--ar-border-width);
   --ar-steps-connect-style: dashed;
-  --ar-steps-connect-color: var(--ar-gray-400);
+  --ar-steps-connect-color: var(--ar-primary);
   --ar-steps-active-number-bg: rgba(var(--ar-primary-rgb), 0.1);
   --ar-steps-active-number-inner-bg: var(--ar-primary);
   --ar-steps-active-number-color: #fff;
