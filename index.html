@@ -1115,6 +1115,245 @@
         </div>
       </section>
 
+      <section class="container">
+        <div class="tab-content">
+          <div class="tab-pane fade active show" id="preview6" role="tabpanel">
+            <div class="row align-items-center">
+              <div class="col-md-5 mb-4 mb-md-0 pb-1 pb-md-0">
+                <div class="binded-content">
+                  <div class="binded-item" id="item1">
+                    <div class="ratio ratio-4x3 bg-danger bg-opacity-10">
+                      <div
+                        class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center display-5"
+                      >
+                        <i class="ai-image text-danger opacity-80"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="binded-item active" id="item2">
+                    <div class="ratio ratio-4x3 bg-success bg-opacity-10">
+                      <div
+                        class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center display-5"
+                      >
+                        <i class="ai-image text-success opacity-80"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="binded-item" id="item3">
+                    <div class="ratio ratio-4x3 bg-warning bg-opacity-10">
+                      <div
+                        class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center display-5"
+                      >
+                        <i class="ai-image text-warning opacity-80"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-7 ps-xl-5">
+                <div
+                  class="swiper swiper-initialized swiper-horizontal swiper-backface-hidden"
+                  data-swiper-options='{
+                        "spaceBetween": 30,
+                        "loop": true,
+                        "bindedContent": true,
+                        "navigation": {
+                          "prevEl": "#prev-btn",
+                          "nextEl": "#next-btn"
+                        }
+                      }'
+                >
+                  <div
+                    class="swiper-wrapper text-center text-md-start"
+                    id="swiper-wrapper-d4d4f3c39e066c6f"
+                    aria-live="polite"
+                    style="
+                      transition-duration: 0ms;
+                      transform: translate3d(-1006px, 0px, 0px);
+                      transition-delay: 0ms;
+                    "
+                  >
+                    <div
+                      class="swiper-slide swiper-slide-next"
+                      data-swiper-binded="#item3"
+                      role="group"
+                      aria-label="3 / 3"
+                      data-swiper-slide-index="2"
+                      style="width: 473px; margin-right: 30px"
+                    >
+                      <h3>Third slide</h3>
+                      <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Pellentesque varius pulvinar dui eu ullamcorper. Donec a
+                        nisl sed felis pretium posuere ut vitae arcu.
+                      </p>
+                    </div>
+                    <div
+                      class="swiper-slide swiper-slide-prev"
+                      data-swiper-binded="#item1"
+                      style="width: 473px; margin-right: 30px"
+                      role="group"
+                      aria-label="1 / 3"
+                      data-swiper-slide-index="0"
+                    >
+                      <h3>First slide</h3>
+                      <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Pellentesque varius pulvinar dui eu ullamcorper. Donec a
+                        nisl sed felis pretium posuere ut vitae arcu.
+                      </p>
+                    </div>
+                    <div
+                      class="swiper-slide swiper-slide-active"
+                      data-swiper-binded="#item2"
+                      style="width: 473px; margin-right: 30px"
+                      role="group"
+                      aria-label="2 / 3"
+                      data-swiper-slide-index="1"
+                    >
+                      <h3>Second slide</h3>
+                      <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Pellentesque varius pulvinar dui eu ullamcorper. Donec a
+                        nisl sed felis pretium posuere ut vitae arcu.
+                      </p>
+                    </div>
+                  </div>
+                  <span
+                    class="swiper-notification"
+                    aria-live="assertive"
+                    aria-atomic="true"
+                  ></span>
+                </div>
+                <div
+                  class="d-flex justify-content-center justify-content-md-start pt-2"
+                >
+                  <button
+                    class="btn btn-prev btn-icon btn-sm btn-outline-primary rounded-circle me-2"
+                    type="button"
+                    id="prev-btn"
+                    aria-label="Previous slide"
+                    tabindex="0"
+                    aria-controls="swiper-wrapper-d4d4f3c39e066c6f"
+                  >
+                    <i class="ai-arrow-left"></i>
+                  </button>
+                  <button
+                    class="btn btn-next btn-icon btn-sm btn-outline-primary rounded-circle ms-2"
+                    type="button"
+                    id="next-btn"
+                    aria-label="Next slide"
+                    tabindex="0"
+                    aria-controls="swiper-wrapper-d4d4f3c39e066c6f"
+                  >
+                    <i class="ai-arrow-right"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane fade" id="html6" role="tabpanel">
+            <div class="code-toolbar">
+              <pre
+                class="line-numbers language-html"
+                tabindex="0"
+              ><code class="language-html"><span class="token comment">&lt;!-- Link swiper slides to any content via binded-content --&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>row align-items-center<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>col-md-5 mb-4 mb-md-0 pb-1 pb-md-0<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+
+    <span class="token comment">&lt;!-- Binded items --&gt;</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>binded-content<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+
+      <span class="token comment">&lt;!-- Item --&gt;</span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>item1<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>binded-item active<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>ratio ratio-4x3 bg-danger bg-opacity-10<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center display-5<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>i</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>ai-image text-danger opacity-80<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>i</span><span class="token punctuation">&gt;</span></span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+
+      <span class="token comment">&lt;!-- Item --&gt;</span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>item2<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>binded-item<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>ratio ratio-4x3 bg-success bg-opacity-10<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center display-5<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>i</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>ai-image text-success opacity-80<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>i</span><span class="token punctuation">&gt;</span></span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+
+      <span class="token comment">&lt;!-- Item --&gt;</span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>item3<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>binded-item<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>ratio ratio-4x3 bg-warning bg-opacity-10<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center display-5<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>i</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>ai-image text-warning opacity-80<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>i</span><span class="token punctuation">&gt;</span></span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+  
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>col-md-7 ps-xl-5<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+
+    <span class="token comment">&lt;!-- Swiper slider --&gt;</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>swiper<span class="token punctuation">"</span></span> <span class="token attr-name">data-swiper-options</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">'</span>{
+      "spaceBetween": 30,
+      "loop": true,
+      "bindedContent": true,
+      "navigation": {
+        "prevEl": "#prev-btn",
+        "nextEl": "#next-btn"
+      }
+    }<span class="token punctuation">'</span></span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>swiper-wrapper text-center text-md-start<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+
+        <span class="token comment">&lt;!-- Item --&gt;</span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>swiper-slide<span class="token punctuation">"</span></span> <span class="token attr-name">data-swiper-binded</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>#item1<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h3</span><span class="token punctuation">&gt;</span></span> First slide<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h3</span><span class="token punctuation">&gt;</span></span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque varius pulvinar dui eu ullamcorper. Donec a nisl sed felis pretium posuere ut vitae arcu.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+
+        <span class="token comment">&lt;!-- Item --&gt;</span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>swiper-slide<span class="token punctuation">"</span></span> <span class="token attr-name">data-swiper-binded</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>#item2<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h3</span><span class="token punctuation">&gt;</span></span> Second slide<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h3</span><span class="token punctuation">&gt;</span></span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque varius pulvinar dui eu ullamcorper. Donec a nisl sed felis pretium posuere ut vitae arcu.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+
+        <span class="token comment">&lt;!-- Item --&gt;</span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>swiper-slide<span class="token punctuation">"</span></span> <span class="token attr-name">data-swiper-binded</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>#item3<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h3</span><span class="token punctuation">&gt;</span></span> Third slide<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h3</span><span class="token punctuation">&gt;</span></span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque varius pulvinar dui eu ullamcorper. Donec a nisl sed felis pretium posuere ut vitae arcu.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+
+      <span class="token comment">&lt;!-- Slider controls (Prev / next) --&gt;</span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>d-flex justify-content-center justify-content-md-start pt-2<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>button<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>prev-btn<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>btn btn-prev btn-icon btn-sm btn-outline-primary rounded-circle me-2<span class="token punctuation">"</span></span> <span class="token attr-name">aria-label</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Prev<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>i</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>ai-arrow-left<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>i</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>button<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>next-btn<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>btn btn-next btn-icon btn-sm btn-outline-primary rounded-circle ms-2<span class="token punctuation">"</span></span> <span class="token attr-name">aria-label</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Next<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>i</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>ai-arrow-rigsht<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>i</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+              <div class="toolbar">
+                <div class="toolbar-item">
+                  <button
+                    class="copy-to-clipboard-button"
+                    type="button"
+                    data-copy-state="copy"
+                  >
+                    <span>Copy</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <!-- Industries (Binded accordion) -->
       <section class="container py-5 mt-2 mt-sm-3 mt-md-4">
         <h2 class="h1 text-center pt-lg-3">Industries we work in</h2>
@@ -1554,6 +1793,266 @@
                       alt="Deloitte"
                     />
                   </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="container pt-5 mt-lg-3 mt-xl-4 mt-xxl-5">
+        <h2 class="h1 text-center pt-2 pt-sm-3">Our classes</h2>
+        <p class="text-center pb-3 mb-3 mb-lg-4">Whether you are a beginner or an experienced yoga</p>
+
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs flex-nowrap overflow-auto text-nowrap w-100 mx-auto pb-3 mb-3 mb-lg-4" role="tablist" style="max-width: 892px;">
+          <li class="nav-item mb-0" role="presentation">
+            <a class="nav-link active" href="#beginners" data-bs-toggle="tab" role="tab" aria-selected="true">Beginners</a>
+          </li>
+          <li class="nav-item mb-0" role="presentation">
+            <a class="nav-link" href="#stretching" data-bs-toggle="tab" role="tab" aria-selected="false" tabindex="-1">Stretching</a>
+          </li>
+          <li class="nav-item mb-0" role="presentation">
+            <a class="nav-link" href="#fly-yoga" data-bs-toggle="tab" role="tab" aria-selected="false" tabindex="-1">Fly-yoga</a>
+          </li>
+          <li class="nav-item mb-0" role="presentation">
+            <a class="nav-link" href="#for-pregnant" data-bs-toggle="tab" role="tab" aria-selected="false" tabindex="-1">For pregnant</a>
+          </li>
+          <li class="nav-item mb-0" role="presentation">
+            <a class="nav-link" href="#healthy-back" data-bs-toggle="tab" role="tab" aria-selected="false" tabindex="-1">Healthy back</a>
+          </li>
+          <li class="nav-item mb-0" role="presentation">
+            <a class="nav-link" href="#relax-yoga" data-bs-toggle="tab" role="tab" aria-selected="false" tabindex="-1">Relax yoga</a>
+          </li>
+        </ul>
+
+
+        <!-- Tab content -->
+        <div class="tab-content">
+
+          <!-- Beginers -->
+          <div class="tab-pane fade show active" id="beginners" role="tabpanel">
+            <div class="row align-items-lg-center">
+              <div class="col-md-6 pb-4 pb-md-0 mb-2 mb-md-0">
+                <img class="rounded-5" src="assets/img/landing/yoga-studio/classes/relax-yoga.jpg" alt="Beginners">
+              </div>
+              <div class="col-md-6 col-lg-5 col-xl-4 offset-lg-1">
+                <div class="ps-md-4 ps-lg-0">
+                  <h2 class="mb-xl-4">Yoga for beginners</h2>
+                  <p class="pb-3 mb-3 mb-xl-4">Purus magna lectus feugiat arcu tellus vitae urna neque, eu velit in vulputate sodales ut tellus amet lorem sit consectetur quisque justo laoreet proin.</p>
+                  <div class="row row-cols-2 g-4 pb-2 pb-xl-0 mb-4 mb-xl-5">
+                    <div class="col">
+                      <i class="ai-spa d-block h2 text-primary fw-normal pb-2 mb-1"></i>
+                      <h3 class="h6 mb-2">Spa area</h3>
+                      <p class="fs-sm mb-0">Neque, blandit consectetur viverra placerat ante.</p>
+                    </div>
+                    <div class="col">
+                      <i class="ai-towel d-block h2 text-primary fw-normal pb-2 mb-1"></i>
+                      <h3 class="h6 mb-2">Changing rooms</h3>
+                      <p class="fs-sm mb-0">Neque, blandit consectetur viverra placerat ante.</p>
+                    </div>
+                    <div class="col">
+                      <i class="ai-cafe d-block h2 text-primary fw-normal pb-2 mb-1"></i>
+                      <h3 class="h6 mb-2">Lounge cafe</h3>
+                      <p class="fs-sm mb-0">Neque, blandit consectetur viverra placerat ante.</p>
+                    </div>
+                    <div class="col">
+                      <i class="ai-sofa d-block h2 text-primary fw-normal pb-2 mb-1"></i>
+                      <h3 class="h6 mb-2">Bright halls</h3>
+                      <p class="fs-sm mb-0">Neque, blandit consectetur viverra placerat ante.</p>
+                    </div>
+                  </div>
+                  <a class="btn btn-primary w-100 w-sm-auto" href="#">Try a free lesson</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Stretching -->
+          <div class="tab-pane fade" id="stretching" role="tabpanel">
+            <div class="row align-items-lg-center">
+              <div class="col-md-6 pb-4 pb-md-0 mb-2 mb-md-0">
+                <img class="rounded-5" src="assets/img/landing/yoga-studio/classes/stretching.jpg" alt="Stretching">
+              </div>
+              <div class="col-md-6 col-lg-5 col-xl-4 offset-lg-1">
+                <div class="ps-md-4 ps-lg-0">
+                  <h2 class="mb-xl-4">Stretching</h2>
+                  <p class="pb-3 mb-3 mb-xl-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse id lectus nec nunc bibendum facilisis pellentesque ut eros. Praesent bibendum sed mi aliquet tempus.</p>
+                  <div class="row row-cols-2 g-4 pb-2 pb-xl-0 mb-4 mb-xl-5">
+                    <div class="col">
+                      <i class="ai-sofa d-block h2 text-primary fw-normal pb-2 mb-1"></i>
+                      <h3 class="h6 mb-2">Bright halls</h3>
+                      <p class="fs-sm mb-0">Neque, blandit consectetur viverra placerat ante.</p>
+                    </div>
+                    <div class="col">
+                      <i class="ai-spa d-block h2 text-primary fw-normal pb-2 mb-1"></i>
+                      <h3 class="h6 mb-2">Spa area</h3>
+                      <p class="fs-sm mb-0">Neque, blandit consectetur viverra placerat ante.</p>
+                    </div>
+                    <div class="col">
+                      <i class="ai-cafe d-block h2 text-primary fw-normal pb-2 mb-1"></i>
+                      <h3 class="h6 mb-2">Lounge cafe</h3>
+                      <p class="fs-sm mb-0">Neque, blandit consectetur viverra placerat ante.</p>
+                    </div>
+                    <div class="col">
+                      <i class="ai-towel d-block h2 text-primary fw-normal pb-2 mb-1"></i>
+                      <h3 class="h6 mb-2">Changing rooms</h3>
+                      <p class="fs-sm mb-0">Neque, blandit consectetur viverra placerat ante.</p>
+                    </div>
+                  </div>
+                  <a class="btn btn-primary w-100 w-sm-auto" href="#">Try a free lesson</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Fly-yoga -->
+          <div class="tab-pane fade" id="fly-yoga" role="tabpanel">
+            <div class="row align-items-lg-center">
+              <div class="col-md-6 pb-4 pb-md-0 mb-2 mb-md-0">
+                <img class="rounded-5" src="assets/img/landing/yoga-studio/classes/fly-yoga.jpg" alt="Fly-yoga">
+              </div>
+              <div class="col-md-6 col-lg-5 col-xl-4 offset-lg-1">
+                <div class="ps-md-4 ps-lg-0">
+                  <h2 class="mb-xl-4">Fly-yoga</h2>
+                  <p class="pb-3 mb-3 mb-xl-4">Varius purus dui nunc faucibus mauris iaculis tortor enim cursus quisque eu, vel amet massa suscipit cursus sit mattis quis magnis dignissim dui fames tortor amet quis.</p>
+                  <div class="row row-cols-2 g-4 pb-2 pb-xl-0 mb-4 mb-xl-5">
+                    <div class="col">
+                      <i class="ai-towel d-block h2 text-primary fw-normal pb-2 mb-1"></i>
+                      <h3 class="h6 mb-2">Changing rooms</h3>
+                      <p class="fs-sm mb-0">Neque, blandit consectetur viverra placerat ante.</p>
+                    </div>
+                    <div class="col">
+                      <i class="ai-rug d-block h2 text-primary fw-normal pb-2 mb-1"></i>
+                      <h3 class="h6 mb-2">Free rugs</h3>
+                      <p class="fs-sm mb-0">Neque, blandit consectetur viverra placerat ante.</p>
+                    </div>
+                    <div class="col">
+                      <i class="ai-spa d-block h2 text-primary fw-normal pb-2 mb-1"></i>
+                      <h3 class="h6 mb-2">Spa area</h3>
+                      <p class="fs-sm mb-0">Neque, blandit consectetur viverra placerat ante.</p>
+                    </div>
+                    <div class="col">
+                      <i class="ai-sofa d-block h2 text-primary fw-normal pb-2 mb-1"></i>
+                      <h3 class="h6 mb-2">Bright halls</h3>
+                      <p class="fs-sm mb-0">Neque, blandit consectetur viverra placerat ante.</p>
+                    </div>
+                  </div>
+                  <a class="btn btn-primary w-100 w-sm-auto" href="#">Try a free lesson</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- For pregnant -->
+          <div class="tab-pane fade" id="for-pregnant" role="tabpanel">
+            <div class="row align-items-lg-center">
+              <div class="col-md-6 pb-4 pb-md-0 mb-2 mb-md-0">
+                <img class="rounded-5" src="assets/img/landing/yoga-studio/classes/for-pregnant.jpg" alt="For pregnant">
+              </div>
+              <div class="col-md-6 col-lg-5 col-xl-4 offset-lg-1">
+                <div class="ps-md-4 ps-lg-0">
+                  <h2 class="mb-xl-4">For pregnant</h2>
+                  <p class="pb-3 mb-3 mb-xl-4">At duis est ante tortor, dictum dictumst nisl erat. Tellus erat pharetra eget vestibulum. Netus eu sit cursus et vehicula porttitor nulla turpis a. In volutpat at orci.</p>
+                  <div class="row row-cols-2 g-4 pb-2 pb-xl-0 mb-4 mb-xl-5">
+                    <div class="col">
+                      <i class="ai-sofa d-block h2 text-primary fw-normal pb-2 mb-1"></i>
+                      <h3 class="h6 mb-2">Bright halls</h3>
+                      <p class="fs-sm mb-0">Neque, blandit consectetur viverra placerat ante.</p>
+                    </div>
+                    <div class="col">
+                      <i class="ai-spa d-block h2 text-primary fw-normal pb-2 mb-1"></i>
+                      <h3 class="h6 mb-2">Spa area</h3>
+                      <p class="fs-sm mb-0">Neque, blandit consectetur viverra placerat ante.</p>
+                    </div>
+                    <div class="col">
+                      <i class="ai-cafe d-block h2 text-primary fw-normal pb-2 mb-1"></i>
+                      <h3 class="h6 mb-2">Lounge cafe</h3>
+                      <p class="fs-sm mb-0">Neque, blandit consectetur viverra placerat ante.</p>
+                    </div>
+                    <div class="col">
+                      <i class="ai-towel d-block h2 text-primary fw-normal pb-2 mb-1"></i>
+                      <h3 class="h6 mb-2">Changing rooms</h3>
+                      <p class="fs-sm mb-0">Neque, blandit consectetur viverra placerat ante.</p>
+                    </div>
+                  </div>
+                  <a class="btn btn-primary w-100 w-sm-auto" href="#">Try a free lesson</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Healthy back -->
+          <div class="tab-pane fade" id="healthy-back" role="tabpanel">
+            <div class="row align-items-lg-center">
+              <div class="col-md-6 pb-4 pb-md-0 mb-2 mb-md-0">
+                <img class="rounded-5" src="assets/img/landing/yoga-studio/classes/healthy-back.jpg" alt="Healthy back">
+              </div>
+              <div class="col-md-6 col-lg-5 col-xl-4 offset-lg-1">
+                <div class="ps-md-4 ps-lg-0">
+                  <h2 class="mb-xl-4">Healthy back</h2>
+                  <p class="pb-3 mb-3 mb-xl-4">Facilisi tempus pharetra, egestas dolor. Nulla lorem interdum cursus habitasse. Morbi aliquam, mauris, varius nulla tortor ut nullam. Est eu eu eget fames leo nisl est.</p>
+                  <div class="row row-cols-2 g-4 pb-2 pb-xl-0 mb-4 mb-xl-5">
+                    <div class="col">
+                      <i class="ai-cafe d-block h2 text-primary fw-normal pb-2 mb-1"></i>
+                      <h3 class="h6 mb-2">Lounge cafe</h3>
+                      <p class="fs-sm mb-0">Neque, blandit consectetur viverra placerat ante.</p>
+                    </div>
+                    <div class="col">
+                      <i class="ai-sofa d-block h2 text-primary fw-normal pb-2 mb-1"></i>
+                      <h3 class="h6 mb-2">Bright halls</h3>
+                      <p class="fs-sm mb-0">Neque, blandit consectetur viverra placerat ante.</p>
+                    </div>
+                    <div class="col">
+                      <i class="ai-towel d-block h2 text-primary fw-normal pb-2 mb-1"></i>
+                      <h3 class="h6 mb-2">Changing rooms</h3>
+                      <p class="fs-sm mb-0">Neque, blandit consectetur viverra placerat ante.</p>
+                    </div>
+                    <div class="col">
+                      <i class="ai-spa d-block h2 text-primary fw-normal pb-2 mb-1"></i>
+                      <h3 class="h6 mb-2">Spa area</h3>
+                      <p class="fs-sm mb-0">Neque, blandit consectetur viverra placerat ante.</p>
+                    </div>
+                  </div>
+                  <a class="btn btn-primary w-100 w-sm-auto" href="#">Try a free lesson</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Relax yoga -->
+          <div class="tab-pane fade" id="relax-yoga" role="tabpanel">
+            <div class="row align-items-lg-center">
+              <div class="col-md-6 pb-4 pb-md-0 mb-2 mb-md-0">
+                <img class="rounded-5" src="assets/img/landing/yoga-studio/classes/relax-yoga.jpg" alt="Relax yoga">
+              </div>
+              <div class="col-md-6 col-lg-5 col-xl-4 offset-lg-1">
+                <div class="ps-md-4 ps-lg-0">
+                  <h2 class="mb-xl-4">Relax yoga</h2>
+                  <p class="pb-3 mb-3 mb-xl-4">Aliquam risus, leo mattis commodo id pretium. In sapien, lacus, cursus id vulputate. Pellentesque quis et posuere maecenas sed aenean quisque ut. Pellentesque sed at.</p>
+                  <div class="row row-cols-2 g-4 pb-2 pb-xl-0 mb-4 mb-xl-5">
+                    <div class="col">
+                      <i class="ai-towel d-block h2 text-primary fw-normal pb-2 mb-1"></i>
+                      <h3 class="h6 mb-2">Changing rooms</h3>
+                      <p class="fs-sm mb-0">Neque, blandit consectetur viverra placerat ante.</p>
+                    </div>
+                    <div class="col">
+                      <i class="ai-cafe d-block h2 text-primary fw-normal pb-2 mb-1"></i>
+                      <h3 class="h6 mb-2">Lounge cafe</h3>
+                      <p class="fs-sm mb-0">Neque, blandit consectetur viverra placerat ante.</p>
+                    </div>
+                    <div class="col">
+                      <i class="ai-sofa d-block h2 text-primary fw-normal pb-2 mb-1"></i>
+                      <h3 class="h6 mb-2">Bright halls</h3>
+                      <p class="fs-sm mb-0">Neque, blandit consectetur viverra placerat ante.</p>
+                    </div>
+                    <div class="col">
+                      <i class="ai-spa d-block h2 text-primary fw-normal pb-2 mb-1"></i>
+                      <h3 class="h6 mb-2">Spa area</h3>
+                      <p class="fs-sm mb-0">Neque, blandit consectetur viverra placerat ante.</p>
+                    </div>
+                  </div>
+                  <a class="btn btn-primary w-100 w-sm-auto" href="#">Try a free lesson</a>
                 </div>
               </div>
             </div>
