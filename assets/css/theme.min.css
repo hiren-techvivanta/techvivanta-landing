@@ -2967,19 +2967,19 @@ fieldset:disabled .btn {
 }
 .btn-primary {
   --ar-btn-color: #fff;
-  --ar-btn-bg: #1b8f3a;
+  --ar-btn-bg: #34a853;
   --ar-btn-border-color: #34a853;
   --ar-btn-hover-color: #fff;
   --ar-btn-hover-bg: #1b8f3a;
   --ar-btn-hover-border-color: #1b8f3a;
-  --ar-btn-focus-shadow-rgb: 96, 157, 137;
+  --ar-btn-focus-shadow-rgb: 40, 176, 83;
   --ar-btn-active-color: #fff;
   --ar-btn-active-bg: #1b8f3a;
   --ar-btn-active-border-color: #1b8f3a;
   --ar-btn-active-shadow: unset;
   --ar-btn-disabled-color: #fff;
-  --ar-btn-disabled-bg: #34a853;
-  --ar-btn-disabled-border-color: #34a853;
+  --ar-btn-disabled-bg: #a7e7b9;
+  --ar-btn-disabled-border-color: #a7e7b9;
 }
 .btn-secondary {
   --ar-btn-color: #000;
@@ -13513,7 +13513,7 @@ html:not([dir="rtl"]) .range-slider-ui.noUi-horizontal .noUi-handle {
 .btn > [class*=" ai-"] {
   font-size: 1.25em;
 }
-.btn-primary {
+/* .btn-primary {
   --ar-btn-hover-color: #fff;
   --ar-btn-active-color: #fff;
   --ar-btn-hover-bg: #37715d;
@@ -13521,7 +13521,7 @@ html:not([dir="rtl"]) .range-slider-ui.noUi-horizontal .noUi-handle {
   --ar-btn-hover-border-color: #37715d;
   --ar-btn-active-border-color: #37715d;
   --ar-btn-disabled-color: #fff;
-}
+} */
 .btn-secondary {
   --ar-btn-hover-color: #fff;
   --ar-btn-active-color: #fff;

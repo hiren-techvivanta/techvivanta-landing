@@ -156,6 +156,34 @@
           transform: none;
         }
       }
+
+      #contactButton {
+        width: 10rem !important;
+        padding: 0.7rem 0;
+        transition: all 0.3s ease-in-out !important;
+      }
+
+      /* hover effect */
+      #contactButton:hover {
+        transform: scale(1.05);
+      }
+
+      /* pseudo-element for smooth fade-in effect */
+      #contactButton::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+        background-size: 200% 200%;
+        opacity: 0;
+        transition: opacity 1s ease-in-out;
+      }
+
+      /* ensure text stays on top */
+      #contactButton span {
+        position: relative;
+        z-index: 1;
+      }
     </style>
 
     <!-- Page loading scripts -->
@@ -628,7 +656,7 @@
           </a>
 
           <!-- Theme switcher -->
-          <div
+          <!-- <div
             class="form-check form-switch mode-switch order-lg-2 me-3 me-lg-4 ms-auto"
             data-bs-toggle="mode"
           >
@@ -639,15 +667,22 @@
             <label class="form-check-label" for="theme-mode">
               <i class="ai-moon fs-lg"></i>
             </label>
-          </div>
+          </div> -->
 
           <a
+            class="btn btn-primary btn-sm fs-sm order-lg-3 d-none d-sm-inline-flex border-0"
+            href="./contact.html"
+            id="contactButton"
+          >
+            Buy now
+          </a>
+          <!-- <a
             class="btn btn-primary btn-sm fs-sm order-lg-3 d-none d-sm-inline-flex"
             href="./contact.html"
           >
             <i class="ai-cart fs-xl me-2 ms-n1"></i>
             Buy now
-          </a>
+          </a> -->
 
           <!-- Mobile menu toggler (Hamburger) -->
           <button
@@ -669,17 +704,164 @@
               <li class="nav-item">
                 <a class="nav-link active" href="">Home</a>
               </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                  >Technologies</a
+                >
+                <div
+                  class="dropdown-menu overflow-hidden p-0"
+                  data-bs-theme="light"
+                >
+                  <div class="d-lg-flex">
+                    <div class="mega-dropdown-column pt-1 pt-lg-3 pb-lg-4">
+                      <ul class="list-unstyled mb-0">
+                        <li>
+                          <a class="dropdown-item" href="index.html"
+                            >Wab Devlopment</a
+                          >
+                          <span
+                            class="mega-dropdown-column position-absolute top-0 end-0 h-100 bg-size-cover bg-repeat-0 rounded-3 rounded-start-0"
+                            style="
+                              background-image: url(assets/img/megamenu/landings.jpg);
+                            "
+                          ></span>
+                        </li>
+                        <li>
+                          <a class="dropdown-item" href="">Mobile Devlopment</a>
+                          <span
+                            class="mega-dropdown-column position-absolute top-0 end-0 h-100 bg-size-cover bg-repeat-0 z-2 opacity-0"
+                            style="
+                              background-image: url(assets/img/megamenu/mobile-app.jpg);
+                            "
+                          ></span>
+                        </li>
+                        <li>
+                          <a class="dropdown-item" href="">Tech Audit</a>
+                          <span
+                            class="mega-dropdown-column position-absolute top-0 end-0 h-100 bg-size-cover bg-repeat-0 z-2 opacity-0"
+                            style="
+                              background-image: url(assets/img/megamenu/product-landing.jpg);
+                            "
+                          ></span>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="mega-dropdown-column pb-2 pt-lg-3 pb-lg-4">
+                      <ul class="list-unstyled mb-0">
+                        <li>
+                          <a class="dropdown-item" href="">Ai-LlM Devlopment</a>
+                          <span
+                            class="mega-dropdown-column position-absolute top-0 end-0 h-100 bg-size-cover bg-repeat-0 z-2 opacity-0"
+                            style="
+                              background-image: url(assets/img/megamenu/creative-agency.jpg);
+                            "
+                          ></span>
+                        </li>
+                        <li>
+                          <a class="dropdown-item" href="">Game Devlopment</a>
+                          <span
+                            class="mega-dropdown-column position-absolute top-0 end-0 h-100 bg-size-cover bg-repeat-0 z-2 opacity-0"
+                            style="
+                              background-image: url(assets/img/megamenu/conference.jpg);
+                            "
+                          ></span>
+                        </li>
+                        <li>
+                          <a class="dropdown-item" href="">Seo service</a>
+                          <span
+                            class="mega-dropdown-column position-absolute top-0 end-0 h-100 bg-size-cover bg-repeat-0 z-2 opacity-0"
+                            style="
+                              background-image: url(assets/img/megamenu/web-studio.jpg);
+                            "
+                          ></span>
+                        </li>
+                      </ul>
+                    </div>
+                    <div
+                      class="mega-dropdown-column position-relative border-start z-3"
+                    ></div>
+                  </div>
+                </div>
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                  >Services</a
+                >
+                <div
+                  class="dropdown-menu overflow-hidden p-0"
+                  data-bs-theme="light"
+                >
+                  <div class="d-lg-flex">
+                    <div class="mega-dropdown-column pt-1 pt-lg-3 pb-lg-4">
+                      <ul class="list-unstyled mb-0">
+                        <li>
+                          <a class="dropdown-item" href="index.html"
+                            >Desine & devlopment</a
+                          >
+                          <span
+                            class="mega-dropdown-column position-absolute top-0 end-0 h-100 bg-size-cover bg-repeat-0 rounded-3 rounded-start-0"
+                            style="
+                              background-image: url(assets/img/megamenu/landings.jpg);
+                            "
+                          ></span>
+                        </li>
+                        <li>
+                          <a class="dropdown-item" href="">Consultution</a>
+                          <span
+                            class="mega-dropdown-column position-absolute top-0 end-0 h-100 bg-size-cover bg-repeat-0 z-2 opacity-0"
+                            style="
+                              background-image: url(assets/img/megamenu/mobile-app.jpg);
+                            "
+                          ></span>
+                        </li>
+                        <li>
+                          <a class="dropdown-item" href="">On Demand Team</a>
+                          <span
+                            class="mega-dropdown-column position-absolute top-0 end-0 h-100 bg-size-cover bg-repeat-0 z-2 opacity-0"
+                            style="
+                              background-image: url(assets/img/megamenu/product-landing.jpg);
+                            "
+                          ></span>
+                        </li>
+                      </ul>
+                    </div>
+                    <div
+                      class="mega-dropdown-column position-relative border-start z-3"
+                    ></div>
+                  </div>
+                </div>
+              </li>
               <li class="nav-item">
                 <a class="nav-link" href="./about.html">About</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="./service.html">Service</a>
+                <a class="nav-link" href="./about.html">Portfolio</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./about.html">Hire Devloper</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="./contact.html">Contact</a>
               </li>
             </ul>
             <div class="d-sm-none p-3 mt-n3">
+              <button id="ctaButton" class="cta-btn">
+                <div class="cta-bg"></div>
+                <div class="cta-hover-bg"></div>
+                <div class="cta-shimmer"></div>
+                <div class="cta-content">
+                  <i class="fas fa-comments"></i>
+                  <span>Free Consultation</span>
+                </div>
+              </button>
               <a class="btn btn-primary w-100 mb-1" href="./contact.html">
                 <i class="ai-cart fs-xl me-2 ms-n1"></i>
                 Buy now
@@ -726,15 +908,27 @@
               );
           "
         ></div>
-        <div class="container position-relative z-2 pt-5 pb-2 pb-sm-3 pb-lg-0">
-          <div
-            class="text-center py-5 mt-3 mt-sm-4 mb-md-3 mb-lg-4 mb-xl-5 mx-auto"
-            style="max-width: 900px"
+        <div class="container position-relative z-2 pt-5 pb-2 pb-sm-3 pb-lg-0 ">
+           <div
+            class="py-5 mt-3 mt-sm-4 mb-md-3 mb-lg-4 mb-xl-5 mx-auto d-md-none"
+            style="max-width: 900px;"
           >
-            <h1 class="display-3 pb-1 pb-sm-2 pb-md-3 custom-font">
+            <h1 class="display-3 text-center pb-1 pb-sm-2 pb-md-3 custom-font ">
               Crafting Technology Today That Powers Tomorrow
             </h1>
-            <p class="fs-lg mb-0">
+            <p class="fs-lg mb-0 text-center ">
+              Empowering your business with smart, scalable, and future-ready
+              technology.
+            </p>
+          </div>
+          <div
+            class="position-absolute z-10 py-5 mt-3 mt-sm-4 mb-md-3 mb-lg-4 mb-xl-5 mx-auto d-none d-md-inline"
+            style="width: 100%; top: 20%;"
+          >
+            <h1 class="display-3 text-center pb-1 pb-sm-2 pb-md-3 custom-font text-white">
+              Crafting Technology Today <br> That Powers Tomorrow
+            </h1>
+            <p class="fs-lg mb-0 text-center text-white">
               Empowering your business with smart, scalable, and future-ready
               technology.
             </p>
@@ -1802,67 +1996,144 @@
 
       <section class="container pt-5 mt-lg-3 mt-xl-4 mt-xxl-5">
         <h2 class="h1 text-center pt-2 pt-sm-3">Our classes</h2>
-        <p class="text-center pb-3 mb-3 mb-lg-4">Whether you are a beginner or an experienced yoga</p>
+        <p class="text-center pb-3 mb-3 mb-lg-4">
+          Whether you are a beginner or an experienced yoga
+        </p>
 
         <!-- Nav tabs -->
-        <ul class="nav nav-tabs flex-nowrap overflow-auto text-nowrap w-100 mx-auto pb-3 mb-3 mb-lg-4" role="tablist" style="max-width: 892px;">
+        <ul
+          class="nav nav-tabs flex-nowrap overflow-auto text-nowrap w-100 mx-auto pb-3 mb-3 mb-lg-4"
+          role="tablist"
+          style="max-width: 892px"
+        >
           <li class="nav-item mb-0" role="presentation">
-            <a class="nav-link active" href="#beginners" data-bs-toggle="tab" role="tab" aria-selected="true">Beginners</a>
+            <a
+              class="nav-link active"
+              href="#beginners"
+              data-bs-toggle="tab"
+              role="tab"
+              aria-selected="true"
+              >Beginners</a
+            >
           </li>
           <li class="nav-item mb-0" role="presentation">
-            <a class="nav-link" href="#stretching" data-bs-toggle="tab" role="tab" aria-selected="false" tabindex="-1">Stretching</a>
+            <a
+              class="nav-link"
+              href="#stretching"
+              data-bs-toggle="tab"
+              role="tab"
+              aria-selected="false"
+              tabindex="-1"
+              >Stretching</a
+            >
           </li>
           <li class="nav-item mb-0" role="presentation">
-            <a class="nav-link" href="#fly-yoga" data-bs-toggle="tab" role="tab" aria-selected="false" tabindex="-1">Fly-yoga</a>
+            <a
+              class="nav-link"
+              href="#fly-yoga"
+              data-bs-toggle="tab"
+              role="tab"
+              aria-selected="false"
+              tabindex="-1"
+              >Fly-yoga</a
+            >
           </li>
           <li class="nav-item mb-0" role="presentation">
-            <a class="nav-link" href="#for-pregnant" data-bs-toggle="tab" role="tab" aria-selected="false" tabindex="-1">For pregnant</a>
+            <a
+              class="nav-link"
+              href="#for-pregnant"
+              data-bs-toggle="tab"
+              role="tab"
+              aria-selected="false"
+              tabindex="-1"
+              >For pregnant</a
+            >
           </li>
           <li class="nav-item mb-0" role="presentation">
-            <a class="nav-link" href="#healthy-back" data-bs-toggle="tab" role="tab" aria-selected="false" tabindex="-1">Healthy back</a>
+            <a
+              class="nav-link"
+              href="#healthy-back"
+              data-bs-toggle="tab"
+              role="tab"
+              aria-selected="false"
+              tabindex="-1"
+              >Healthy back</a
+            >
           </li>
           <li class="nav-item mb-0" role="presentation">
-            <a class="nav-link" href="#relax-yoga" data-bs-toggle="tab" role="tab" aria-selected="false" tabindex="-1">Relax yoga</a>
+            <a
+              class="nav-link"
+              href="#relax-yoga"
+              data-bs-toggle="tab"
+              role="tab"
+              aria-selected="false"
+              tabindex="-1"
+              >Relax yoga</a
+            >
           </li>
         </ul>
 
-
         <!-- Tab content -->
         <div class="tab-content">
-
           <!-- Beginers -->
           <div class="tab-pane fade show active" id="beginners" role="tabpanel">
             <div class="row align-items-lg-center">
               <div class="col-md-6 pb-4 pb-md-0 mb-2 mb-md-0">
-                <img class="rounded-5" src="assets/img/landing/yoga-studio/classes/relax-yoga.jpg" alt="Beginners">
+                <img
+                  class="rounded-5"
+                  src="assets/img/landing/yoga-studio/classes/relax-yoga.jpg"
+                  alt="Beginners"
+                />
               </div>
               <div class="col-md-6 col-lg-5 col-xl-4 offset-lg-1">
                 <div class="ps-md-4 ps-lg-0">
                   <h2 class="mb-xl-4">Yoga for beginners</h2>
-                  <p class="pb-3 mb-3 mb-xl-4">Purus magna lectus feugiat arcu tellus vitae urna neque, eu velit in vulputate sodales ut tellus amet lorem sit consectetur quisque justo laoreet proin.</p>
+                  <p class="pb-3 mb-3 mb-xl-4">
+                    Purus magna lectus feugiat arcu tellus vitae urna neque, eu
+                    velit in vulputate sodales ut tellus amet lorem sit
+                    consectetur quisque justo laoreet proin.
+                  </p>
                   <div class="row row-cols-2 g-4 pb-2 pb-xl-0 mb-4 mb-xl-5">
                     <div class="col">
-                      <i class="ai-spa d-block h2 text-primary fw-normal pb-2 mb-1"></i>
+                      <i
+                        class="ai-spa d-block h2 text-primary fw-normal pb-2 mb-1"
+                      ></i>
                       <h3 class="h6 mb-2">Spa area</h3>
-                      <p class="fs-sm mb-0">Neque, blandit consectetur viverra placerat ante.</p>
+                      <p class="fs-sm mb-0">
+                        Neque, blandit consectetur viverra placerat ante.
+                      </p>
                     </div>
                     <div class="col">
-                      <i class="ai-towel d-block h2 text-primary fw-normal pb-2 mb-1"></i>
+                      <i
+                        class="ai-towel d-block h2 text-primary fw-normal pb-2 mb-1"
+                      ></i>
                       <h3 class="h6 mb-2">Changing rooms</h3>
-                      <p class="fs-sm mb-0">Neque, blandit consectetur viverra placerat ante.</p>
+                      <p class="fs-sm mb-0">
+                        Neque, blandit consectetur viverra placerat ante.
+                      </p>
                     </div>
                     <div class="col">
-                      <i class="ai-cafe d-block h2 text-primary fw-normal pb-2 mb-1"></i>
+                      <i
+                        class="ai-cafe d-block h2 text-primary fw-normal pb-2 mb-1"
+                      ></i>
                       <h3 class="h6 mb-2">Lounge cafe</h3>
-                      <p class="fs-sm mb-0">Neque, blandit consectetur viverra placerat ante.</p>
+                      <p class="fs-sm mb-0">
+                        Neque, blandit consectetur viverra placerat ante.
+                      </p>
                     </div>
                     <div class="col">
-                      <i class="ai-sofa d-block h2 text-primary fw-normal pb-2 mb-1"></i>
+                      <i
+                        class="ai-sofa d-block h2 text-primary fw-normal pb-2 mb-1"
+                      ></i>
                       <h3 class="h6 mb-2">Bright halls</h3>
-                      <p class="fs-sm mb-0">Neque, blandit consectetur viverra placerat ante.</p>
+                      <p class="fs-sm mb-0">
+                        Neque, blandit consectetur viverra placerat ante.
+                      </p>
                     </div>
                   </div>
-                  <a class="btn btn-primary w-100 w-sm-auto" href="#">Try a free lesson</a>
+                  <a class="btn btn-primary w-100 w-sm-auto" href="#"
+                    >Try a free lesson</a
+                  >
                 </div>
               </div>
             </div>
@@ -1872,35 +2143,62 @@
           <div class="tab-pane fade" id="stretching" role="tabpanel">
             <div class="row align-items-lg-center">
               <div class="col-md-6 pb-4 pb-md-0 mb-2 mb-md-0">
-                <img class="rounded-5" src="assets/img/landing/yoga-studio/classes/stretching.jpg" alt="Stretching">
+                <img
+                  class="rounded-5"
+                  src="assets/img/landing/yoga-studio/classes/stretching.jpg"
+                  alt="Stretching"
+                />
               </div>
               <div class="col-md-6 col-lg-5 col-xl-4 offset-lg-1">
                 <div class="ps-md-4 ps-lg-0">
                   <h2 class="mb-xl-4">Stretching</h2>
-                  <p class="pb-3 mb-3 mb-xl-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse id lectus nec nunc bibendum facilisis pellentesque ut eros. Praesent bibendum sed mi aliquet tempus.</p>
+                  <p class="pb-3 mb-3 mb-xl-4">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Suspendisse id lectus nec nunc bibendum facilisis
+                    pellentesque ut eros. Praesent bibendum sed mi aliquet
+                    tempus.
+                  </p>
                   <div class="row row-cols-2 g-4 pb-2 pb-xl-0 mb-4 mb-xl-5">
                     <div class="col">
-                      <i class="ai-sofa d-block h2 text-primary fw-normal pb-2 mb-1"></i>
+                      <i
+                        class="ai-sofa d-block h2 text-primary fw-normal pb-2 mb-1"
+                      ></i>
                       <h3 class="h6 mb-2">Bright halls</h3>
-                      <p class="fs-sm mb-0">Neque, blandit consectetur viverra placerat ante.</p>
+                      <p class="fs-sm mb-0">
+                        Neque, blandit consectetur viverra placerat ante.
+                      </p>
                     </div>
                     <div class="col">
-                      <i class="ai-spa d-block h2 text-primary fw-normal pb-2 mb-1"></i>
+                      <i
+                        class="ai-spa d-block h2 text-primary fw-normal pb-2 mb-1"
+                      ></i>
                       <h3 class="h6 mb-2">Spa area</h3>
-                      <p class="fs-sm mb-0">Neque, blandit consectetur viverra placerat ante.</p>
+                      <p class="fs-sm mb-0">
+                        Neque, blandit consectetur viverra placerat ante.
+                      </p>
                     </div>
                     <div class="col">
-                      <i class="ai-cafe d-block h2 text-primary fw-normal pb-2 mb-1"></i>
+                      <i
+                        class="ai-cafe d-block h2 text-primary fw-normal pb-2 mb-1"
+                      ></i>
                       <h3 class="h6 mb-2">Lounge cafe</h3>
-                      <p class="fs-sm mb-0">Neque, blandit consectetur viverra placerat ante.</p>
+                      <p class="fs-sm mb-0">
+                        Neque, blandit consectetur viverra placerat ante.
+                      </p>
                     </div>
                     <div class="col">
-                      <i class="ai-towel d-block h2 text-primary fw-normal pb-2 mb-1"></i>
+                      <i
+                        class="ai-towel d-block h2 text-primary fw-normal pb-2 mb-1"
+                      ></i>
                       <h3 class="h6 mb-2">Changing rooms</h3>
-                      <p class="fs-sm mb-0">Neque, blandit consectetur viverra placerat ante.</p>
+                      <p class="fs-sm mb-0">
+                        Neque, blandit consectetur viverra placerat ante.
+                      </p>
                     </div>
                   </div>
-                  <a class="btn btn-primary w-100 w-sm-auto" href="#">Try a free lesson</a>
+                  <a class="btn btn-primary w-100 w-sm-auto" href="#"
+                    >Try a free lesson</a
+                  >
                 </div>
               </div>
             </div>
@@ -1910,35 +2208,61 @@
           <div class="tab-pane fade" id="fly-yoga" role="tabpanel">
             <div class="row align-items-lg-center">
               <div class="col-md-6 pb-4 pb-md-0 mb-2 mb-md-0">
-                <img class="rounded-5" src="assets/img/landing/yoga-studio/classes/fly-yoga.jpg" alt="Fly-yoga">
+                <img
+                  class="rounded-5"
+                  src="assets/img/landing/yoga-studio/classes/fly-yoga.jpg"
+                  alt="Fly-yoga"
+                />
               </div>
               <div class="col-md-6 col-lg-5 col-xl-4 offset-lg-1">
                 <div class="ps-md-4 ps-lg-0">
                   <h2 class="mb-xl-4">Fly-yoga</h2>
-                  <p class="pb-3 mb-3 mb-xl-4">Varius purus dui nunc faucibus mauris iaculis tortor enim cursus quisque eu, vel amet massa suscipit cursus sit mattis quis magnis dignissim dui fames tortor amet quis.</p>
+                  <p class="pb-3 mb-3 mb-xl-4">
+                    Varius purus dui nunc faucibus mauris iaculis tortor enim
+                    cursus quisque eu, vel amet massa suscipit cursus sit mattis
+                    quis magnis dignissim dui fames tortor amet quis.
+                  </p>
                   <div class="row row-cols-2 g-4 pb-2 pb-xl-0 mb-4 mb-xl-5">
                     <div class="col">
-                      <i class="ai-towel d-block h2 text-primary fw-normal pb-2 mb-1"></i>
+                      <i
+                        class="ai-towel d-block h2 text-primary fw-normal pb-2 mb-1"
+                      ></i>
                       <h3 class="h6 mb-2">Changing rooms</h3>
-                      <p class="fs-sm mb-0">Neque, blandit consectetur viverra placerat ante.</p>
+                      <p class="fs-sm mb-0">
+                        Neque, blandit consectetur viverra placerat ante.
+                      </p>
                     </div>
                     <div class="col">
-                      <i class="ai-rug d-block h2 text-primary fw-normal pb-2 mb-1"></i>
+                      <i
+                        class="ai-rug d-block h2 text-primary fw-normal pb-2 mb-1"
+                      ></i>
                       <h3 class="h6 mb-2">Free rugs</h3>
-                      <p class="fs-sm mb-0">Neque, blandit consectetur viverra placerat ante.</p>
+                      <p class="fs-sm mb-0">
+                        Neque, blandit consectetur viverra placerat ante.
+                      </p>
                     </div>
                     <div class="col">
-                      <i class="ai-spa d-block h2 text-primary fw-normal pb-2 mb-1"></i>
+                      <i
+                        class="ai-spa d-block h2 text-primary fw-normal pb-2 mb-1"
+                      ></i>
                       <h3 class="h6 mb-2">Spa area</h3>
-                      <p class="fs-sm mb-0">Neque, blandit consectetur viverra placerat ante.</p>
+                      <p class="fs-sm mb-0">
+                        Neque, blandit consectetur viverra placerat ante.
+                      </p>
                     </div>
                     <div class="col">
-                      <i class="ai-sofa d-block h2 text-primary fw-normal pb-2 mb-1"></i>
+                      <i
+                        class="ai-sofa d-block h2 text-primary fw-normal pb-2 mb-1"
+                      ></i>
                       <h3 class="h6 mb-2">Bright halls</h3>
-                      <p class="fs-sm mb-0">Neque, blandit consectetur viverra placerat ante.</p>
+                      <p class="fs-sm mb-0">
+                        Neque, blandit consectetur viverra placerat ante.
+                      </p>
                     </div>
                   </div>
-                  <a class="btn btn-primary w-100 w-sm-auto" href="#">Try a free lesson</a>
+                  <a class="btn btn-primary w-100 w-sm-auto" href="#"
+                    >Try a free lesson</a
+                  >
                 </div>
               </div>
             </div>
@@ -1948,35 +2272,61 @@
           <div class="tab-pane fade" id="for-pregnant" role="tabpanel">
             <div class="row align-items-lg-center">
               <div class="col-md-6 pb-4 pb-md-0 mb-2 mb-md-0">
-                <img class="rounded-5" src="assets/img/landing/yoga-studio/classes/for-pregnant.jpg" alt="For pregnant">
+                <img
+                  class="rounded-5"
+                  src="assets/img/landing/yoga-studio/classes/for-pregnant.jpg"
+                  alt="For pregnant"
+                />
               </div>
               <div class="col-md-6 col-lg-5 col-xl-4 offset-lg-1">
                 <div class="ps-md-4 ps-lg-0">
                   <h2 class="mb-xl-4">For pregnant</h2>
-                  <p class="pb-3 mb-3 mb-xl-4">At duis est ante tortor, dictum dictumst nisl erat. Tellus erat pharetra eget vestibulum. Netus eu sit cursus et vehicula porttitor nulla turpis a. In volutpat at orci.</p>
+                  <p class="pb-3 mb-3 mb-xl-4">
+                    At duis est ante tortor, dictum dictumst nisl erat. Tellus
+                    erat pharetra eget vestibulum. Netus eu sit cursus et
+                    vehicula porttitor nulla turpis a. In volutpat at orci.
+                  </p>
                   <div class="row row-cols-2 g-4 pb-2 pb-xl-0 mb-4 mb-xl-5">
                     <div class="col">
-                      <i class="ai-sofa d-block h2 text-primary fw-normal pb-2 mb-1"></i>
+                      <i
+                        class="ai-sofa d-block h2 text-primary fw-normal pb-2 mb-1"
+                      ></i>
                       <h3 class="h6 mb-2">Bright halls</h3>
-                      <p class="fs-sm mb-0">Neque, blandit consectetur viverra placerat ante.</p>
+                      <p class="fs-sm mb-0">
+                        Neque, blandit consectetur viverra placerat ante.
+                      </p>
                     </div>
                     <div class="col">
-                      <i class="ai-spa d-block h2 text-primary fw-normal pb-2 mb-1"></i>
+                      <i
+                        class="ai-spa d-block h2 text-primary fw-normal pb-2 mb-1"
+                      ></i>
                       <h3 class="h6 mb-2">Spa area</h3>
-                      <p class="fs-sm mb-0">Neque, blandit consectetur viverra placerat ante.</p>
+                      <p class="fs-sm mb-0">
+                        Neque, blandit consectetur viverra placerat ante.
+                      </p>
                     </div>
                     <div class="col">
-                      <i class="ai-cafe d-block h2 text-primary fw-normal pb-2 mb-1"></i>
+                      <i
+                        class="ai-cafe d-block h2 text-primary fw-normal pb-2 mb-1"
+                      ></i>
                       <h3 class="h6 mb-2">Lounge cafe</h3>
-                      <p class="fs-sm mb-0">Neque, blandit consectetur viverra placerat ante.</p>
+                      <p class="fs-sm mb-0">
+                        Neque, blandit consectetur viverra placerat ante.
+                      </p>
                     </div>
                     <div class="col">
-                      <i class="ai-towel d-block h2 text-primary fw-normal pb-2 mb-1"></i>
+                      <i
+                        class="ai-towel d-block h2 text-primary fw-normal pb-2 mb-1"
+                      ></i>
                       <h3 class="h6 mb-2">Changing rooms</h3>
-                      <p class="fs-sm mb-0">Neque, blandit consectetur viverra placerat ante.</p>
+                      <p class="fs-sm mb-0">
+                        Neque, blandit consectetur viverra placerat ante.
+                      </p>
                     </div>
                   </div>
-                  <a class="btn btn-primary w-100 w-sm-auto" href="#">Try a free lesson</a>
+                  <a class="btn btn-primary w-100 w-sm-auto" href="#"
+                    >Try a free lesson</a
+                  >
                 </div>
               </div>
             </div>
@@ -1986,35 +2336,61 @@
           <div class="tab-pane fade" id="healthy-back" role="tabpanel">
             <div class="row align-items-lg-center">
               <div class="col-md-6 pb-4 pb-md-0 mb-2 mb-md-0">
-                <img class="rounded-5" src="assets/img/landing/yoga-studio/classes/healthy-back.jpg" alt="Healthy back">
+                <img
+                  class="rounded-5"
+                  src="assets/img/landing/yoga-studio/classes/healthy-back.jpg"
+                  alt="Healthy back"
+                />
               </div>
               <div class="col-md-6 col-lg-5 col-xl-4 offset-lg-1">
                 <div class="ps-md-4 ps-lg-0">
                   <h2 class="mb-xl-4">Healthy back</h2>
-                  <p class="pb-3 mb-3 mb-xl-4">Facilisi tempus pharetra, egestas dolor. Nulla lorem interdum cursus habitasse. Morbi aliquam, mauris, varius nulla tortor ut nullam. Est eu eu eget fames leo nisl est.</p>
+                  <p class="pb-3 mb-3 mb-xl-4">
+                    Facilisi tempus pharetra, egestas dolor. Nulla lorem
+                    interdum cursus habitasse. Morbi aliquam, mauris, varius
+                    nulla tortor ut nullam. Est eu eu eget fames leo nisl est.
+                  </p>
                   <div class="row row-cols-2 g-4 pb-2 pb-xl-0 mb-4 mb-xl-5">
                     <div class="col">
-                      <i class="ai-cafe d-block h2 text-primary fw-normal pb-2 mb-1"></i>
+                      <i
+                        class="ai-cafe d-block h2 text-primary fw-normal pb-2 mb-1"
+                      ></i>
                       <h3 class="h6 mb-2">Lounge cafe</h3>
-                      <p class="fs-sm mb-0">Neque, blandit consectetur viverra placerat ante.</p>
+                      <p class="fs-sm mb-0">
+                        Neque, blandit consectetur viverra placerat ante.
+                      </p>
                     </div>
                     <div class="col">
-                      <i class="ai-sofa d-block h2 text-primary fw-normal pb-2 mb-1"></i>
+                      <i
+                        class="ai-sofa d-block h2 text-primary fw-normal pb-2 mb-1"
+                      ></i>
                       <h3 class="h6 mb-2">Bright halls</h3>
-                      <p class="fs-sm mb-0">Neque, blandit consectetur viverra placerat ante.</p>
+                      <p class="fs-sm mb-0">
+                        Neque, blandit consectetur viverra placerat ante.
+                      </p>
                     </div>
                     <div class="col">
-                      <i class="ai-towel d-block h2 text-primary fw-normal pb-2 mb-1"></i>
+                      <i
+                        class="ai-towel d-block h2 text-primary fw-normal pb-2 mb-1"
+                      ></i>
                       <h3 class="h6 mb-2">Changing rooms</h3>
-                      <p class="fs-sm mb-0">Neque, blandit consectetur viverra placerat ante.</p>
+                      <p class="fs-sm mb-0">
+                        Neque, blandit consectetur viverra placerat ante.
+                      </p>
                     </div>
                     <div class="col">
-                      <i class="ai-spa d-block h2 text-primary fw-normal pb-2 mb-1"></i>
+                      <i
+                        class="ai-spa d-block h2 text-primary fw-normal pb-2 mb-1"
+                      ></i>
                       <h3 class="h6 mb-2">Spa area</h3>
-                      <p class="fs-sm mb-0">Neque, blandit consectetur viverra placerat ante.</p>
+                      <p class="fs-sm mb-0">
+                        Neque, blandit consectetur viverra placerat ante.
+                      </p>
                     </div>
                   </div>
-                  <a class="btn btn-primary w-100 w-sm-auto" href="#">Try a free lesson</a>
+                  <a class="btn btn-primary w-100 w-sm-auto" href="#"
+                    >Try a free lesson</a
+                  >
                 </div>
               </div>
             </div>
@@ -2024,35 +2400,61 @@
           <div class="tab-pane fade" id="relax-yoga" role="tabpanel">
             <div class="row align-items-lg-center">
               <div class="col-md-6 pb-4 pb-md-0 mb-2 mb-md-0">
-                <img class="rounded-5" src="assets/img/landing/yoga-studio/classes/relax-yoga.jpg" alt="Relax yoga">
+                <img
+                  class="rounded-5"
+                  src="assets/img/landing/yoga-studio/classes/relax-yoga.jpg"
+                  alt="Relax yoga"
+                />
               </div>
               <div class="col-md-6 col-lg-5 col-xl-4 offset-lg-1">
                 <div class="ps-md-4 ps-lg-0">
                   <h2 class="mb-xl-4">Relax yoga</h2>
-                  <p class="pb-3 mb-3 mb-xl-4">Aliquam risus, leo mattis commodo id pretium. In sapien, lacus, cursus id vulputate. Pellentesque quis et posuere maecenas sed aenean quisque ut. Pellentesque sed at.</p>
+                  <p class="pb-3 mb-3 mb-xl-4">
+                    Aliquam risus, leo mattis commodo id pretium. In sapien,
+                    lacus, cursus id vulputate. Pellentesque quis et posuere
+                    maecenas sed aenean quisque ut. Pellentesque sed at.
+                  </p>
                   <div class="row row-cols-2 g-4 pb-2 pb-xl-0 mb-4 mb-xl-5">
                     <div class="col">
-                      <i class="ai-towel d-block h2 text-primary fw-normal pb-2 mb-1"></i>
+                      <i
+                        class="ai-towel d-block h2 text-primary fw-normal pb-2 mb-1"
+                      ></i>
                       <h3 class="h6 mb-2">Changing rooms</h3>
-                      <p class="fs-sm mb-0">Neque, blandit consectetur viverra placerat ante.</p>
+                      <p class="fs-sm mb-0">
+                        Neque, blandit consectetur viverra placerat ante.
+                      </p>
                     </div>
                     <div class="col">
-                      <i class="ai-cafe d-block h2 text-primary fw-normal pb-2 mb-1"></i>
+                      <i
+                        class="ai-cafe d-block h2 text-primary fw-normal pb-2 mb-1"
+                      ></i>
                       <h3 class="h6 mb-2">Lounge cafe</h3>
-                      <p class="fs-sm mb-0">Neque, blandit consectetur viverra placerat ante.</p>
+                      <p class="fs-sm mb-0">
+                        Neque, blandit consectetur viverra placerat ante.
+                      </p>
                     </div>
                     <div class="col">
-                      <i class="ai-sofa d-block h2 text-primary fw-normal pb-2 mb-1"></i>
+                      <i
+                        class="ai-sofa d-block h2 text-primary fw-normal pb-2 mb-1"
+                      ></i>
                       <h3 class="h6 mb-2">Bright halls</h3>
-                      <p class="fs-sm mb-0">Neque, blandit consectetur viverra placerat ante.</p>
+                      <p class="fs-sm mb-0">
+                        Neque, blandit consectetur viverra placerat ante.
+                      </p>
                     </div>
                     <div class="col">
-                      <i class="ai-spa d-block h2 text-primary fw-normal pb-2 mb-1"></i>
+                      <i
+                        class="ai-spa d-block h2 text-primary fw-normal pb-2 mb-1"
+                      ></i>
                       <h3 class="h6 mb-2">Spa area</h3>
-                      <p class="fs-sm mb-0">Neque, blandit consectetur viverra placerat ante.</p>
+                      <p class="fs-sm mb-0">
+                        Neque, blandit consectetur viverra placerat ante.
+                      </p>
                     </div>
                   </div>
-                  <a class="btn btn-primary w-100 w-sm-auto" href="#">Try a free lesson</a>
+                  <a class="btn btn-primary w-100 w-sm-auto" href="#"
+                    >Try a free lesson</a
+                  >
                 </div>
               </div>
             </div>
@@ -2715,5 +3117,9 @@
 
     <!-- Customizer -->
     <script src="assets/js/customizer.min.js"></script>
+
+    <!-- custom nav button -->
+
+    <script src="assets/js/customNavButton.js"></script>
   </body>
 </html>
