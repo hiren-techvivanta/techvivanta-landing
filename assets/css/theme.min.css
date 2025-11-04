@@ -17232,3 +17232,33 @@ img-comparison-slider:focus {
 .blinking {
   animation: blinking 1s infinite;
 }
+
+/* button css (custom) */
+
+ #contactButton {
+        width: 10rem !important;
+        padding: 0.7rem 0;
+        transition: all 0.3s ease-in-out !important;
+      }
+
+      /* hover effect */
+      #contactButton:hover {
+        transform: scale(1.05);
+      }
+
+      /* pseudo-element for smooth fade-in effect */
+      #contactButton::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+        background-size: 200% 200%;
+        opacity: 0;
+        transition: opacity 1s ease-in-out;
+      }
+
+      /* ensure text stays on top */
+      #contactButton span {
+        position: relative;
+        z-index: 1;
+      }

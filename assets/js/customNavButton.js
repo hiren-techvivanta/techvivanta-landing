@@ -19,10 +19,10 @@ const textColors = [
 ];
 
 const buttonTexts = [
-  "Contact Us",
-  "Let's Talk",
+  "Free Consultation",
+  "Hire Developers",
   "Get a Quote",
-  "Work With Us",
+  "Ai Applications",
   "Start Your Project"
 ];
 
