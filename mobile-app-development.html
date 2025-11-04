@@ -60,9 +60,6 @@
     <!-- Theme styles + Bootstrap -->
     <link rel="stylesheet" media="screen" href="assets/css/theme.min.css" />
 
-    <!-- Customizer generated styles -->
-    <style id="customizer-styles"></style>
-
     <!-- Page loading styles -->
     <style>
       .page-loading {
@@ -164,101 +161,11 @@
         };
       })();
     </script>
-    <script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const counters = document.querySelectorAll('.count');
-    const wrapper = document.querySelector('.counters-wrapper');
-
-    if (!wrapper || counters.length === 0) return;
-
-    // Easing function for nicer animation
-    function easeOutCubic(t) {
-      return 1 - Math.pow(1 - t, 3);
-    }
-
-    // Animate single counter element
-    function animateCounter(el, target, suffix, duration = 1800) {
-      let startTime = null;
-      const isK = suffix && suffix.indexOf('k') !== -1;
-
-      // target: if isK, target is number of thousands (e.g., 10 for 10k)
-      function step(timestamp) {
-        if (!startTime) startTime = timestamp;
-        const elapsed = timestamp - startTime;
-        const progress = Math.min(elapsed / duration, 1);
-        const eased = easeOutCubic(progress);
-        // current numeric value (0 .. target)
-        const current = Math.floor(eased * target);
-
-        // format display:
-        if (isK) {
-          el.textContent = current + (suffix || '');
-        } else {
-          // For normal numbers (like 25 or 10000), show full integer. If target is large and you'd
-          // rather show "10k", use the k+ approach above.
-          el.textContent = current + (suffix || '');
-        }
-
-        if (progress < 1) {
-          requestAnimationFrame(step);
-        } else {
-          // Ensure final exact value
-          el.textContent = (isK ? target : target) + (suffix || '');
-        }
-      }
-
-      requestAnimationFrame(step);
-    }
-
-    // IntersectionObserver to trigger animation when in viewport
-    const obs = new IntersectionObserver(function (entries, observer) {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          counters.forEach(el => {
-            // read numeric target and suffix from data attributes
-            const rawTarget = el.getAttribute('data-target') || '0';
-            const suffix = el.getAttribute('data-suffix') || '';
-            // parse target as number (for 10k use target=10 and suffix="k+")
-            const target = Number(rawTarget);
-            // choose duration optionally by data attribute (fallback 1800ms)
-            const duration = Number(el.getAttribute('data-duration')) || 1800;
-            animateCounter(el, target, suffix, duration);
-          });
-          observer.disconnect(); // run once
-        }
-      });
-    }, { threshold: 0.3 });
-
-    obs.observe(wrapper);
-  });
-</script>
-    <!-- Google Tag Manager -->
-    <script>
-      (function (w, d, s, l, i) {
-        w[l] = w[l] || [];
-        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
-        var f = d.getElementsByTagName(s)[0],
-          j = d.createElement(s),
-          dl = l != "dataLayer" ? "&l=" + l : "";
-        j.async = true;
-        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
-        f.parentNode.insertBefore(j, f);
-      })(window, document, "script", "dataLayer", "GTM-WKV3GT5");
-    </script>
   </head>
 
   <!-- Body -->
   <body>
     <!-- Google Tag Manager (noscript) -->
-    <noscript>
-      <iframe
-        src="//www.googletagmanager.com/ns.html?id=GTM-WKV3GT5"
-        height="0"
-        width="0"
-        style="display: none; visibility: hidden"
-        title="Google Tag Manager"
-      ></iframe>
-    </noscript>
 
     <!-- Page loading spinner -->
     <div class="page-loading active">
@@ -2031,5 +1938,78 @@
 
     <!-- Customizer -->
     <script src="assets/js/customizer.min.js"></script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const counters = document.querySelectorAll(".count");
+        const wrapper = document.querySelector(".counters-wrapper");
+
+        if (!wrapper || counters.length === 0) return;
+
+        // Easing function for nicer animation
+        function easeOutCubic(t) {
+          return 1 - Math.pow(1 - t, 3);
+        }
+
+        // Animate single counter element
+        function animateCounter(el, target, suffix, duration = 1800) {
+          let startTime = null;
+          const isK = suffix && suffix.indexOf("k") !== -1;
+
+          // target: if isK, target is number of thousands (e.g., 10 for 10k)
+          function step(timestamp) {
+            if (!startTime) startTime = timestamp;
+            const elapsed = timestamp - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+            const eased = easeOutCubic(progress);
+            // current numeric value (0 .. target)
+            const current = Math.floor(eased * target);
+
+            // format display:
+            if (isK) {
+              el.textContent = current + (suffix || "");
+            } else {
+              // For normal numbers (like 25 or 10000), show full integer. If target is large and you'd
+              // rather show "10k", use the k+ approach above.
+              el.textContent = current + (suffix || "");
+            }
+
+            if (progress < 1) {
+              requestAnimationFrame(step);
+            } else {
+              // Ensure final exact value
+              el.textContent = (isK ? target : target) + (suffix || "");
+            }
+          }
+
+          requestAnimationFrame(step);
+        }
+
+        // IntersectionObserver to trigger animation when in viewport
+        const obs = new IntersectionObserver(
+          function (entries, observer) {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                counters.forEach((el) => {
+                  // read numeric target and suffix from data attributes
+                  const rawTarget = el.getAttribute("data-target") || "0";
+                  const suffix = el.getAttribute("data-suffix") || "";
+                  // parse target as number (for 10k use target=10 and suffix="k+")
+                  const target = Number(rawTarget);
+                  // choose duration optionally by data attribute (fallback 1800ms)
+                  const duration =
+                    Number(el.getAttribute("data-duration")) || 1800;
+                  animateCounter(el, target, suffix, duration);
+                });
+                observer.disconnect(); // run once
+              }
+            });
+          },
+          { threshold: 0.3 }
+        );
+
+        obs.observe(wrapper);
+      });
+    </script>
   </body>
 </html>
