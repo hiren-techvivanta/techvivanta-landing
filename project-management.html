@@ -1,0 +1,1232 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+  <head>
+    <meta charset="utf-8" />
+
+    <!-- Viewport -->
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover"
+    />
+
+    <!-- SEO meta tags -->
+    <title>Around | Creative Agency</title>
+    <meta
+      name="description"
+      content="Around - Multipurpose Bootstrap HTML Template"
+    />
+    <meta
+      name="keywords"
+      content="bootstrap, business, corporate, coworking space, services, creative agency, dashboard, e-commerce, mobile app showcase, saas, multipurpose, product landing, shop, software, ui kit, web studio, landing, light and dark mode, html5, css3, javascript, gallery, slider, touch, creative"
+    />
+    <meta name="author" content="Createx Studio" />
+
+    <!-- Webmanifest + Favicon / App icons -->
+    <link rel="manifest" href="/manifest.json" />
+    <link
+      rel="icon"
+      type="image/png"
+      href="assets/app-icons/icon-32x32.png"
+      sizes="32x32"
+    />
+    <link rel="apple-touch-icon" href="assets/app-icons/icon-180x180.png" />
+
+    <!-- Theme switcher (color modes) -->
+    <script src="assets/js/theme-switcher.js"></script>
+
+    <!-- Import Google font (Inter) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap"
+      rel="stylesheet"
+      id="google-font"
+    />
+
+    <!-- Vendor styles -->
+    <link
+      rel="stylesheet"
+      media="screen"
+      href="assets/vendor/swiper/swiper-bundle.min.css"
+    />
+
+    <!-- Font icons -->
+    <link rel="stylesheet" href="assets/icons/around-icons.min.css" />
+
+    <!-- Theme styles + Bootstrap -->
+    <link rel="stylesheet" media="screen" href="assets/css/theme.min.css" />
+
+    <!-- Page loading styles -->
+    <style>
+      .page-loading {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        -webkit-transition: all 0.4s 0.2s ease-in-out;
+        transition: all 0.4s 0.2s ease-in-out;
+        background-color: #fff;
+        opacity: 0;
+        visibility: hidden;
+        z-index: 9999;
+      }
+      [data-bs-theme="dark"] .page-loading {
+        background-color: #121519;
+      }
+      .page-loading.active {
+        opacity: 1;
+        visibility: visible;
+      }
+      .page-loading-inner {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        -webkit-transform: translateY(-50%);
+        transform: translateY(-50%);
+        -webkit-transition: opacity 0.2s ease-in-out;
+        transition: opacity 0.2s ease-in-out;
+        opacity: 0;
+      }
+      .page-loading.active > .page-loading-inner {
+        opacity: 1;
+      }
+      .page-loading-inner > span {
+        display: block;
+        font-family: "Inter", sans-serif;
+        font-size: 1rem;
+        font-weight: normal;
+        color: #6f788b;
+      }
+      [data-bs-theme="dark"] .page-loading-inner > span {
+        color: #fff;
+        opacity: 0.6;
+      }
+      .page-spinner {
+        display: inline-block;
+        width: 2.75rem;
+        height: 2.75rem;
+        margin-bottom: 0.75rem;
+        vertical-align: text-bottom;
+        background-color: #d7dde2;
+        border-radius: 50%;
+        opacity: 0;
+        -webkit-animation: spinner 0.75s linear infinite;
+        animation: spinner 0.75s linear infinite;
+      }
+      [data-bs-theme="dark"] .page-spinner {
+        background-color: rgba(255, 255, 255, 0.25);
+      }
+      @-webkit-keyframes spinner {
+        0% {
+          -webkit-transform: scale(0);
+          transform: scale(0);
+        }
+        50% {
+          opacity: 1;
+          -webkit-transform: none;
+          transform: none;
+        }
+      }
+      @keyframes spinner {
+        0% {
+          -webkit-transform: scale(0);
+          transform: scale(0);
+        }
+        50% {
+          opacity: 1;
+          -webkit-transform: none;
+          transform: none;
+        }
+      }
+    </style>
+
+    <!-- Page loading scripts -->
+    <script>
+      (function () {
+        window.onload = function () {
+          const preloader = document.querySelector(".page-loading");
+          preloader.classList.remove("active");
+          setTimeout(function () {
+            preloader.remove();
+          }, 1500);
+        };
+      })();
+    </script>
+  </head>
+
+  <!-- Body -->
+  <body>
+    <!-- Page loading spinner -->
+    <div class="page-loading active">
+      <div class="page-loading-inner">
+        <div class="page-spinner"></div>
+        <span>Loading...</span>
+      </div>
+    </div>
+
+    <!-- Page wrapper -->
+    <main class="page-wrapper">
+      <!-- Navbar. Remove 'fixed-top' class to make the navigation bar scrollable with the page -->
+      <header class="navbar navbar-expand-lg fixed-top bg-white">
+        <div class="container">
+          <!-- Navbar brand (Logo) -->
+          <a class="navbar-brand pe-sm-3" href="index.html">
+            <span class="text-primary me-2">
+              <img
+                src="./assets/app-icons/logo.png"
+                class="img-fluid"
+                style="max-width: 150px"
+                alt="logo"
+              />
+            </span>
+          </a>
+
+          <a
+            class="btn btn-primary btn-sm fs-sm order-lg-3 d-none d-sm-inline-flex border-0 rounded-pill"
+            href="./contact.html"
+            id="contactButton"
+          >
+            Buy now
+          </a>
+          <!-- <a
+            class="btn btn-primary btn-sm fs-sm order-lg-3 d-none d-sm-inline-flex"
+            href="./contact.html"
+          >
+            <i class="ai-cart fs-xl me-2 ms-n1"></i>
+            Buy now
+          </a> -->
+
+          <!-- Mobile menu toggler (Hamburger) -->
+          <button
+            class="navbar-toggler ms-sm-3"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <!-- Navbar collapse (Main navigation) -->
+          <nav class="collapse navbar-collapse" id="navbarNav">
+            <ul
+              class="navbar-nav navbar-nav-scroll mx-auto"
+              style="--ar-scroll-height: 520px"
+            >
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">Home</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                  >Technologies</a
+                >
+                <div
+                  class="dropdown-menu overflow-hidden p-0"
+                  data-bs-theme="light"
+                >
+                  <div class="d-lg-flex">
+                    <div class="mega-dropdown-column pt-1 pt-lg-3 pb-lg-4">
+                      <ul class="list-unstyled mb-0">
+                        <li>
+                          <a class="dropdown-item" href="./web-devlopment.html"
+                            >Web Devlopment</a
+                          >
+                          <span
+                            class="mega-dropdown-column position-absolute top-0 end-0 h-100 bg-size-cover bg-repeat-0 rounded-3 rounded-start-0"
+                            style="
+                              background-image: url(assets/img/megamenu/landings.jpg);
+                            "
+                          ></span>
+                        </li>
+                        <li>
+                          <a
+                            class="dropdown-item"
+                            href="./mobile-app-development.html"
+                            >Mobile Devlopment</a
+                          >
+                          <span
+                            class="mega-dropdown-column position-absolute top-0 end-0 h-100 bg-size-cover bg-repeat-0 z-2 opacity-0"
+                            style="
+                              background-image: url(assets/img/megamenu/mobile-app.jpg);
+                            "
+                          ></span>
+                        </li>
+                        <li>
+                          <a
+                            class="dropdown-item"
+                            href="./backend-devlopment.html"
+                            >Backend Development</a
+                          >
+                          <span
+                            class="mega-dropdown-column position-absolute top-0 end-0 h-100 bg-size-cover bg-repeat-0 z-2 opacity-0"
+                            style="
+                              background-image: url(assets/img/megamenu/conference.jpg);
+                            "
+                          ></span>
+                        </li>
+                        <li>
+                          <a
+                            class="dropdown-item"
+                            href="./crypto-platform-development.html"
+                            >Crypto Platform Development</a
+                          >
+                          <span
+                            class="mega-dropdown-column position-absolute top-0 end-0 h-100 bg-size-cover bg-repeat-0 z-2 opacity-0"
+                            style="
+                              background-image: url(assets/img/megamenu/web-studio.jpg);
+                            "
+                          ></span>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="mega-dropdown-column pb-2 pt-lg-3 pb-lg-4">
+                      <ul class="list-unstyled mb-0">
+                        <li>
+                          <a
+                            class="dropdown-item active"
+                            href="./ai-llm-devlopment.html"
+                            >Ai-LlM Devlopment</a
+                          >
+                          <span
+                            class="mega-dropdown-column position-absolute top-0 end-0 h-100 bg-size-cover bg-repeat-0 z-2 opacity-0"
+                            style="
+                              background-image: url(assets/img/megamenu/creative-agency.jpg);
+                            "
+                          ></span>
+                        </li>
+                        <li>
+                          <a class="dropdown-item" href="./ui-ux.html">Ui/Ux</a>
+                          <span
+                            class="mega-dropdown-column position-absolute top-0 end-0 h-100 bg-size-cover bg-repeat-0 z-2 opacity-0"
+                            style="
+                              background-image: url(assets/img/megamenu/product-landing.jpg);
+                            "
+                          ></span>
+                        </li>
+                        <li>
+                          <a
+                            class="dropdown-item"
+                            href="./project-management.html"
+                            >Project Management</a
+                          >
+                          <span
+                            class="mega-dropdown-column position-absolute top-0 end-0 h-100 bg-size-cover bg-repeat-0 z-2 opacity-0"
+                            style="
+                              background-image: url(assets/img/megamenu/conference.jpg);
+                            "
+                          ></span>
+                        </li>
+
+                        <li>
+                          <a class="dropdown-item" href="./seo-services.html"
+                            >Seo service</a
+                          >
+                          <span
+                            class="mega-dropdown-column position-absolute top-0 end-0 h-100 bg-size-cover bg-repeat-0 z-2 opacity-0"
+                            style="
+                              background-image: url(assets/img/megamenu/web-studio.jpg);
+                            "
+                          ></span>
+                        </li>
+                      </ul>
+                    </div>
+
+                    <div
+                      class="mega-dropdown-column position-relative border-start z-3"
+                    ></div>
+                  </div>
+                </div>
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                  >Services</a
+                >
+                <div
+                  class="dropdown-menu overflow-hidden p-0"
+                  data-bs-theme="light"
+                >
+                  <div class="d-lg-flex">
+                    <div class="mega-dropdown-column pt-1 pt-lg-3 pb-lg-4">
+                      <ul class="list-unstyled mb-0">
+                        <li>
+                          <a class="dropdown-item" href="./contact.html"
+                            >Desine & devlopment</a
+                          >
+                          <span
+                            class="mega-dropdown-column position-absolute top-0 end-0 h-100 bg-size-cover bg-repeat-0 rounded-3 rounded-start-0"
+                            style="
+                              background-image: url(assets/img/megamenu/01.jpg);
+                            "
+                          ></span>
+                        </li>
+                        <li>
+                          <a class="dropdown-item" href="./contact.html"
+                            >Consultution</a
+                          >
+                          <span
+                            class="mega-dropdown-column position-absolute top-0 end-0 h-100 bg-size-cover bg-repeat-0 z-2 opacity-0"
+                            style="
+                              background-image: url(assets/img/megamenu/02.jpg);
+                            "
+                          ></span>
+                        </li>
+                        <li>
+                          <a class="dropdown-item" href="./contact.html"
+                            >On Demand Team</a
+                          >
+                          <span
+                            class="mega-dropdown-column position-absolute top-0 end-0 h-100 bg-size-cover bg-repeat-0 z-2 opacity-0"
+                            style="
+                              background-image: url(assets/img/megamenu/03.jpg);
+                            "
+                          ></span>
+                        </li>
+                      </ul>
+                    </div>
+                    <div
+                      class="mega-dropdown-column position-relative border-start z-3"
+                    ></div>
+                  </div>
+                </div>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./about.html">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./portfoilo.html">Portfolio</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./contact.html">Hire Devloper</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./contact.html">Contact</a>
+              </li>
+            </ul>
+            <div class="d-sm-none p-3 mt-n3">
+              <button id="ctaButton" class="cta-btn">
+                <div class="cta-bg"></div>
+                <div class="cta-hover-bg"></div>
+                <div class="cta-shimmer"></div>
+                <div class="cta-content">
+                  <i class="fas fa-comments"></i>
+                  <span>Free Consultation</span>
+                </div>
+              </button>
+              <a class="btn btn-primary w-100 mb-1" href="./contact.html">
+                <i class="ai-cart fs-xl me-2 ms-n1"></i>
+                Buy now
+              </a>
+            </div>
+          </nav>
+        </div>
+      </header>
+
+      <!-- Hero -->
+      <section class="container py-5 mt-5 mb-xl-3 mb-xxl-5">
+        <div class="row pt-2">
+          <!-- Text + CTA button -->
+          <div
+            class="col-lg-6 d-flex flex-column justify-center my-auto mb-4 mb-lg-auto pb-sm-3 pb-lg-0"
+          >
+            <h1 class="display-6 text-uppercase fw-bold">
+              Empowering
+              <span class="fw-normal"> Teams with Smarter</span> Project
+              Management<span
+                class="d-none d-md-inline-block align-middle ms-4"
+                style="
+                  width: 120px;
+                  height: 2px;
+                  background-color: currentColor;
+                "
+              ></span>
+            </h1>
+            <div class="d-flex align-items-center py-4 py-lg-5">
+              <a
+                class="btn btn-lg btn-primary rounded-0 me-2 me-sm-3"
+                href="./contact.html"
+                >Let's work together</a
+              >
+            </div>
+          </div>
+
+          <!-- Services (Grid of cards) -->
+          <div class="col-lg-6">
+            <div class="row row-cols-1 row-cols-sm-2 g-1">
+              <!-- Card -->
+              <div class="col">
+                <a class="card-flip" href="#">
+                  <div class="card-flip-inner">
+                    <div
+                      class="card-flip-front"
+                      style="
+                        background-image: url(assets/img/landing/creative-agency/services/01.jpg);
+                      "
+                    >
+                      <div
+                        class="d-flex flex-column h-100"
+                        data-bs-theme="light"
+                      >
+                        <h2 class="fs-lg fw-normal mb-0 mt-auto">Planning</h2>
+                      </div>
+                    </div>
+                    <div class="card-flip-back bg-secondary">
+                      <div
+                        class="d-flex flex-column h-100 px-sm-2 pt-sm-2 px-lg-0 pt-lg-0 px-xl-3 pt-xl-3"
+                      >
+                        <h3 class="h4">Planning</h3>
+                        <p class="text-body mb-3">
+                          Build structured project roadmaps, set milestones, and
+                          allocate resources effectively. Keep every task
+                          aligned with your business goals for better results.
+                        </p>
+                        <div
+                          class="text-end pt-3 pt-sm-2 pt-xl-4 mt-auto me-sm-n2 me-lg-0 me-xl-n3"
+                        ></div>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </div>
+
+              <!-- Card -->
+              <div class="col">
+                <a class="card-flip" href="#">
+                  <div class="card-flip-inner">
+                    <div
+                      class="card-flip-front"
+                      style="
+                        background-image: url(assets/img/landing/creative-agency/services/02.jpg);
+                      "
+                    >
+                      <div
+                        class="d-flex flex-column h-100"
+                        data-bs-theme="light"
+                      >
+                        <h2 class="fs-lg fw-normal mb-0 mt-auto">
+                          Collaboration
+                        </h2>
+                      </div>
+                    </div>
+                    <div class="card-flip-back bg-secondary">
+                      <div
+                        class="d-flex flex-column h-100 px-sm-2 pt-sm-2 px-lg-0 pt-lg-0 px-xl-3 pt-xl-3"
+                      >
+                        <h3 class="h4">Collaboration</h3>
+                        <p class="text-body mb-3">
+                          Enhance team productivity through seamless
+                          communication, shared dashboards, and task
+                          transparency across departments.
+                        </p>
+                        <div
+                          class="text-end pt-3 pt-sm-2 pt-xl-4 mt-auto me-sm-n2 me-lg-0 me-xl-n3"
+                        ></div>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </div>
+
+              <!-- Card -->
+              <div class="col order-sm-2">
+                <a class="card-flip" href="#">
+                  <div class="card-flip-inner">
+                    <div
+                      class="card-flip-front"
+                      style="
+                        background-image: url(assets/img/landing/creative-agency/services/04.jpg);
+                      "
+                    >
+                      <div
+                        class="d-flex flex-column h-100"
+                        data-bs-theme="light"
+                      >
+                        <h2 class="fs-lg fw-normal mb-0 mt-auto">
+                          Tracking & Reports
+                        </h2>
+                      </div>
+                    </div>
+                    <div class="card-flip-back bg-secondary">
+                      <div
+                        class="d-flex flex-column h-100 px-sm-2 pt-sm-2 px-lg-0 pt-lg-0 px-xl-3 pt-xl-3"
+                      >
+                        <h3 class="h4">Tracking & Reports</h3>
+                        <p class="text-body mb-3">
+                          Monitor progress in real time with visual dashboards
+                          and automated reports. Identify bottlenecks early and
+                          stay on track.
+                        </p>
+                        <div
+                          class="text-end pt-3 pt-sm-2 pt-xl-4 mt-auto me-sm-n2 me-lg-0 me-xl-n3"
+                        ></div>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </div>
+
+              <!-- Card -->
+              <div class="col order-sm-1">
+                <a class="card-flip" href="#">
+                  <div class="card-flip-inner">
+                    <div
+                      class="card-flip-front"
+                      style="
+                        background-image: url(assets/img/landing/creative-agency/services/03.jpg);
+                      "
+                    >
+                      <div
+                        class="d-flex flex-column h-100"
+                        data-bs-theme="light"
+                      >
+                        <h2 class="fs-lg fw-normal mb-0 mt-auto">
+                          Workflow Automation
+                        </h2>
+                      </div>
+                    </div>
+                    <div class="card-flip-back bg-secondary">
+                      <div
+                        class="d-flex flex-column h-100 px-sm-2 pt-sm-2 px-lg-0 pt-lg-0 px-xl-3 pt-xl-3"
+                      >
+                        <h3 class="h4">Workflow Automation</h3>
+                        <p class="text-body mb-3">
+                          Automate repetitive tasks, set smart triggers, and
+                          streamline project handovers to save time and reduce
+                          human error.
+                        </p>
+                        <div
+                          class="text-end pt-3 pt-sm-2 pt-xl-4 mt-auto me-sm-n2 me-lg-0 me-xl-n3"
+                        ></div>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- About -->
+      <section class="container py-md-4 py-lg-5 mb-xl-3 mb-xxl-5">
+        <div class="row pt-sm-2">
+          <div class="col-xl-10">
+            <p class="fs-2 text-dark pb-md-2 mb-lg-5">
+              From brainstorming innovative concepts to executing successful
+              digital solutions, we focus on building
+              <span class="fw-semibold"
+                >impactful designs that solve real-world challenges</span
+              >, craft
+              <span class="fw-semibold">brands that inspire trust</span>, and
+              develop technology that bridges the gap between
+              <span class="fw-semibold">creativity and human experience.</span>
+            </p>
+          </div>
+        </div>
+        <div class="row pb-5">
+          <div class="col-sm-4 col-lg-3 mb-3">
+            <h3 class="display-1 mb-0 mb-sm-1">16</h3>
+            <span class="fs-sm">Projects delivered across industries</span>
+          </div>
+          <div class="col-sm-4 col-lg-3 mb-3">
+            <h3 class="display-1 mb-0 mb-sm-1">22</h3>
+            <span class="fs-sm">Skilled professionals in our core team</span>
+          </div>
+          <div class="col-sm-4 col-lg-3 mb-2 mb-sm-3">
+            <h3 class="display-1 mb-0 mb-sm-1">205</h3>
+            <span class="fs-sm">Satisfied clients across India and beyond</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Our projects (Filterable masonry grid) -->
+      <section
+        class="container overflow-hidden pb-5 mb-2 mb-lg-3 mb-xl-4 mb-xxl-5"
+      >
+        <div class="masonry-filterable">
+          <div class="row pb-lg-4 mb-2 mb-sm-3">
+            <!-- Page title -->
+            <div class="col-xxl-3 col-lg-4 text-center text-lg-start">
+              <h1>Our Projects</h1>
+              <p class="mb-4 mb-lg-0">
+                We will put our industry expertise for creativity to work for
+                your project
+              </p>
+            </div>
+
+            <!-- Filters -->
+            <div class="col-xxl-9 col-lg-8 d-flex">
+              <ul
+                class="masonry-filters nav nav-pills fs-sm flex-nowrap overflow-auto text-nowrap w-100 mx-auto me-lg-0 pb-3"
+                style="max-width: 456px"
+              >
+                <li class="nav-item mb-0">
+                  <a class="nav-link border active" href="#" data-group="all"
+                    >All</a
+                  >
+                </li>
+                <li class="nav-item mb-0">
+                  <a class="nav-link border" href="#" data-group="branding"
+                    >Branding</a
+                  >
+                </li>
+                <li class="nav-item mb-0">
+                  <a class="nav-link border" href="#" data-group="stationery"
+                    >Stationery</a
+                  >
+                </li>
+                <li class="nav-item mb-0">
+                  <a class="nav-link border" href="#" data-group="web">Web</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Grid of portfolio items -->
+          <div class="masonry-grid" data-columns="2">
+            <!-- Item -->
+            <article
+              class="masonry-grid-item pb-5 mb-md-2 mb-lg-4 mb-xl-5"
+              data-groups='["branding"]'
+            >
+              <div
+                class="zoom-effect position-relative border-bottom pb-3"
+                style="max-width: 512px"
+              >
+                <div class="zoom-effect-wrapper">
+                  <div class="zoom-effect-img">
+                    <img src="assets/img/portfolio/grid/07.jpg" alt="Image" />
+                  </div>
+                </div>
+                <div class="pt-4 mt-lg-2">
+                  <h2 class="h4 mb-2">
+                    <a class="stretched-link" href="portfolio-single-v2.html"
+                      >Healthy Yellow</a
+                    >
+                  </h2>
+                  <div
+                    class="d-flex justify-content-between fs-lg text-body-secondary"
+                  >
+                    <span>Branding, Packaging</span>
+                    <span>2022</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- Item -->
+            <article
+              class="masonry-grid-item pb-5 mb-md-2 mb-lg-4 mb-xl-5"
+              data-groups='["stationery"]'
+            >
+              <div
+                class="zoom-effect position-relative border-bottom pb-3"
+                style="max-width: 704px"
+              >
+                <div class="zoom-effect-wrapper">
+                  <div class="zoom-effect-img">
+                    <img src="assets/img/portfolio/grid/08.jpg" alt="Image" />
+                  </div>
+                </div>
+                <div class="pt-4 mt-lg-2">
+                  <h2 class="h4 mb-2">
+                    <a class="stretched-link" href="portfolio-single-v2.html"
+                      >Sen Jonson</a
+                    >
+                  </h2>
+                  <div
+                    class="d-flex justify-content-between fs-lg text-body-secondary"
+                  >
+                    <span>Stationery design</span>
+                    <span>2022</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- Item -->
+            <article
+              class="masonry-grid-item pb-5 mb-md-2 mb-lg-4 mb-xl-5"
+              data-groups='["branding"]'
+            >
+              <div
+                class="zoom-effect position-relative border-bottom pb-3"
+                style="max-width: 467px"
+              >
+                <div class="zoom-effect-wrapper">
+                  <div class="zoom-effect-img">
+                    <img src="assets/img/portfolio/grid/09.jpg" alt="Image" />
+                  </div>
+                </div>
+                <div class="pt-4 mt-lg-2">
+                  <h2 class="h4 mb-2">
+                    <a class="stretched-link" href="portfolio-single-v2.html"
+                      >Gradient</a
+                    >
+                  </h2>
+                  <div
+                    class="d-flex justify-content-between fs-lg text-body-secondary"
+                  >
+                    <span>Branding, Packaging</span>
+                    <span>2022</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- Item -->
+            <article
+              class="masonry-grid-item pb-5 mb-md-2 mb-lg-4 mb-xl-5"
+              data-groups='["stationery"]'
+            >
+              <div
+                class="zoom-effect position-relative border-bottom ms-auto pb-3"
+                style="max-width: 605px"
+              >
+                <div class="zoom-effect-wrapper">
+                  <div class="zoom-effect-img">
+                    <img src="assets/img/portfolio/grid/10.jpg" alt="Image" />
+                  </div>
+                </div>
+                <div class="pt-4 mt-lg-2">
+                  <h2 class="h4 mb-2">
+                    <a class="stretched-link" href="portfolio-single-v2.html"
+                      >D.G.Vent</a
+                    >
+                  </h2>
+                  <div
+                    class="d-flex justify-content-between fs-lg text-body-secondary"
+                  >
+                    <span>Stationery design</span>
+                    <span>2021</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- Item -->
+            <article
+              class="masonry-grid-item pb-5 mb-md-2 mb-lg-4 mb-xl-5"
+              data-groups='["stationery"]'
+            >
+              <div
+                class="zoom-effect position-relative border-bottom pb-3"
+                style="max-width: 550px"
+              >
+                <div class="zoom-effect-wrapper">
+                  <div class="zoom-effect-img">
+                    <img src="assets/img/portfolio/grid/11.jpg" alt="Image" />
+                  </div>
+                </div>
+                <div class="pt-4 mt-lg-2">
+                  <h2 class="h4 mb-2">
+                    <a class="stretched-link" href="portfolio-single-v2.html"
+                      >Doe design</a
+                    >
+                  </h2>
+                  <div
+                    class="d-flex justify-content-between fs-lg text-body-secondary"
+                  >
+                    <span>Branding, Stationery</span>
+                    <span>2021</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- Item -->
+            <article
+              class="masonry-grid-item pb-5 mb-md-2 mb-lg-4 mb-xl-5"
+              data-groups='["web"]'
+            >
+              <div
+                class="zoom-effect position-relative border-bottom mx-auto pb-3"
+                style="max-width: 470px"
+              >
+                <div class="zoom-effect-wrapper">
+                  <div class="zoom-effect-img">
+                    <img src="assets/img/portfolio/grid/12.jpg" alt="Image" />
+                  </div>
+                </div>
+                <div class="pt-4 mt-lg-2">
+                  <h2 class="h4 mb-2">
+                    <a class="stretched-link" href="portfolio-single-v2.html"
+                      >The Studio</a
+                    >
+                  </h2>
+                  <div
+                    class="d-flex justify-content-between fs-lg text-body-secondary"
+                  >
+                    <span>Web design</span>
+                    <span>2020</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- Button -->
+          <div class="text-center pb-sm-2 pb-md-4 mt-n1 mt-lg-n2">
+            <a class="btn btn-lg btn-outline-dark rounded-0" href="#"
+              >Let's work together</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <!-- Testimonials (Carousel) -->
+      <section
+        class="container position-relative z-2 py-5 mt-n3 mt-sm-0 mb-md-3 my-lg-3 my-xl-4 my-xxl-5"
+      >
+        <div class="row py-md-4 py-lg-5">
+          <div class="col-md-9 col-lg-7 order-md-2">
+            <!-- Swiper slider -->
+            <div
+              class="swiper"
+              data-swiper-options='{
+              "spaceBetween": 40,
+              "loop": true,
+              "bindedContent": true,
+              "autoHeight": true,
+              "pagination": {
+                "el": ".testimonials-count",
+                "type": "fraction"
+              },
+              "navigation": {
+                "prevEl": "#prev-testimonial",
+                "nextEl": "#next-testimonial"
+              }
+            }'
+            >
+              <div class="swiper-wrapper">
+                <!-- Item -->
+                <div class="swiper-slide" data-swiper-binded="#testimonial-1">
+                  <div class="d-flex d-md-none pt-3 mb-3">
+                    <i
+                      class="ai-quotes d-md-none text-primary display-3 mt-n2"
+                    ></i>
+                    <div class="ps-3">
+                      <h3 class="h5 mb-0">Aarav Sharma</h3>
+                      <p class="text-body-secondary mb-0">Head of Marketing</p>
+                    </div>
+                  </div>
+                  <h2 class="mb-lg-4">
+                    Awesome experience with a professional team. Thank you :)
+                  </h2>
+                  <p class="lead mb-0">
+                    “Partnering with this AI team transformed how we build and
+                    deploy automation. Their expertise in LLM integration has
+                    made our workflows faster and smarter.”
+                  </p>
+                </div>
+
+                <!-- Item -->
+                <div class="swiper-slide" data-swiper-binded="#testimonial-2">
+                  <div class="d-flex d-md-none pt-3 mb-3">
+                    <i
+                      class="ai-quotes d-md-none text-primary display-3 mt-n2"
+                    ></i>
+                    <div class="ps-3">
+                      <h3 class="h5 mb-0">Priya Iyer</h3>
+                      <p class="text-body-secondary mb-0">
+                        Marketing Coordinator
+                      </p>
+                    </div>
+                  </div>
+                  <h2 class="mb-lg-4">
+                    Thanks to your talented team for the banding we dreamed
+                    about
+                  </h2>
+                  <p class="lead mb-0">
+                    “Their AI-driven models helped us analyze massive datasets
+                    effortlessly. The insights we now generate have directly
+                    improved our decision-making process.”
+                  </p>
+                </div>
+
+                <!-- Item -->
+                <div class="swiper-slide" data-swiper-binded="#testimonial-3">
+                  <div class="d-flex d-md-none pt-3 mb-3">
+                    <i
+                      class="ai-quotes d-md-none text-primary display-3 mt-n2"
+                    ></i>
+                    <div class="ps-3">
+                      <h3 class="h5 mb-0">Rohan Patel</h3>
+                      <p class="text-body-secondary mb-0">CEO, Co-Founder</p>
+                    </div>
+                  </div>
+                  <h2 class="mb-lg-4">
+                    Thanks to you, we have created a unique branding that is our
+                    pride!
+                  </h2>
+                  <p class="lead mb-0">
+                    “From concept to execution, the collaboration was seamless.
+                    The AI tools they developed truly reflect innovation and
+                    deep technical understanding.”
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 offset-lg-1 order-md-1 mt-n3">
+            <i
+              class="ai-quotes d-none d-md-block text-primary ms-n2 mb-1"
+              style="font-size: 150px"
+            ></i>
+
+            <!-- Contnetn binded to slider (on screens > 768px) -->
+            <div class="binded-content h-auto d-none d-md-block">
+              <div class="binded-item h-auto active" id="testimonial-1">
+                <h3 class="h5 mb-1">Aarav Sharma</h3>
+                <p class="text-body-secondary mb-0">Head of Marketing</p>
+              </div>
+              <div class="binded-item h-auto" id="testimonial-2">
+                <h3 class="h5 mb-1">Priya Iyer</h3>
+                <p class="text-body-secondary mb-0">Marketing Coordinator</p>
+              </div>
+              <div class="binded-item h-auto" id="testimonial-3">
+                <h3 class="h5 mb-1">Rohan Patel</h3>
+                <p class="text-body-secondary mb-0">CEO, Co-Founder</p>
+              </div>
+            </div>
+
+            <!-- Swiper controls (Prev / Next) -->
+            <div class="d-flex align-items-center pb-2 pb-md-0 pt-4 mt-3">
+              <button
+                class="btn btn-icon btn-sm btn-outline-primary rounded-circle me-3"
+                type="button"
+                id="prev-testimonial"
+                aria-label="Prev"
+              >
+                <i class="ai-arrow-left"></i>
+              </button>
+              <div
+                class="testimonials-count fw-medium text-center"
+                style="width: 2.5rem"
+              ></div>
+              <button
+                class="btn btn-icon btn-sm btn-outline-primary rounded-circle ms-3"
+                type="button"
+                id="next-testimonial"
+                aria-label="Next"
+              >
+                <i class="ai-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer bg-secondary pt-4 pb-2 pb-md-5 pt-sm-5">
+      <div class="container-fluid pb-1 pb-md-0 px-md-5">
+        <div
+          class="bg-dark rounded-5 position-relative overflow-hidden w-100 py-5 px-3 px-sm-4 px-xl-5 mx-auto"
+          style="max-width: 1660px"
+          data-bs-theme="dark"
+        >
+          <div
+            class="position-absolute top-50 start-50 translate-middle"
+            style="width: 1664px"
+          >
+            <img
+              src="assets/img/landing/web-studio/footer-wave.png"
+              alt="Wave"
+            />
+          </div>
+          <div
+            class="container position-relative z-2 pt-md-3 pt-lg-4 pt-xl-5 pb-2"
+          >
+            <div class="row pb-2">
+              <div class="col-lg-4 col-xxl-3 pb-2 pb-lg-0 mb-4 mb-lg-0">
+                <div class="navbar-brand text-light py-0 me-0 pb-1 mb-3">
+                  <span class="text-primary me-2">
+                    <a class="navbar-brand pe-sm-3" href="index.html">
+                      <span class="text-primary me-2">
+                        <img
+                          src="./assets/app-icons/logo.png"
+                          class="img-fluid"
+                          style="max-width: 150px"
+                          alt="logo"
+                        />
+                      </span>
+                    </a>
+                  </span>
+                </div>
+                <p class="text-body fs-sm mb-4">
+                  Empowering your business with smart, scalable, and
+                  future-ready technology.
+                </p>
+              </div>
+              <div
+                class="col-sm-4 col-lg-2 offset-lg-1 offset-xl-2 offset-xxl-3 mb-4 mb-sm-0"
+              >
+                <h6 class="fw-bold">Company</h6>
+                <ul class="nav flex-column fs-sm">
+                  <li class="nav-item">
+                    <a class="nav-link fw-normal px-0 py-1" href="./index.html"
+                      >Home</a
+                    >
+                  </li>
+
+                  <li class="nav-item">
+                    <a class="nav-link fw-normal px-0 py-1" href="./about.html"
+                      >About</a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a
+                      class="nav-link fw-normal px-0 py-1"
+                      href="./portfoilo.html"
+                      >Portfolio</a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a
+                      class="nav-link fw-normal px-0 py-1"
+                      href="./contact.html"
+                      >Contact</a
+                    >
+                  </li>
+                </ul>
+              </div>
+              <div class="col-sm-4 col-lg-2 mb-4 mb-sm-0">
+                <h6 class="fw-bold">Support</h6>
+                <ul class="nav flex-column fs-sm">
+                  <li class="nav-item">
+                    <a
+                      class="nav-link fw-normal px-0 py-1"
+                      href="./contact.html"
+                      >Help center</a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link fw-normal px-0 py-1" href="./terms.html"
+                      >Terms of service</a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a
+                      class="nav-link fw-normal px-0 py-1"
+                      href="./privacy-policy.html"
+                      >Privacy policy</a
+                    >
+                  </li>
+                </ul>
+              </div>
+              <div class="col-sm-4 col-lg-3 col-xl-2">
+                <h6 class="fw-bold">Contact us</h6>
+                <ul class="nav flex-column fs-sm">
+                  <li class="nav-item">
+                    <a
+                      class="nav-link fw-normal px-0 py-1"
+                      href="mailto:email@example.com"
+                      >techvivanta.app@gmail.com</a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a
+                      class="nav-link fw-normal px-0 py-1"
+                      href="tel:+15262200444"
+                      >+91 79902 69840</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div
+              class="d-sm-flex align-items-center justify-content-between pt-4 pt-md-5 mt-2 mt-md-0 mt-lg-2 mt-xl-4"
+            >
+              <div class="d-flex justify-content-center order-sm-2 me-md-n2">
+                <a
+                  class="btn btn-icon btn-sm btn-secondary btn-instagram rounded-circle mx-2"
+                  href="https://www.instagram.com/techvivanta/"
+                  aria-label="Instagram"
+                >
+                  <i class="ai-instagram"></i>
+                </a>
+                <a
+                  class="btn btn-icon btn-sm btn-secondary btn-github rounded-circle mx-2"
+                  href="https://github.com/techvivanta"
+                  aria-label="Facebook"
+                >
+                  <i class="ai-github"></i>
+                </a>
+                <a
+                  class="btn btn-icon btn-sm btn-secondary btn-linkedin rounded-circle mx-2"
+                  href="https://www.linkedin.com/company/tech-vivanta?trk=public_jobs_topcard-org-name"
+                  aria-label="LinkedIn"
+                >
+                  <i class="ai-linkedin"></i>
+                </a>
+              </div>
+              <p
+                class="nav fs-sm order-sm-1 text-center text-sm-start pt-4 pt-sm-0 mb-0 me-4"
+              >
+                <span class="text-body-secondary"
+                  >&copy; All rights reserved. Made by</span
+                >
+                <a
+                  class="nav-link fw-normal p-0 ms-1"
+                  href="https://createx.studio/"
+                  target="_blank"
+                  rel="noopener"
+                  >TechVivanta</a
+                >
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Back to top button -->
+    <a
+      class="btn-scroll-top"
+      href="#top"
+      data-scroll
+      aria-label="Scroll back to top"
+    >
+      <svg
+        viewBox="0 0 40 40"
+        fill="currentColor"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <circle
+          cx="20"
+          cy="20"
+          r="19"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.5"
+          stroke-miterlimit="10"
+        ></circle>
+      </svg>
+      <i class="ai-arrow-up"></i>
+    </a>
+
+    <!-- Vendor scripts: JS libraries and plugins -->
+    <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+    <script src="assets/vendor/shufflejs/dist/shuffle.min.js"></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+    <!-- Bootstrap + Theme scripts -->
+    <script src="assets/js/theme.min.js"></script>
+
+    <!-- Customizer -->
+    <script src="assets/js/customizer.min.js"></script>
+  </body>
+</html>
