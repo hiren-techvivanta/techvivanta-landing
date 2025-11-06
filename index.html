@@ -32,7 +32,12 @@
       sizes="32x32"
     />
     <link rel="apple-touch-icon" href="assets/app-icons/icon-180x180.png" />
-
+    <!-- Add these in your <head> section -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <!-- Theme switcher (color modes) -->
     <script src="assets/js/theme-switcher.js"></script>
 
@@ -371,7 +376,7 @@
                   </div>
                 </div>
               </li>
-             <li class="nav-item dropdown">
+              <li class="nav-item dropdown">
                 <a
                   class="nav-link dropdown-toggle"
                   href="#"
@@ -575,12 +580,25 @@
             <span
               class="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-25"
             ></span>
-            <div
+            <!-- <div
               class="jarallax-img"
               style="
                 background-image: url(assets/img/landing/insurance/hero/bg-image.jpg);
               "
-            ></div>
+            ></div> -->
+            <div class="jarallax-img">
+              <video
+                class="w-100 h-100"
+                autoplay
+                loop
+                muted
+                playsinline
+                preload="auto"
+                style="object-fit: cover"
+              >
+                <source src="assets/video/herovideo.mp4" type="video/mp4" />
+              </video>
+            </div>
           </div>
           <!-- https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YnVzaW5lc3MlMjBiYWNrZ3JvdW5kfGVufDB8fDB8fHww&fm=jpg&q=60&w=3000 -->
 
@@ -689,7 +707,7 @@
           <h2 class="h1 text-center pt-lg-3">Technologies We Work With</h2>
 
           <div
-            class="swiper"
+            class="swiper "
             style="
               transition-timing-function: linear;
               animation-timing-function: linear;
@@ -1410,21 +1428,22 @@
         >
           <li class="nav-item mb-0" role="presentation">
             <a
-              class="nav-link active px-3"
+              class="nav-link px-3"
               href="#all-services"
               data-bs-toggle="tab"
               role="tab"
-              aria-selected="true"
+              aria-selected="false"
             >
               All Services
             </a>
           </li>
           <li class="nav-item mb-0" role="presentation">
             <a
-              class="nav-link px-3"
-              href="#web-development.html"
+              class="nav-link active px-3"
+              href="#web-development"
               data-bs-toggle="tab"
               role="tab"
+              aria-selected="true"
               >Web Development</a
             >
           </li>
@@ -1458,10 +1477,10 @@
           <li class="nav-item mb-0" role="presentation">
             <a
               class="nav-link px-3"
-              href="#cyber-security"
+              href="#crypto-platform"
               data-bs-toggle="tab"
               role="tab"
-              >Cyber Security</a
+              >Crypto Platform</a
             >
           </li>
           <li class="nav-item mb-0" role="presentation">
@@ -1485,11 +1504,7 @@
         </ul>
 
         <div class="tab-content">
-          <div
-            class="tab-pane fade show active"
-            id="all-services"
-            role="tabpanel"
-          >
+          <div class="tab-pane fade" id="all-services" role="tabpanel">
             <div class="row align-items-lg-center">
               <div class="col-md-6 pb-4 pb-md-0 mb-2 mb-md-0">
                 <img
@@ -1544,7 +1559,9 @@
                       </p>
                     </div>
                   </div>
-                  <a class="btn btn-primary w-100 w-sm-auto" href="#"
+                  <a
+                    class="btn btn-primary w-100 w-sm-auto"
+                    href="./contact.html"
                     >Schedule a Consultation</a
                   >
                 </div>
@@ -1552,7 +1569,11 @@
             </div>
           </div>
 
-          <div class="tab-pane fade" id="web-development" role="tabpanel">
+          <div
+            class="tab-pane fade show active"
+            id="web-development"
+            role="tabpanel"
+          >
             <div class="row align-items-lg-center">
               <div class="col-md-6 pb-4 pb-md-0 mb-2 mb-md-0">
                 <img
@@ -1594,7 +1615,7 @@
                       ></i>
                       <h3 class="h6 mb-2">Modern Frameworks</h3>
                       <p class="fs-sm mb-0">
-                        React, Angular, Vue.js,Flutter, and more.
+                        React, Angular, Vue.js, and more.
                       </p>
                     </div>
                     <div class="col">
@@ -1684,7 +1705,7 @@
               <div class="col-md-6 pb-4 pb-md-0 mb-2 mb-md-0">
                 <img
                   class="rounded-5"
-                  src="./assets/img/landing/yoga-studio/classes/image1.png"
+                  src="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
                   alt="UI/UX Design"
                 />
               </div>
@@ -1800,77 +1821,78 @@
                       </p>
                     </div>
                   </div>
-                  <a class="btn btn-primary w-100 w-sm-auto" href="#"
+                  <!-- <a class="btn btn-primary w-100 w-sm-auto" href="#"
                     >Explore Cloud Options</a
-                  >
+                  > -->
                 </div>
               </div>
             </div>
           </div>
 
-          <div class="tab-pane fade" id="cyber-security" role="tabpanel">
+          <div class="tab-pane fade" id="crypto-platform" role="tabpanel">
             <div class="row align-items-lg-center">
               <div class="col-md-6 pb-4 pb-md-0 mb-2 mb-md-0">
                 <img
                   class="rounded-5"
-                  src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
-                  alt="Cyber Security"
+                  src="./assets/img/landing/cryptodevimg.webp"
+                  alt="Crypto Platform Development"
                 />
               </div>
               <div class="col-md-6 col-lg-5 col-xl-4 offset-lg-1">
                 <div class="ps-md-4 ps-lg-0">
-                  <h2 class="mb-xl-4">Cyber Security</h2>
+                  <h2 class="mb-xl-4">Crypto Platform Development</h2>
                   <p class="pb-3 mb-3 mb-xl-4">
-                    Protect your digital assets with comprehensive cybersecurity
-                    solutions. We implement multi-layered strategies to
-                    safeguard your systems, data, and reputation from evolving
-                    threats.
+                    Build secure and scalable crypto platforms with advanced
+                    blockchain tech — from custom exchanges to wallets and
+                    trading systems.
                   </p>
 
                   <div class="row row-cols-2 g-4 pb-2 pb-xl-0 mb-4 mb-xl-5">
                     <div class="col">
                       <i
+                        class="bi bi-currency-bitcoin d-block h2 text-primary fw-normal pb-2 mb-1"
+                      ></i>
+                      <h3 class="h6 mb-2">Exchange Development</h3>
+                      <p class="fs-sm mb-0">
+                        Custom crypto exchanges with advanced trading features.
+                      </p>
+                    </div>
+
+                    <div class="col">
+                      <i
+                        class="bi bi-wallet2 d-block h2 text-primary fw-normal pb-2 mb-1"
+                      ></i>
+                      <h3 class="h6 mb-2">Wallet Solutions</h3>
+                      <p class="fs-sm mb-0">
+                        Secure hot and cold wallet systems for multiple
+                        cryptocurrencies.
+                      </p>
+                    </div>
+
+                    <div class="col">
+                      <i
                         class="bi bi-shield-check d-block h2 text-primary fw-normal pb-2 mb-1"
                       ></i>
-                      <h3 class="h6 mb-2">Threat Protection</h3>
+                      <h3 class="h6 mb-2">Blockchain Security</h3>
                       <p class="fs-sm mb-0">
-                        Advanced protection against cyber threats.
+                        Multi-layered security protocols and smart contract
+                        audits.
                       </p>
                     </div>
 
                     <div class="col">
                       <i
-                        class="bi bi-lock d-block h2 text-primary fw-normal pb-2 mb-1"
+                        class="bi bi-graph-up-arrow d-block h2 text-primary fw-normal pb-2 mb-1"
                       ></i>
-                      <h3 class="h6 mb-2">Data Encryption</h3>
+                      <h3 class="h6 mb-2">Trading Systems</h3>
                       <p class="fs-sm mb-0">
-                        Secure your sensitive information.
-                      </p>
-                    </div>
-
-                    <div class="col">
-                      <i
-                        class="bi bi-eye d-block h2 text-primary fw-normal pb-2 mb-1"
-                      ></i>
-                      <h3 class="h6 mb-2">Security Monitoring</h3>
-                      <p class="fs-sm mb-0">
-                        24/7 monitoring and threat detection.
-                      </p>
-                    </div>
-
-                    <div class="col">
-                      <i
-                        class="bi bi-people d-block h2 text-primary fw-normal pb-2 mb-1"
-                      ></i>
-                      <h3 class="h6 mb-2">Compliance</h3>
-                      <p class="fs-sm mb-0">
-                        Meet industry regulations and standards.
+                        High-frequency trading engines with real-time analytics.
                       </p>
                     </div>
                   </div>
 
                   <a class="btn btn-primary w-100 w-sm-auto" href="#">
-                    Get Security Assessment
+                    Start Crypto Project
                   </a>
                 </div>
               </div>
@@ -2531,6 +2553,128 @@
           </div>
         </div>
       </section>
+      <section
+        class="container pt-5 mt-sm-2 mt-md-3 mt-lg-4 mt-xxl-5 mb-n4 mb-md-n2 mb-lg-0"
+      >
+        <!-- Map for screens < 992px -->
+        <div class="d-lg-none rounded-5 overflow-hidden">
+          <div
+            class="interactive-map"
+            data-map-options='{
+            "center": [21.1702, 72.8311],
+            "zoom": 12,
+            "scrollWheelZoom": false,
+            "markers": [
+              {
+                "position": [21.1418, 72.7709],
+                "popup": "<div class=&#39;p-3&#39;><h6>Tech Vivanta Office</h6><p class=&#39;fs-sm pt-1 mt-n3 mb-0&#39;>337, Exult Shoppers, Vesu, Surat - 395007</p></div>"
+              }
+            ]
+          }'
+            style="height: 350px"
+          ></div>
+        </div>
+        <div
+          class="position-relative overflow-hidden rounded-5 px-lg-5 mt-lg-3 mt-xl-5"
+        >
+          <div class="d-none d-xxl-block" style="height: 160px"></div>
+          <div class="d-none d-xl-block d-xxl-none" style="height: 130px"></div>
+          <div class="d-none d-lg-block d-xl-none" style="height: 100px"></div>
+          <div class="position-relative z-5 ms-lg-5" style="max-width: 530px">
+            <div class="card border-0">
+              <div class="card-body">
+                <h2 class="h4 mb-sm-4">Tech Vivanta Office</h2>
+                <div class="d-sm-flex mb-3">
+                  <div class="mb-3 mb-sm-0 me-sm-4">
+                    <p class="mb-0">337, Exult Shoppers, Vesu</p>
+                    <p class="mb-0">Surat - 395007, Gujarat</p>
+                  </div>
+                  <div class="d-none d-sm-block border-end"></div>
+                    <div class="ms-sm-4">
+                      <h5>contact us</h5>
+                      <p class="mb-0">+91 7990269840</p>
+                    </div>
+                </div>
+                <a href="mailto:contact@techvivanta.com"
+                  >contact@techvivanta.com</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="d-none d-xxl-block" style="height: 160px"></div>
+          <div class="d-none d-xl-block d-xxl-none" style="height: 130px"></div>
+          <div class="d-none d-lg-block d-xl-none" style="height: 100px"></div>
+
+          <!-- Map for screens > 992px -->
+          <div
+            class="d-none d-lg-block interactive-map position-absolute z-1 top-0 start-0 w-100 h-100"
+            data-map-options='{
+            "center": [21.1702, 72.8311],
+            "zoom": 12,
+            "scrollWheelZoom": false,
+            "markers": [
+              {
+                "position": [21.1418, 72.7709],
+                "popup": "<div class=&#39;p-3&#39;><h6>Tech Vivanta Office</h6><p class=&#39;fs-sm pt-1 mt-n3 mb-0&#39;>337, Exult Shoppers, Vesu, Surat - 395007</p></div>"
+              }
+            ]
+          }'
+          ></div>
+        </div>
+      </section>
+
+      <!-- Add this JavaScript at the end of your body -->
+      <script>
+        // Initialize maps after page load
+        document.addEventListener("DOMContentLoaded", function () {
+          // Mobile Map
+          const mobileMap = L.map("mobile-map").setView([21.1418, 72.7709], 15);
+
+          // Desktop Map
+          const desktopMap = L.map("desktop-map").setView(
+            [21.1418, 72.7709],
+            15
+          );
+
+          // Add tile layer to both maps
+          L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+            attribution: "© OpenStreetMap contributors",
+          }).addTo(mobileMap);
+
+          L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+            attribution: "© OpenStreetMap contributors",
+          }).addTo(desktopMap);
+
+          // Add marker for Tech Vivanta office
+          const marker = L.marker([21.1418, 72.7709]).addTo(mobileMap);
+          const marker2 = L.marker([21.1418, 72.7709]).addTo(desktopMap);
+
+          // Add popup to markers
+          marker
+            .bindPopup(
+              `
+        <div class="p-3">
+            <h6 class="mb-2">Tech Vivanta Office</h6>
+            <p class="fs-sm mb-0">337, Exult Shoppers, Vesu</p>
+            <p class="fs-sm mb-0">Surat - 395007, Gujarat</p>
+        </div>
+    `
+            )
+            .openPopup();
+
+          marker2
+            .bindPopup(
+              `
+        <div class="p-3">
+            <h6 class="mb-2">Tech Vivanta Office</h6>
+            <p class="fs-sm mb-0">337, Exult Shoppers, Vesu</p>
+            <p class="fs-sm mb-0">Surat - 395007, Gujarat</p>
+        </div>
+    `
+            )
+            .openPopup();
+        });
+      </script>
     </main>
 
     <!-- Footer -->
@@ -2610,7 +2754,9 @@
                 <h6 class="fw-bold">Support</h6>
                 <ul class="nav flex-column fs-sm">
                   <li class="nav-item">
-                    <a class="nav-link fw-normal px-0 py-1" href="./contact.html"
+                    <a
+                      class="nav-link fw-normal px-0 py-1"
+                      href="./contact.html"
                       >Help center</a
                     >
                   </li>
@@ -2620,7 +2766,9 @@
                     >
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link fw-normal px-0 py-1" href="./privacy-policy.html"
+                    <a
+                      class="nav-link fw-normal px-0 py-1"
+                      href="./privacy-policy.html"
                       >Privacy policy</a
                     >
                   </li>
@@ -2716,6 +2864,8 @@
       </svg>
       <i class="ai-arrow-up"></i>
     </a>
+
+    <!-- new scripts -->
 
     <!-- Vendor scripts: JS libraries and plugins -->
     <script src="assets/vendor/jarallax/dist/jarallax.min.js"></script>
