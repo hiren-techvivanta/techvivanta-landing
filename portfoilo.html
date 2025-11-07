@@ -174,13 +174,20 @@
 
   <!-- Body -->
   <body cz-shortcut-listen="true">
+    <div class="page-loading active">
+      <div class="page-loading-inner">
+        <div class="page-spinner"></div>
+        <span>Loading...</span>
+      </div>
+    </div>
+
     <!-- Page wrapper -->
     <main class="page-wrapper">
       <!-- Navbar. Remove 'fixed-top' class to make the navigation bar scrollable with the page -->
       <header class="navbar navbar-expand-lg fixed-top bg-white">
         <div class="container">
           <!-- Navbar brand (Logo) -->
-          <a class="navbar-brand pe-sm-3" href="index.html">
+          <a class="navbar-brand pe-sm-3" href="./index.html">
             <span class="text-primary me-2">
               <img
                 src="./assets/app-icons/logo.png"
@@ -192,19 +199,12 @@
           </a>
 
           <a
-            class="btn btn-primary btn-sm fs-sm order-lg-3 d-none d-sm-inline-flex border-0 rounded-pill"
+            class="btn btn-primary btn-sm fs-sm order-lg-3 d-none d-lg-inline-flex border-0 rounded-pill animated-contact-btn"
             href="./contact.html"
             id="contactButton"
           >
             Buy now
           </a>
-          <!-- <a
-            class="btn btn-primary btn-sm fs-sm order-lg-3 d-none d-sm-inline-flex"
-            href="./contact.html"
-          >
-            <i class="ai-cart fs-xl me-2 ms-n1"></i>
-            Buy now
-          </a> -->
 
           <!-- Mobile menu toggler (Hamburger) -->
           <button
@@ -224,7 +224,7 @@
               style="--ar-scroll-height: 520px"
             >
               <li class="nav-item">
-                <a class="nav-link" href="./index.html">Home</a>
+                <a class="nav-link  " href="./index.html">Home</a>
               </li>
               <li class="nav-item dropdown">
                 <a
@@ -274,7 +274,7 @@
                           <span
                             class="mega-dropdown-column position-absolute top-0 end-0 h-100 bg-size-cover bg-repeat-0 z-2 opacity-0"
                             style="
-                              background-image: url(assets/img/megamenu/06.jpg);
+                              background-image: url(assets/img/megamenu/10.jpg);
                             "
                           ></span>
                         </li>
@@ -420,18 +420,12 @@
                 <a class="nav-link" href="./contact.html">Contact</a>
               </li>
             </ul>
-            <div class="d-sm-none p-3 mt-n3">
-              <button id="ctaButton" class="cta-btn">
-                <div class="cta-bg"></div>
-                <div class="cta-hover-bg"></div>
-                <div class="cta-shimmer"></div>
-                <div class="cta-content">
-                  <i class="fas fa-comments"></i>
-                  <span>Free Consultation</span>
-                </div>
-              </button>
-              <a class="btn btn-primary w-100 mb-1" href="./contact.html">
-                <i class="ai-cart fs-xl me-2 ms-n1"></i>
+            <div class="d-lg-none p-3 mt-n3">
+              <a
+                class="btn btn-primary btn-sm fs-sm order-lg-3 border-0 rounded-pill animated-contact-btn"
+                href="./contact.html"
+                id="contactButton"
+              >
                 Buy now
               </a>
             </div>
@@ -475,14 +469,13 @@
                       class="position-absolute top-0 end-0 w-100 h-100 d-lg-none"
                       style="background-color: #a5df28"
                     ></div>
-                    <a href="portfolio-single-v1.html">
-                      <img
-                        class="d-block position-relative z-2 mx-auto scale-up"
-                        src="assets/img/portfolio/slider/01.png"
-                        width="748"
-                        alt="Image"
-                      />
-                    </a>
+
+                    <img
+                      class="d-block position-relative z-2 mx-auto scale-up"
+                      src="assets/img/portfolio/slider/01.png"
+                      width="748"
+                      alt="Image"
+                    />
                   </div>
                   <div class="w-100 order-lg-1 px-3 px-lg-4 py-4 pt-lg-0">
                     <div
@@ -550,14 +543,13 @@
                       class="position-absolute top-0 end-0 w-100 h-100 d-lg-none"
                       style="background-color: #1f70e6"
                     ></div>
-                    <a href="portfolio-single-v1.html">
-                      <img
-                        class="d-block position-relative z-2 ms-auto from-end"
-                        src="assets/img/portfolio/slider/02.jpg"
-                        width="748"
-                        alt="Image"
-                      />
-                    </a>
+
+                    <img
+                      class="d-block position-relative z-2 ms-auto from-end"
+                      src="assets/img/portfolio/slider/02.jpg"
+                      width="748"
+                      alt="Image"
+                    />
                   </div>
                   <div class="w-100 order-lg-1 px-3 px-lg-4 py-4 pt-lg-0">
                     <div
@@ -605,14 +597,13 @@
                       class="position-absolute top-0 end-0 w-100 h-100 d-lg-none"
                       style="background-color: #dfa93c"
                     ></div>
-                    <a href="portfolio-single-v1.html">
-                      <img
-                        class="d-block position-relative z-2 mx-auto scale-up"
-                        src="assets/img/portfolio/slider/03.png"
-                        width="748"
-                        alt="Image"
-                      />
-                    </a>
+
+                    <img
+                      class="d-block position-relative z-2 mx-auto scale-up"
+                      src="assets/img/portfolio/slider/03.png"
+                      width="748"
+                      alt="Image"
+                    />
                   </div>
                   <div class="w-100 order-lg-1 px-3 px-lg-4 py-4 pt-lg-0">
                     <div
@@ -661,13 +652,12 @@
                       class="position-absolute top-0 end-0 w-100 h-100 d-lg-none"
                       style="background-color: #dfa93c"
                     ></div>
-                    <a href="portfolio-single-v1.html">
-                      <img
-                        class="d-block position-relative z-2 mx-auto scale-up"
-                        src="assets/img/portfolio/slider/04.png"
-                        alt="Image"
-                      />
-                    </a>
+
+                    <img
+                      class="d-block position-relative z-2 mx-auto scale-up"
+                      src="assets/img/portfolio/slider/04.png"
+                      alt="Image"
+                    />
                   </div>
                   <div class="w-100 order-lg-1 px-3 px-lg-4 py-4 pt-lg-0">
                     <div
@@ -717,14 +707,13 @@
                       class="position-absolute top-0 end-0 w-100 h-100 d-lg-none"
                       style="background-color: #2e437c"
                     ></div>
-                    <a href="portfolio-single-v1.html">
-                      <img
-                        class="d-block position-relative z-2 mx-auto scale-up"
-                        src="assets/img/portfolio/slider/05.jpg"
-                        width="748"
-                        alt="Image"
-                      />
-                    </a>
+
+                    <img
+                      class="d-block position-relative z-2 mx-auto scale-up"
+                      src="assets/img/portfolio/slider/05.jpg"
+                      width="748"
+                      alt="Image"
+                    />
                   </div>
                   <div class="w-100 order-lg-1 px-3 px-lg-4 py-4 pt-lg-0">
                     <div
@@ -772,14 +761,13 @@
                       class="position-absolute top-0 end-0 w-100 h-100 d-lg-none"
                       style="background-color: #6cb594"
                     ></div>
-                    <a href="portfolio-single-v1.html">
-                      <img
-                        class="d-block position-relative z-2 mx-auto scale-up"
-                        src="assets/img/portfolio/slider/06.png"
-                        width="748"
-                        alt="Image"
-                      />
-                    </a>
+
+                    <img
+                      class="d-block position-relative z-2 mx-auto scale-up"
+                      src="assets/img/portfolio/slider/06.png"
+                      width="748"
+                      alt="Image"
+                    />
                   </div>
                   <div class="w-100 order-lg-1 px-3 px-lg-4 py-4 pt-lg-0">
                     <div
@@ -821,14 +809,13 @@
                       class="position-absolute top-0 end-0 w-100 h-100 d-lg-none"
                       style="background-color: #000"
                     ></div>
-                    <a href="portfolio-single-v1.html">
-                      <img
-                        class="d-block position-relative z-2 mx-auto scale-up"
-                        src="assets/img/portfolio/slider/07.jpg"
-                        width="748"
-                        alt="Image"
-                      />
-                    </a>
+
+                    <img
+                      class="d-block position-relative z-2 mx-auto scale-up"
+                      src="assets/img/portfolio/slider/07.jpg"
+                      width="748"
+                      alt="Image"
+                    />
                   </div>
                   <div class="w-100 order-lg-1 px-3 px-lg-4 py-4 pt-lg-0">
                     <div
@@ -870,14 +857,13 @@
                       class="position-absolute top-0 end-0 w-100 h-100 d-lg-none"
                       style="background-color: #ffc600"
                     ></div>
-                    <a href="portfolio-single-v1.html">
-                      <img
-                        class="d-block position-relative z-2 mx-auto scale-up"
-                        src="assets/img/portfolio/slider/08.png"
-                        width="748"
-                        alt="Image"
-                      />
-                    </a>
+
+                    <img
+                      class="d-block position-relative z-2 mx-auto scale-up"
+                      src="assets/img/portfolio/slider/08.png"
+                      width="748"
+                      alt="Image"
+                    />
                   </div>
                   <div class="w-100 order-lg-1 px-3 px-lg-4 py-4 pt-lg-0">
                     <div
@@ -919,14 +905,13 @@
                       class="position-absolute top-0 end-0 w-100 h-100 d-lg-none"
                       style="background-color: #f6f6f6"
                     ></div>
-                    <a href="portfolio-single-v1.html">
-                      <img
-                        class="d-block position-relative z-2 mx-auto scale-up"
-                        src="assets/img/portfolio/slider/09.png"
-                        width="748"
-                        alt="Image"
-                      />
-                    </a>
+
+                    <img
+                      class="d-block position-relative z-2 mx-auto scale-up"
+                      src="assets/img/portfolio/slider/09.png"
+                      width="748"
+                      alt="Image"
+                    />
                   </div>
                   <div class="w-100 order-lg-1 px-3 px-lg-4 py-4 pt-lg-0">
                     <div
@@ -968,14 +953,13 @@
                       class="position-absolute top-0 end-0 w-100 h-100 d-lg-none"
                       style="background-color: #feda79"
                     ></div>
-                    <a href="portfolio-single-v1.html">
-                      <img
-                        class="d-block position-relative z-2 mx-auto scale-up"
-                        src="assets/img/portfolio/slider/10.png"
-                        width="748"
-                        alt="Image"
-                      />
-                    </a>
+
+                    <img
+                      class="d-block position-relative z-2 mx-auto scale-up"
+                      src="assets/img/portfolio/slider/10.png"
+                      width="748"
+                      alt="Image"
+                    />
                   </div>
                   <div class="w-100 order-lg-1 px-3 px-lg-4 py-4 pt-lg-0">
                     <div
@@ -1017,14 +1001,13 @@
                       class="position-absolute top-0 end-0 w-100 h-100 d-lg-none"
                       style="background-color: #7d6bb3"
                     ></div>
-                    <a href="portfolio-single-v1.html">
-                      <img
-                        class="d-block position-relative z-2 mx-auto scale-up"
-                        src="assets/img/portfolio/slider/11.png"
-                        width="748"
-                        alt="Image"
-                      />
-                    </a>
+
+                    <img
+                      class="d-block position-relative z-2 mx-auto scale-up"
+                      src="assets/img/portfolio/slider/11.png"
+                      width="748"
+                      alt="Image"
+                    />
                   </div>
                   <div class="w-100 order-lg-1 px-3 px-lg-4 py-4 pt-lg-0">
                     <div
@@ -1064,14 +1047,13 @@
                       class="position-absolute top-0 end-0 w-100 h-100 d-lg-none"
                       style="background-color: #5667af"
                     ></div>
-                    <a href="portfolio-single-v1.html">
-                      <img
-                        class="d-block position-relative z-2 mx-auto scale-up"
-                        src="assets/img/portfolio/slider/12.png"
-                        width="748"
-                        alt="Image"
-                      />
-                    </a>
+
+                    <img
+                      class="d-block position-relative z-2 mx-auto scale-up"
+                      src="assets/img/portfolio/slider/12.png"
+                      width="748"
+                      alt="Image"
+                    />
                   </div>
                   <div class="w-100 order-lg-1 px-3 px-lg-4 py-4 pt-lg-0">
                     <div
