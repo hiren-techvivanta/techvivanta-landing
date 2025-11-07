@@ -558,6 +558,8 @@
           >
             <div class="d-none d-md-block ratio ratio-21x9"></div>
             <div class="d-md-none ratio ratio-16x9"></div>
+
+            <!-- Fixed SVG ClipPath: Straight top, curved bottom-right -->
             <svg
               class="d-none d-md-block"
               width="0"
@@ -568,24 +570,19 @@
                 <clipPath
                   id="shape"
                   clipPathUnits="objectBoundingBox"
-                  transform="scale(0.0007716049383, 0.001976284585)"
+                  transform="scale(0.0007716049, 0.0019762846)"
                 >
                   <path
-                    d="M18 110H288C297.941 110 306 101.941 306 92V18C306 8.05887 314.059 0 324 0H1278C1287.94 0 1296 8.05888 1296 18V378C1296 387.941 1287.94 396 1278 396H1008C998.059 396 990 404.059 990 414V488C990 497.941 981.941 506 972 506H18C8.05887 506 0 497.941 0 488V128C0 118.059 8.05887 110 18 110Z"
+                    d="M0 0H1278C1287.94 0 1296 8.05888 1296 18V378C1296 387.941 1287.94 396 1278 396H1008C998.059 396 990 404.059 990 414V488C990 497.941 981.941 506 972 506H18C8.05887 506 0 497.941 0 488V0Z"
                   />
                 </clipPath>
               </defs>
             </svg>
 
             <span
-              class="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-25"
+              class="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-75"
             ></span>
-            <!-- <div
-              class="jarallax-img"
-              style="
-                background-image: url(assets/img/landing/insurance/hero/bg-image.jpg);
-              "
-            ></div> -->
+
             <div class="jarallax-img">
               <video
                 class="w-100 h-100"
@@ -596,10 +593,11 @@
                 preload="auto"
                 style="object-fit: cover"
               >
-                <source src="assets/video/herovideo.mp4" type="video/mp4" />
+                <source src="assets/video/herovideo04.mp4" type="video/mp4" />
               </video>
             </div>
           </div>
+
           <!-- https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YnVzaW5lc3MlMjBiYWNrZ3JvdW5kfGVufDB8fDB8fHww&fm=jpg&q=60&w=3000 -->
 
           <!-- Clients (visible on screens > 768px) -->
@@ -632,31 +630,12 @@
 
           <!-- Google reviews + Clients (visible on screens < 768px) -->
           <div class="d-flex flex-column flex-sm-row gap-3 pt-3 d-md-none">
+          
             <div class="position-relative d-flex justify-content-center w-100">
+            
               <img
-                class="position-relative z-2"
-                src="assets/img/landing/insurance/hero/google-reviews.png"
-                width="282"
-                alt="Google reviews"
-              />
-              <div
-                class="position-absolute top-0 start-0 w-100 h-100 bg-light rounded-3 shadow-sm d-dark-mode-none"
-              ></div>
-              <div
-                class="position-absolute top-0 start-0 w-100 h-100 rounded-3 d-none d-dark-mode-block"
-                style="background-color: #202327"
-              ></div>
-            </div>
-            <div class="position-relative d-flex justify-content-center w-100">
-              <img
-                class="position-relative z-2 d-dark-mode-none"
-                src="assets/img/landing/insurance/hero/clients-light.png"
-                width="282"
-                alt="Google reviews"
-              />
-              <img
-                class="position-relative z-2 d-none d-dark-mode-block"
-                src="assets/img/landing/insurance/hero/clients-dark.png"
+                class="position-relative z-2 p-4"
+                src="/assets/img/landing/insurance/hero/clients-light.jpg"
                 width="282"
                 alt="Google reviews"
               />
@@ -707,7 +686,7 @@
           <h2 class="h1 text-center pt-lg-3">Technologies We Work With</h2>
 
           <div
-            class="swiper "
+            class="swiper"
             style="
               transition-timing-function: linear;
               animation-timing-function: linear;
@@ -1158,7 +1137,7 @@
         </div>
 
         <!-- Swiper slider -->
-        <div class="container-start">
+        <div class="container">
           <div
             class="swiper"
             data-swiper-options='{
@@ -1214,16 +1193,16 @@
                 <div class="card border-0 bg-secondary h-100">
                   <div class="card-body mx-auto" style="max-width: 416px">
                     <p class="fs-lg mb-1">
-                      "Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      Vestibulum posuere finibus dui, eget scelerisque ipsum
-                      suscipit nec. Praesent nec quam in ipsum ultricies
-                      ultricies et sagittis dui. Sed condimentum felis at
-                      pretium."
+                      “Tech Vivanta transformed our blockchain vision into a
+                      reality. Their expertise in crypto exchange development
+                      and smart contract implementation helped us launch faster
+                      with zero security flaws.”
                     </p>
                     <img
-                      src="assets/img/brands/foster.svg"
-                      width="150"
-                      alt="Foster"
+                      src="assets/img/brands/waveLogo.png"
+                      width="100"
+                      class="mt-2"
+                      alt="waveLogo"
                     />
                   </div>
                 </div>
@@ -1271,23 +1250,17 @@
                 <div class="card border-0 bg-secondary h-100">
                   <div class="card-body mx-auto" style="max-width: 416px">
                     <p class="fs-lg mb-1">
-                      "Pellentesque habitant morbi tristique senectus et netus
-                      et malesuada fames ac turpis egestas. Mauris tincidunt
-                      imperdiet hendrerit. Fusce tortor turpis, facilisis ac
-                      efficitur eget, aliquet ut odio. Curabitur in vestibulum
-                      tellus."
+                      "Working with TechVivanta was an excellent experience.
+                      They built our private jet booking platform with
+                      precision, speed, and creativity. The team delivered a
+                      seamless, high-performance site that exceeded our
+                      expectations."
                     </p>
                     <img
-                      class="d-dark-mode-none"
-                      src="assets/img/brands/champion-dark.svg"
-                      width="150"
-                      alt="Champion"
-                    />
-                    <img
-                      class="d-none d-dark-mode-inline-block"
-                      src="assets/img/brands/champion-light.svg"
-                      width="150"
-                      alt="Champion"
+                      class=""
+                      src="assets/img/brands/justCharterLogo.png"
+                      width="100"
+                      alt="justCharterLogo"
                     />
                   </div>
                 </div>
@@ -1335,15 +1308,15 @@
                 <div class="card border-0 bg-secondary h-100">
                   <div class="card-body mx-auto" style="max-width: 416px">
                     <p class="fs-lg mb-1">
-                      "Nulla facilisi. Curabitur dictum sodales aliquam. Etiam
-                      tortor augue, ultrices in efficitur sit amet, luctus
-                      dapibus magna. Vivamus eu lacus elementum, ultrices massa
-                      vitae, elementum lorem. Proin feugiat egestas dolor."
+                      "Working with TechVivanta was a smooth and professional
+                      experience. The team was responsive, understood our vision
+                      clearly, and delivered high-quality results right on
+                      time."
                     </p>
                     <img
-                      src="assets/img/brands/alpine.svg"
+                      src="assets/img/brands/arovitaLogo.png"
                       width="150"
-                      alt="Alpine"
+                      alt="arovita"
                     />
                   </div>
                 </div>
@@ -1390,22 +1363,73 @@
                 <div class="card border-0 bg-secondary h-100">
                   <div class="card-body mx-auto" style="max-width: 416px">
                     <p class="fs-lg mb-1">
-                      "Suspendisse potenti. Nulla vel varius urna. Donec at
-                      libero ipsum. Nullam scelerisque tempus malesuada. Donec
-                      vehicula odio est, at faucibus purus sollicitudin ut.
-                      Fusce mollis ultrices ex sed pellentesque velit euismod."
+                      "Our experience with TechVivanta was fantastic. The team
+                      showed great creativity and technical skill, turning our
+                      ideas into a polished, high-performing app that perfectly
+                      represents our brand."
                     </p>
                     <img
-                      class="d-dark-mode-none"
-                      src="assets/img/brands/deloitte-dark.svg"
-                      width="150"
-                      alt="Deloitte"
+                      class="mt-2"
+                      src="assets/img/brands/styolaLogo.png"
+                      width="100"
+                      alt="styola"
                     />
+                  </div>
+                </div>
+              </div>
+
+              <!-- Item -->
+              <div class="swiper-slide w-sm-auto h-auto">
+                <div
+                  class="card card-flip card-hover border-0 w-sm-auto h-100 bg-secondary rounded-5"
+                >
+                  <div class="card-flip-inner mx-auto" style="max-width: 306px">
+                    <div class="card-flip-front p-0">
+                      <div
+                        class="card-body d-flex flex-column justify-content-center align-items-center position-absolute top-0 start-0 w-100 h-100 opacity-100"
+                      >
+                        <img
+                          src="assets/img/brands/aws.svg"
+                          width="72"
+                          alt="aws"
+                        />
+                      </div>
+                    </div>
+                    <div class="card-flip-back p-0 bg-transparent">
+                      <div
+                        class="card-body d-flex flex-column justify-content-center align-items-center h-100"
+                      >
+                        <img
+                          src="assets/img/brands/aws.svg"
+                          width="52"
+                          alt="Python"
+                        />
+                        <p class="fs-sm pt-3 mb-0">
+                          AWS offers scalable cloud solutions for computing,
+                          storage, and deployment with top-tier reliability and
+                          performance.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Item-->
+              <div class="swiper-slide w-sm-auto h-auto">
+                <div class="card border-0 bg-secondary h-100">
+                  <div class="card-body mx-auto" style="max-width: 416px">
+                    <p class="fs-lg mb-1">
+                      "Working with TechVivanta was a smooth and rewarding
+                      experience. Their team understood our vision from day one
+                      and delivered a robust, scalable platform that exceeded
+                      our expectations in both design and performance."
+                    </p>
                     <img
-                      class="d-none d-dark-mode-inline-block"
-                      src="assets/img/brands/deloitte-light.svg"
-                      width="150"
-                      alt="Deloitte"
+                      class="mt-2"
+                      src="assets/img/brands/atcLogo.png"
+                      width="100"
+                      alt="atc chain"
                     />
                   </div>
                 </div>
@@ -2037,232 +2061,6 @@
           </div>
         </div>
       </section>
-      <!-- Portfolio -->
-      <section
-        class="container pt-5 pb-sm-3 mt-2 mt-sm-4 mb-2 mb-md-3 mb-lg-4 mb-xxl-5"
-      >
-        <h2 class="h1 text-center">Recent case studies</h2>
-        <p class="pb-4 mb-md-2 mb-lg-3 text-center">
-          Below you'll find handpicked recent projects we are most proud of
-        </p>
-
-        <!-- Item -->
-        <div
-          class="row align-items-center pt-xl-2 pb-5 mb-lg-2 mb-xl-3 mb-xxl-4"
-        >
-          <div class="col-md-7 col-lg-6 mb-4 mb-md-0">
-            <a
-              class="d-block position-relative"
-              href="portfolio-single-v1.html"
-            >
-              <div
-                class="bg-info rounded-5 position-absolute top-0 start-0 w-100 h-100"
-                data-aos="zoom-in"
-                data-aos-duration="600"
-                data-aos-offset="250"
-              ></div>
-              <img
-                class="d-block position-relative z-2 mx-auto"
-                src="assets/img/portfolio/list/06.png"
-                width="636"
-                alt="Image"
-                data-aos="fade-in"
-                data-aos-duration="400"
-                data-aos-offset="250"
-              />
-            </a>
-          </div>
-          <div
-            class="col-md-5 col-xl-4 offset-lg-1"
-            data-aos="fade-up"
-            data-aos-duration="400"
-            data-aos-offset="170"
-          >
-            <div class="ps-md-3 ps-lg-0">
-              <img
-                class="d-block d-dark-mode-none mb-2 mb-lg-3"
-                src="assets/img/portfolio/brands/waveLogo.png"
-                alt="wave"
-                style="max-width: 150px"
-              />
-              <img
-                class="d-none d-dark-mode-block mb-2 mb-lg-3"
-                src="assets/img/portfolio/brands/waveLogoWhite.png"
-                alt="wave"
-                style="max-width: 150px"
-              />
-              <h2 class="h4">
-                Development of an application for One Wave platform
-              </h2>
-              <p class="fs-sm pb-3 pb-lg-4 mb-3">
-                We developed a powerful and user-friendly mobile app for
-                OneWave, enabling seamless crypto payments, wallet management,
-                and smooth transactions within a secure, performance-driven
-                digital ecosystem.
-              </p>
-              <!-- <a
-                class="btn btn-sm btn-outline-dark rounded-pill"
-                href="portfolio-single-v1.html"
-                >Read the full story</a
-              > -->
-              <!-- <div class="d-flex align-items-center pt-2 pt-lg-3 mt-3">
-                <h6 class="text-body mb-0 me-3">Awards:</h6>
-                <img
-                  class="d-block d-dark-mode-none me-4"
-                  src="assets/img/portfolio/brands/vuejs-dark.svg"
-                  width="90"
-                  alt="Vue.js"
-                />
-                <img
-                  class="d-none d-dark-mode-block me-4"
-                  src="assets/img/portfolio/brands/vuejs-light.svg"
-                  width="90"
-                  alt="Vue.js"
-                />
-                <img
-                  class="d-block d-dark-mode-none"
-                  src="assets/img/portfolio/brands/deloitte-dark.svg"
-                  width="95"
-                  alt="Deloitte"
-                />
-                <img
-                  class="d-none d-dark-mode-block"
-                  src="assets/img/portfolio/brands/deloitte-light.svg"
-                  width="95"
-                  alt="Deloitte"
-                />
-              </div> -->
-            </div>
-          </div>
-        </div>
-
-        <!-- Item -->
-        <div
-          class="row align-items-center pt-xl-2 pb-5 mb-lg-2 mb-xl-3 mb-xxl-4"
-        >
-          <div class="col-md-7 col-lg-6 mb-4 mb-md-0">
-            <a
-              class="d-block position-relative"
-              href="portfolio-single-v1.html"
-            >
-              <div
-                class="bg-primary rounded-5 position-absolute top-0 start-0 w-100 h-100"
-                data-aos="zoom-in"
-                data-aos-duration="600"
-                data-aos-offset="250"
-              ></div>
-              <img
-                class="d-block position-relative z-2 mx-auto"
-                src="assets/img/portfolio/list/07.png"
-                width="636"
-                alt="Image"
-                data-aos="fade-in"
-                data-aos-duration="400"
-                data-aos-offset="250"
-              />
-            </a>
-          </div>
-          <div
-            class="col-md-5 col-xl-4 offset-lg-1"
-            data-aos="fade-up"
-            data-aos-duration="400"
-            data-aos-offset="170"
-          >
-            <div class="ps-md-3 ps-lg-0">
-              <img
-                class="d-block d-dark-mode-none mb-2 mb-lg-3"
-                src="assets/img/portfolio/brands/atcLogo.png"
-                alt="atc chin"
-                style="max-width: 150px"
-              />
-              <img
-                class="d-none d-dark-mode-block mb-2 mb-lg-3"
-                src="assets/img/portfolio/brands/atcLogoWhite.png"
-                alt="atc chain"
-                style="max-width: 150px"
-              />
-
-              <h2 class="h4">
-                Design and development of a webside for ATC chain india
-              </h2>
-              <p class="fs-sm pb-3 pb-lg-4 mb-3">
-                We designed a modern, responsive website for ATC Chains India,
-                showcasing their extensive conveyor chain, modular belt and
-                component manufacturing capabilities with clear visuals,
-                seamless navigation and strong brand presence.
-              </p>
-              <!-- <a
-                class="btn btn-sm btn-outline-dark rounded-pill"
-                href="portfolio-single-v1.html"
-                >Read the full story</a
-              > -->
-            </div>
-          </div>
-        </div>
-
-        <!-- Item -->
-        <div
-          class="row align-items-center pt-xl-2 pb-5 mb-lg-2 mb-xl-3 mb-xxl-4"
-        >
-          <div class="col-md-7 col-lg-6 mb-4 mb-md-0">
-            <a
-              class="d-block position-relative"
-              href="portfolio-single-v1.html"
-            >
-              <div
-                class="bg-danger rounded-5 position-absolute top-0 start-0 w-100 h-100"
-                data-aos="zoom-in"
-                data-aos-duration="600"
-                data-aos-offset="250"
-              ></div>
-              <img
-                class="d-block position-relative z-2 ms-auto"
-                src="assets/img/portfolio/list/08.png"
-                width="636"
-                alt="Image"
-                data-aos="fade-in"
-                data-aos-duration="400"
-                data-aos-offset="250"
-              />
-            </a>
-          </div>
-          <div
-            class="col-md-5 col-xl-4 offset-lg-1"
-            data-aos="fade-up"
-            data-aos-duration="400"
-            data-aos-offset="170"
-          >
-            <div class="ps-md-3 ps-lg-0">
-              <img
-                class="d-block mb-2 mb-lg-3"
-                src="assets/img/portfolio/brands/boost.svg"
-                alt="Boost"
-              />
-              <h2 class="h4 mb-lg-4">Devlop Mobile app for J.P. hotels</h2>
-              <ul class="list-unstyled pb-1 pb-lg-2 mb-3">
-                <li class="d-flex pb-1 mb-2">
-                  <i class="ai-check-alt text-primary fs-4 mt-n1 me-2"></i>
-                  Secure login system
-                </li>
-                <li class="d-flex pb-1 mb-2">
-                  <i class="ai-check-alt text-primary fs-4 mt-n1 me-2"></i>
-                  Fast check-in and check-out
-                </li>
-                <li class="d-flex pb-1 mb-2">
-                  <i class="ai-check-alt text-primary fs-4 mt-n1 me-2"></i>
-                  Great user experience
-                </li>
-              </ul>
-
-              <!-- <a
-                class="btn btn-sm btn-outline-dark rounded-pill"
-                href="portfolio-single-v1.html"
-                >Read the full story</a
-              > -->
-            </div>
-          </div>
-        </div>
-      </section>
 
       <!-- Contact form + Benefits -->
       <section class="bg-secondary pt-5 pb-4">
@@ -2590,10 +2388,10 @@
                     <p class="mb-0">Surat - 395007, Gujarat</p>
                   </div>
                   <div class="d-none d-sm-block border-end"></div>
-                    <div class="ms-sm-4">
-                      <h5>contact us</h5>
-                      <p class="mb-0">+91 7990269840</p>
-                    </div>
+                  <div class="ms-sm-4">
+                    <h5>contact us</h5>
+                    <p class="mb-0">+91 7990269840</p>
+                  </div>
                 </div>
                 <a href="mailto:contact@techvivanta.com"
                   >contact@techvivanta.com</a
@@ -2622,59 +2420,6 @@
           ></div>
         </div>
       </section>
-
-      <!-- Add this JavaScript at the end of your body -->
-      <script>
-        // Initialize maps after page load
-        document.addEventListener("DOMContentLoaded", function () {
-          // Mobile Map
-          const mobileMap = L.map("mobile-map").setView([21.1418, 72.7709], 15);
-
-          // Desktop Map
-          const desktopMap = L.map("desktop-map").setView(
-            [21.1418, 72.7709],
-            15
-          );
-
-          // Add tile layer to both maps
-          L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-            attribution: "© OpenStreetMap contributors",
-          }).addTo(mobileMap);
-
-          L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-            attribution: "© OpenStreetMap contributors",
-          }).addTo(desktopMap);
-
-          // Add marker for Tech Vivanta office
-          const marker = L.marker([21.1418, 72.7709]).addTo(mobileMap);
-          const marker2 = L.marker([21.1418, 72.7709]).addTo(desktopMap);
-
-          // Add popup to markers
-          marker
-            .bindPopup(
-              `
-        <div class="p-3">
-            <h6 class="mb-2">Tech Vivanta Office</h6>
-            <p class="fs-sm mb-0">337, Exult Shoppers, Vesu</p>
-            <p class="fs-sm mb-0">Surat - 395007, Gujarat</p>
-        </div>
-    `
-            )
-            .openPopup();
-
-          marker2
-            .bindPopup(
-              `
-        <div class="p-3">
-            <h6 class="mb-2">Tech Vivanta Office</h6>
-            <p class="fs-sm mb-0">337, Exult Shoppers, Vesu</p>
-            <p class="fs-sm mb-0">Surat - 395007, Gujarat</p>
-        </div>
-    `
-            )
-            .openPopup();
-        });
-      </script>
     </main>
 
     <!-- Footer -->
@@ -2866,6 +2611,56 @@
     </a>
 
     <!-- new scripts -->
+
+    <!-- Add this JavaScript at the end of your body -->
+    <script>
+      // Initialize maps after page load
+      document.addEventListener("DOMContentLoaded", function () {
+        // Mobile Map
+        const mobileMap = L.map("mobile-map").setView([21.1418, 72.7709], 15);
+
+        // Desktop Map
+        const desktopMap = L.map("desktop-map").setView([21.1418, 72.7709], 15);
+
+        // Add tile layer to both maps
+        L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+          attribution: "© OpenStreetMap contributors",
+        }).addTo(mobileMap);
+
+        L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+          attribution: "© OpenStreetMap contributors",
+        }).addTo(desktopMap);
+
+        // Add marker for Tech Vivanta office
+        const marker = L.marker([21.1418, 72.7709]).addTo(mobileMap);
+        const marker2 = L.marker([21.1418, 72.7709]).addTo(desktopMap);
+
+        // Add popup to markers
+        marker
+          .bindPopup(
+            `
+        <div class="p-3">
+            <h6 class="mb-2">Tech Vivanta Office</h6>
+            <p class="fs-sm mb-0">337, Exult Shoppers, Vesu</p>
+            <p class="fs-sm mb-0">Surat - 395007, Gujarat</p>
+        </div>
+    `
+          )
+          .openPopup();
+
+        marker2
+          .bindPopup(
+            `
+        <div class="p-3">
+            <h6 class="mb-2">Tech Vivanta Office</h6>
+            <p class="fs-sm mb-0">337, Exult Shoppers, Vesu</p>
+            <p class="fs-sm mb-0">Surat - 395007, Gujarat</p>
+        </div>
+    `
+          )
+          .openPopup();
+      });
+    </script>
 
     <!-- Vendor scripts: JS libraries and plugins -->
     <script src="assets/vendor/jarallax/dist/jarallax.min.js"></script>
