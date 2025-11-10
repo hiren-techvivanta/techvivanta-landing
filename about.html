@@ -22,6 +22,16 @@
     <meta name="author" content="Createx Studio" />
 
     <!-- Webmanifest + Favicon / App icons -->
+    <link rel="manifest" href="/manifest.json" />
+    <link
+      rel="icon"
+      type="image/png"
+      href="assets/app-icons/icon-32x32.png"
+      sizes="32x32"
+    />
+    <link rel="apple-touch-icon" href="assets/app-icons/icon-180x180.png" />
+
+    <!-- Theme switcher (color modes) -->
     <script src="assets/js/theme-switcher.js"></script>
 
     <!-- Import Google font (Inter) -->
@@ -37,6 +47,11 @@
     <link
       rel="stylesheet"
       media="screen"
+      href="assets/vendor/swiper/swiper-bundle.min.css"
+    />
+    <link
+      rel="stylesheet"
+      media="screen"
       href="assets/vendor/aos/dist/aos.css"
     />
 
@@ -47,6 +62,7 @@
     <link rel="stylesheet" media="screen" href="assets/css/theme.min.css" />
 
     <!-- Customizer generated styles -->
+    <style id="customizer-styles"></style>
 
     <!-- Page loading styles -->
     <style>
@@ -113,6 +129,10 @@
       [data-bs-theme="dark"] .page-spinner {
         background-color: rgba(255, 255, 255, 0.25);
       }
+      .bg-secondary {
+        --ar-bg-opacity: 1;
+        background-color: #f5f5f5 !important;
+      }
       @-webkit-keyframes spinner {
         0% {
           -webkit-transform: scale(0);
@@ -135,6 +155,55 @@
           transform: none;
         }
       }
+      .parallax {
+        height: 100%;
+        width: 100%;
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      /* Your new video styling */
+      .parallax-video {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        display: block;
+      }
+      .stat-section {
+        background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        border-radius: 20px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+      }
+
+      .stat-number {
+        font-weight: 700;
+        background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+        /* -webkit-background-clip: text; */
+        -webkit-text-fill-color: transparent;
+      }
+
+      .stat-label {
+        color: #495057;
+        font-size: 0.95rem;
+        font-weight: 500;
+      }
+
+      .divider {
+        border-color: rgba(0, 0, 0, 0.1) !important;
+      }
+
+      @media (max-width: 767.98px) {
+        .stat-section .col {
+          border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .stat-section .col:last-child {
+          border-bottom: none;
+        }
+      }
     </style>
 
     <!-- Page loading scripts -->
@@ -149,10 +218,35 @@
         };
       })();
     </script>
+
+    <!-- Google Tag Manager -->
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-WKV3GT5");
+    </script>
   </head>
 
   <!-- Body -->
-  <body>
+  <body class="bg-secondary">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+      <iframe
+        src="//www.googletagmanager.com/ns.html?id=GTM-WKV3GT5"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"
+        title="Google Tag Manager"
+      ></iframe>
+    </noscript>
+
     <!-- Page loading spinner -->
     <div class="page-loading active">
       <div class="page-loading-inner">
@@ -161,8 +255,66 @@
       </div>
     </div>
 
+    <!-- Customizer modal -->
+    <div class="modal fade" id="customizer-modal" tabindex="-1" role="dialog">
+      <div
+        class="modal-dialog modal-lg modal-dialog-scrollable"
+        role="document"
+      >
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">Your custom styles</h4>
+            <button
+              class="btn-close"
+              type="button"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body py-4">
+            <p class="mb-3">
+              Grab the generated styles below. Wrap them inside
+              <code>&lt;style&gt;</code> tag and put in the
+              <code>&lt;head&gt;</code> section of your HTML document.
+            </p>
+            <p class="mb-4">
+              <span class="fw-medium">IMPORTANT:</span> In order for these
+              styles to take effect you have to placed them below:<br /><code
+                >&lt;link rel=&quot;stylesheet&quot; media=&quot;screen&quot;
+                href=&quot;assets/css/theme.min.css&quot;&gt;</code
+              >
+            </p>
+            <div class="bg-secondary overflow-hidden rounded-4">
+              <pre
+                class="text-wrap bg-transparent border-0 text-dark p-4"
+                id="custom-generated-styles"
+              ></pre>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button
+              class="btn btn-secondary w-100 w-sm-auto mb-3 mb-sm-0"
+              type="button"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+            <button
+              class="btn btn-primary w-100 w-sm-auto ms-sm-3"
+              type="button"
+              id="copy-styles-btn"
+            >
+              <i class="ai-copy me-2 ms-n1"></i>
+              Copy styles
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!-- Page wrapper -->
     <main class="page-wrapper">
+      <!-- Navbar. Remove 'fixed-top' class to make the navigation bar scrollable with the page -->
       <header class="navbar navbar-expand-lg fixed-top">
         <div class="container">
           <!-- Navbar brand (Logo) -->
@@ -412,1237 +564,1588 @@
         </div>
       </header>
 
-      <section class="position-relative overflow-hidden pt-5 pt-lg-0">
-        <div
-          class="container position-relative z-2 pt-4 pt-sm-5 mt-2 mt-sm-0 mt-md-2 mt-lg-3 mt-xl-4 mt-xxl-5"
-        >
-          <div class="row align-items-center g-3">
-            <div class="col-12 col-lg-6 order-2 order-lg-1">
-              <h1 class="fw-normal text-center text-lg-start">
-                <span class="fw-bold text-primary">Transforming Ideas</span>
-                Into Digital Excellence
+      <!-- Hero -->
+      <section class="overflow-hidden">
+        <div class="container pt-2 pt-sm-4 pb-sm-2 pb-md-4 py-xl-5 mt-5">
+          <div
+            class="row align-items-center py-5 mt-md-2 my-lg-3 my-xl-4 my-xxl-5"
+          >
+            <div
+              class="col-lg-7 order-lg-2 d-flex justify-content-center justify-content-lg-end mb-4 mb-md-5 mb-lg-0 pb-3 pb-md-0"
+            >
+              <div class="parallax me-lg-n4 me-xl-n5" style="max-width: 667px">
+                <video class="parallax-video" autoplay muted loop playsinline>
+                  <source
+                    src="./assets/img/landing/mobile-app-showcase/herovideo01.mp4"
+                    type="video/mp4"
+                  />
+                </video>
+              </div>
+            </div>
+            <div class="col-lg-5 order-lg-1">
+              <h1 class="display-3 text-center text-lg-start pb-sm-2 pb-md-3">
+                Innovative Digital Solutions for Your Business
               </h1>
-              <p class="text-center text-lg-start pb-3 pb-md-4 mb-lg-4">
-                We are a team of passionate developers and designers crafting
-                innovative solutions for forward-thinking companies worldwide.
-              </p>
-            </div>
-            <div class="col-12 col-lg-6 order-1 order-lg-2">
-              <div
-                class="parallax"
-                style="
-                  transform: translate3d(0px, 0px, 0px) rotate(0.0001deg);
-                  transform-style: preserve-3d;
-                  backface-visibility: hidden;
-                  pointer-events: none;
-                "
+              <p
+                class="fs-lg text-center text-lg-start pb-xl-2 mx-auto mx-lg-0 mb-5"
+                style="max-width: 420px"
               >
-                <div
-                  class="parallax-layer"
-                  data-depth="-0.05"
-                  style="
-                    transform: translate3d(-4.4px, 3.8px, 0px);
-                    transform-style: preserve-3d;
-                    backface-visibility: hidden;
-                    position: relative;
-                    display: block;
-                    left: 0px;
-                    top: 0px;
-                  "
-                >
-                  <img
-                    class="d-dark-mode-none"
-                    src="assets/img/about/product/hero/01-light.png"
-                    alt="Layer"
-                  />
-                  <img
-                    class="d-none d-dark-mode-block"
-                    src="assets/img/about/product/hero/01-dark.png"
-                    alt="Layer"
-                  />
-                </div>
-                <div
-                  class="parallax-layer"
-                  data-depth="0.1"
-                  style="
-                    transform: translate3d(8.8px, -7.6px, 0px);
-                    transform-style: preserve-3d;
-                    backface-visibility: hidden;
-                    position: absolute;
-                    display: block;
-                    left: 0px;
-                    top: 0px;
-                  "
-                >
-                  <img
-                    class="d-dark-mode-none"
-                    src="assets/img/about/product/hero/02-light.png"
-                    alt="Layer"
-                  />
-                  <img
-                    class="d-none d-dark-mode-block"
-                    src="assets/img/about/product/hero/02-dark.png"
-                    alt="Layer"
-                  />
-                </div>
-                <div
-                  class="parallax-layer z-2"
-                  data-depth="0.2"
-                  style="
-                    transform: translate3d(17.5px, -15.3px, 0px);
-                    transform-style: preserve-3d;
-                    backface-visibility: hidden;
-                    position: absolute;
-                    display: block;
-                    left: 0px;
-                    top: 0px;
-                  "
-                >
-                  <img
-                    class="d-dark-mode-none"
-                    src="assets/img/about/product/hero/03-light.png"
-                    alt="Layer"
-                  />
-                  <img
-                    class="d-none d-dark-mode-block"
-                    src="assets/img/about/product/hero/03-dark.png"
-                    alt="Layer"
-                  />
-                </div>
-                <div
-                  class="parallax-layer"
-                  data-depth="-0.2"
-                  style="
-                    transform: translate3d(-17.5px, 15.3px, 0px);
-                    transform-style: preserve-3d;
-                    backface-visibility: hidden;
-                    position: absolute;
-                    display: block;
-                    left: 0px;
-                    top: 0px;
-                  "
-                >
-                  <img
-                    class="d-dark-mode-none"
-                    src="assets/img/about/product/hero/04-light.png"
-                    alt="Layer"
-                  />
-                  <img
-                    class="d-none d-dark-mode-block"
-                    src="assets/img/about/product/hero/04-dark.png"
-                    alt="Layer"
-                  />
-                </div>
-                <div
-                  class="parallax-layer"
-                  data-depth="-0.25"
-                  style="
-                    transform: translate3d(-21.9px, 19.1px, 0px);
-                    transform-style: preserve-3d;
-                    backface-visibility: hidden;
-                    position: absolute;
-                    display: block;
-                    left: 0px;
-                    top: 0px;
-                  "
-                >
-                  <img
-                    class="d-dark-mode-none"
-                    src="assets/img/about/product/hero/05-light.png"
-                    alt="Layer"
-                  />
-                  <img
-                    class="d-none d-dark-mode-block"
-                    src="assets/img/about/product/hero/05-dark.png"
-                    alt="Layer"
-                  />
-                </div>
+                Tech Vivanta specializes in creating cutting-edge mobile
+                applications and web solutions that drive growth and transform
+                user experiences.
+              </p>
+              <div class="mx-auto mx-lg-0" style="max-width: 420px">
+                <button class="btn btn-primary">
+                  <a
+                    href="./contact.html"
+                    class="text-white text-decoration-none d-block w-100 h-100"
+                  >
+                    Book a call
+                  </a>
+                </button>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section class="container pt-5 mt-xl-3 mt-xxl-4">
-        <h2 class="h4 text-center pb-3 pb-md-4 mb-lg-4">
-          Join 1000+ companies who's reached Techvivanta
-        </h2>
+      <!-- Stats -->
+      <section class="container pb-2 pb-sm-3 pb-md-4 pb-lg-5 mb-xl-3 mb-xxl-5">
+        <div class="text-center mb-4 mb-md-5">
+          <h2 class="h1 display-4 mb-3">Our Achievements</h2>
+          <p class="fs-lg text-muted mx-auto" style="max-width: 600px">
+            With years of expertise and a proven track record, we deliver
+            exceptional digital solutions that drive business growth and
+            success.
+          </p>
+        </div>
+        <div class="bg-light rounded-5 py-4 py-md-5 px-lg-5">
+          <div class="row row-cols-2 row-cols-md-3 row-cols-lg-6 g-0">
+            <div
+              class="col d-md-flex justify-content-center text-center text-md-start position-relative"
+            >
+              <div
+                class="position-absolute top-50 end-0 translate-middle-y border-end"
+                style="height: 60px"
+              ></div>
+              <div class="p-3 px-sm-0 py-sm-4">
+                <div
+                  class="h2 display-5 text-primary mb-0 counter"
+                  data-target="50"
+                >
+                  0
+                </div>
+                <span>Custom Solutions</span>
+              </div>
+            </div>
+            <div
+              class="col d-md-flex justify-content-center text-center text-md-start position-relative"
+            >
+              <div
+                class="position-absolute top-50 end-0 translate-middle-y border-end d-none d-md-block"
+                style="height: 60px"
+              ></div>
+              <div class="p-3 px-sm-0 py-sm-4">
+                <div
+                  class="h2 display-5 text-primary mb-0 counter"
+                  data-target="8"
+                >
+                  0
+                </div>
+                <span>Years of Experience</span>
+              </div>
+            </div>
+            <div
+              class="col d-md-flex justify-content-center text-center text-md-start position-relative"
+            >
+              <div
+                class="position-absolute top-50 end-0 translate-middle-y border-end"
+                style="height: 60px"
+              ></div>
+              <div class="p-3 px-sm-0 py-sm-4">
+                <div
+                  class="h2 display-5 text-primary mb-0 counter"
+                  data-target="25"
+                >
+                  0
+                </div>
+                <span>Happy Clients</span>
+              </div>
+            </div>
+            <div
+              class="col d-md-flex justify-content-center text-center text-md-start position-relative"
+            >
+              <div
+                class="position-absolute top-50 end-0 translate-middle-y border-end d-none d-md-block"
+                style="height: 60px"
+              ></div>
+              <div class="p-3 px-sm-0 py-sm-4">
+                <div
+                  class="h2 display-5 text-primary mb-0 counter"
+                  data-target="20"
+                >
+                  0
+                </div>
+                <span>Experts</span>
+              </div>
+            </div>
+            <div
+              class="col d-md-flex justify-content-center text-center text-md-start position-relative"
+            >
+              <div
+                class="position-absolute top-50 end-0 translate-middle-y border-end"
+                style="height: 60px"
+              ></div>
+              <div class="p-3 px-sm-0 py-sm-4">
+                <div
+                  class="h2 display-5 text-primary mb-0 counter"
+                  data-target="30"
+                >
+                  0
+                </div>
+                <span>Cost Effective</span>
+              </div>
+            </div>
+            <div
+              class="col d-md-flex justify-content-center text-center text-md-start position-relative"
+            >
+              <div class="p-3 px-sm-0 py-sm-4">
+                <div
+                  class="h2 display-5 text-primary mb-0 counter"
+                  data-target="99.8"
+                >
+                  0
+                </div>
+                <span>Client Success Ratio</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Services grid -->
+
+      <section class="container py-5">
+        <h2 class="h1 text-center">Our Approach</h2>
+        <p class="text-center pb-4 mb-2 mb-lg-3">
+          How we build exceptional digital solutions that drive results
+        </p>
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-4">
+          <!-- Step 1: Understand the problem -->
+          <div class="col">
+            <a
+              class="card card-hover-primary border-0 h-100 text-decoration-none"
+              href="#"
+            >
+              <div class="card-body pb-0">
+                <div class="text-warning mb-4" style="font-size: 2.5rem">
+                  <i class="bi bi-search"></i>
+                </div>
+                <h3 class="h4 card-title mt-0">Understand the Problem</h3>
+                <p class="card-text">
+                  We begin by deeply analyzing your business challenges, goals,
+                  and user needs to ensure we build solutions that truly address
+                  your requirements.
+                </p>
+              </div>
+              <div class="card-footer border-0 py-3 my-3 mb-sm-4">
+                <div
+                  class="btn btn-lg btn-icon btn-outline-primary rounded-circle pe-none"
+                >
+                  <i class="ai-arrow-right"></i>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <!-- Step 2: Plan Smart Architecture -->
+          <div class="col">
+            <a
+              class="card card-hover-primary border-0 h-100 text-decoration-none"
+              href="#"
+            >
+              <div class="card-body pb-0">
+                <div class="text-warning mb-4" style="font-size: 2.5rem">
+                  <i class="bi bi-diagram-3"></i>
+                </div>
+                <h3 class="h4 card-title mt-0">Plan Smart Architecture</h3>
+                <p class="card-text">
+                  Our technical architects design robust, scalable systems that
+                  grow with your business while maintaining performance and
+                  reliability.
+                </p>
+              </div>
+              <div class="card-footer border-0 py-3 my-3 mb-sm-4">
+                <div
+                  class="btn btn-lg btn-icon btn-outline-primary rounded-circle pe-none"
+                >
+                  <i class="ai-arrow-right"></i>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <!-- Step 3: Design for Clarity -->
+          <div class="col">
+            <a
+              class="card card-hover-primary border-0 h-100 text-decoration-none"
+              href="#"
+            >
+              <div class="card-body pb-0">
+                <div class="text-warning mb-4" style="font-size: 2.5rem">
+                  <i class="bi bi-palette"></i>
+                </div>
+                <h3 class="h4 card-title mt-0">Design for Clarity</h3>
+                <p class="card-text">
+                  We create intuitive, user-centered designs that enhance user
+                  experience while maintaining brand consistency and visual
+                  appeal.
+                </p>
+              </div>
+              <div class="card-footer border-0 py-3 my-3 mb-sm-4">
+                <div
+                  class="btn btn-lg btn-icon btn-outline-primary rounded-circle pe-none"
+                >
+                  <i class="ai-arrow-right"></i>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <!-- Step 4: Build Clean, Scalable Code -->
+          <div class="col">
+            <a
+              class="card card-hover-primary border-0 h-100 text-decoration-none"
+              href="#"
+            >
+              <div class="card-body pb-0">
+                <div class="text-warning mb-4" style="font-size: 2.5rem">
+                  <i class="bi bi-code-slash"></i>
+                </div>
+                <h3 class="h4 card-title mt-0">Build Clean, Scalable Code</h3>
+                <p class="card-text">
+                  Our developers write maintainable, efficient code following
+                  best practices to ensure your solution performs optimally and
+                  can scale seamlessly.
+                </p>
+              </div>
+              <div class="card-footer border-0 py-3 my-3 mb-sm-4">
+                <div
+                  class="btn btn-lg btn-icon btn-outline-primary rounded-circle pe-none"
+                >
+                  <i class="ai-arrow-right"></i>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <!-- Step 5: Test Everything -->
+          <div class="col">
+            <a
+              class="card card-hover-primary border-0 h-100 text-decoration-none"
+              href="#"
+            >
+              <div class="card-body pb-0">
+                <div class="text-warning mb-4" style="font-size: 2.5rem">
+                  <i class="bi bi-check-circle"></i>
+                </div>
+                <h3 class="h4 card-title mt-0">Test Everything</h3>
+                <p class="card-text">
+                  We conduct comprehensive testing across all devices and
+                  scenarios to ensure flawless performance, security, and user
+                  satisfaction.
+                </p>
+              </div>
+              <div class="card-footer border-0 py-3 my-3 mb-sm-4">
+                <div
+                  class="btn btn-lg btn-icon btn-outline-primary rounded-circle pe-none"
+                >
+                  <i class="ai-arrow-right"></i>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <!-- Step 6: Support Long Term -->
+          <div class="col">
+            <a
+              class="card card-hover-primary border-0 h-100 text-decoration-none"
+              href="#"
+            >
+              <div class="card-body pb-0">
+                <div class="text-warning mb-4" style="font-size: 2.5rem">
+                  <i class="bi bi-headset"></i>
+                </div>
+                <h3 class="h4 card-title mt-0">Support Long Term</h3>
+                <p class="card-text">
+                  Our relationship continues after launch with ongoing
+                  maintenance, updates, and support to keep your solution
+                  running smoothly for years to come.
+                </p>
+              </div>
+              <div class="card-footer border-0 py-3 my-3 mb-sm-4">
+                <div
+                  class="btn btn-lg btn-icon btn-outline-primary rounded-circle pe-none"
+                >
+                  <i class="ai-arrow-right"></i>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Industries (Carousel on screens < 992px) -->
+      <section class="container pb-5 pt-3 pt-sm-4 pt-lg-5 my-xl-3 my-xxl-5">
+        <h2 class="h1 text-center">Industries We Work With</h2>
+        <p class="text-center pb-4 mb-2 mb-lg-3">
+          We build innovative digital solutions for forward-thinking businesses
+          across key sectors
+        </p>
+
+        <!-- Swiper slider -->
         <div
-          class="row row-cols-3 row-cols-sm-4 row-cols-lg-5 row-cols-xl-6 justify-content-center align-items-center g-4"
+          class="swiper"
+          data-swiper-options='
+  {
+    "spaceBetween": 24,
+    "loop": true,
+    "speed": 5000,
+    "autoplay": {
+      "delay": 0,
+      "disableOnInteraction": false,
+      "pauseOnMouseEnter": false
+    },
+
+    "slidesPerView": "auto",
+    "allowTouchMove": true,
+
+    "pagination": {
+      "el": ".swiper-pagination",
+      "clickable": true
+    },
+
+    "breakpoints": {
+      "576": { "slidesPerView": 2 },
+      "992": { "slidesPerView": 3 }
+    }
+  }
+'
         >
-          <div class="col text-center">
-            <a class="swap-image my-1 my-sm-2" href="#">
-              <img
-                class="swap-to"
-                src="assets/img/landing/saas-1/brands/foster-color.svg"
-                width="145"
-                alt="Foster"
-              />
-              <div class="swap-from">
-                <img
-                  class="d-dark-mode-none"
-                  src="assets/img/landing/saas-1/brands/foster-gray.svg"
-                  width="145"
-                  alt="Foster"
-                />
-                <img
-                  class="d-none d-dark-mode-block"
-                  src="assets/img/landing/saas-1/brands/foster-light.svg"
-                  width="145"
-                  alt="Foster"
-                />
+          <div class="swiper-wrapper">
+            <!-- SaaS -->
+            <div class="swiper-slide h-auto">
+              <div class="card border-0 h-100">
+                <div class="card-img-top overflow-hidden">
+                  <img
+                    class="rounded-5 rounded-end-0"
+                    src="./assets/img/landing/business-consulting/industries/Saas.webp"
+                    alt="SaaS Solutions"
+                  />
+                </div>
+                <div class="card-body">
+                  <h3 class="h4 card-title">SaaS</h3>
+                  <ul class="ps-4 mb-n2">
+                    <li class="mb-2">Cloud-based software platforms</li>
+                    <li class="mb-2">Subscription management systems</li>
+                    <li class="mb-2">Multi-tenant architecture</li>
+                    <li class="mb-2">API integration services</li>
+                  </ul>
+                </div>
               </div>
-            </a>
-          </div>
-          <div class="col text-center">
-            <a class="swap-image my-1 my-sm-2" href="#">
-              <img
-                class="swap-to"
-                src="assets/img/landing/saas-1/brands/klinos-color.svg"
-                width="140"
-                alt="Klinos"
-              />
-              <div class="swap-from">
-                <img
-                  class="d-dark-mode-none"
-                  src="assets/img/landing/saas-1/brands/klinos-gray.svg"
-                  width="140"
-                  alt="Klinos"
-                />
-                <img
-                  class="d-none d-dark-mode-block"
-                  src="assets/img/landing/saas-1/brands/klinos-light.svg"
-                  width="140"
-                  alt="Klinos"
-                />
+            </div>
+
+            <!-- E-commerce -->
+            <div class="swiper-slide h-auto">
+              <div class="card border-0 h-100">
+                <div class="card-img-top overflow-hidden">
+                  <img
+                    class="rounded-5 rounded-end-0"
+                    src="./assets/img/landing/business-consulting/industries/ecom.webp"
+                    alt="E-commerce Solutions"
+                  />
+                </div>
+                <div class="card-body">
+                  <h3 class="h4 card-title">E-commerce</h3>
+                  <ul class="ps-4 mb-n2">
+                    <li class="mb-2">Custom online store development</li>
+                    <li class="mb-2">Mobile shopping applications</li>
+                    <li class="mb-2">Payment gateway integration</li>
+                    <li class="mb-2">Inventory management systems</li>
+                  </ul>
+                </div>
               </div>
-            </a>
-          </div>
-          <div class="col text-center">
-            <a class="swap-image my-1 my-sm-2" href="#">
-              <img
-                class="swap-to"
-                src="assets/img/landing/saas-1/brands/champion-color.svg"
-                width="160"
-                alt="Champion"
-              />
-              <div class="swap-from">
-                <img
-                  class="d-dark-mode-none"
-                  src="assets/img/landing/saas-1/brands/champion-gray.svg"
-                  width="160"
-                  alt="Champion"
-                />
-                <img
-                  class="d-none d-dark-mode-block"
-                  src="assets/img/landing/saas-1/brands/champion-light.svg"
-                  width="160"
-                  alt="Champion"
-                />
+            </div>
+
+            <!-- Logistics -->
+            <div class="swiper-slide h-auto">
+              <div class="card border-0 h-100">
+                <div class="card-img-top overflow-hidden">
+                  <img
+                    class="rounded-5 rounded-end-0"
+                    src="./assets/img/landing/business-consulting/industries/logistics.webp"
+                    alt="Logistics Solutions"
+                  />
+                </div>
+                <div class="card-body">
+                  <h3 class="h4 card-title">Logistics</h3>
+                  <ul class="ps-4 mb-n2">
+                    <li class="mb-2">Fleet management software</li>
+                    <li class="mb-2">Real-time tracking systems</li>
+                    <li class="mb-2">Route optimization algorithms</li>
+                    <li class="mb-2">Supply chain management</li>
+                  </ul>
+                </div>
               </div>
-            </a>
-          </div>
-          <div class="col text-center">
-            <a class="swap-image my-1 my-sm-2" href="#">
-              <img
-                class="swap-to"
-                src="assets/img/landing/saas-1/brands/airbnb-color.svg"
-                width="130"
-                alt="Airbnb"
-              />
-              <div class="swap-from">
-                <img
-                  class="d-dark-mode-none"
-                  src="assets/img/landing/saas-1/brands/airbnb-gray.svg"
-                  width="130"
-                  alt="Airbnb"
-                />
-                <img
-                  class="d-none d-dark-mode-block"
-                  src="assets/img/landing/saas-1/brands/airbnb-light.svg"
-                  width="130"
-                  alt="Airbnb"
-                />
+            </div>
+
+            <!-- Travel & Booking -->
+            <div class="swiper-slide h-auto">
+              <div class="card border-0 h-100">
+                <div class="card-img-top overflow-hidden">
+                  <img
+                    class="rounded-5 rounded-end-0"
+                    src="./assets/img/landing/business-consulting/industries/travel and booking.webp"
+                    alt="Travel & Booking Solutions"
+                  />
+                </div>
+                <div class="card-body">
+                  <h3 class="h4 card-title">Travel & Booking</h3>
+                  <ul class="ps-4 mb-n2">
+                    <li class="mb-2">Hotel reservation platforms</li>
+                    <li class="mb-2">Flight booking engines</li>
+                    <li class="mb-2">Tour package management</li>
+                    <li class="mb-2">Travel itinerary apps</li>
+                  </ul>
+                </div>
               </div>
-            </a>
-          </div>
-          <div class="col text-center">
-            <a class="swap-image my-1 my-sm-2" href="#">
-              <img
-                class="swap-to"
-                src="assets/img/landing/saas-1/brands/starcraft-color.svg"
-                width="160"
-                alt="Starcraft"
-              />
-              <div class="swap-from">
-                <img
-                  class="d-dark-mode-none"
-                  src="assets/img/landing/saas-1/brands/starcraft-gray.svg"
-                  width="160"
-                  alt="Starcraft"
-                />
-                <img
-                  class="d-none d-dark-mode-block"
-                  src="assets/img/landing/saas-1/brands/starcraft-light.svg"
-                  width="160"
-                  alt="Starcraft"
-                />
+            </div>
+
+            <!-- Healthcare -->
+            <div class="swiper-slide h-auto">
+              <div class="card border-0 h-100">
+                <div class="card-img-top overflow-hidden">
+                  <img
+                    class="rounded-5 rounded-end-0"
+                    src="./assets/img/landing/business-consulting/industries/healthcare.webp"
+                    alt="Healthcare Solutions"
+                  />
+                </div>
+                <div class="card-body">
+                  <h3 class="h4 card-title">Healthcare</h3>
+                  <ul class="ps-4 mb-n2">
+                    <li class="mb-2">Telemedicine applications</li>
+                    <li class="mb-2">Patient management systems</li>
+                    <li class="mb-2">Medical record software</li>
+                    <li class="mb-2">Healthcare analytics dashboards</li>
+                  </ul>
+                </div>
               </div>
-            </a>
-          </div>
-          <div class="col text-center">
-            <a class="swap-image my-1 my-sm-2" href="#">
-              <img
-                class="swap-to"
-                src="assets/img/landing/saas-1/brands/alpine-color.svg"
-                width="150"
-                alt="Alpine"
-              />
-              <div class="swap-from">
-                <img
-                  class="d-dark-mode-none"
-                  src="assets/img/landing/saas-1/brands/alpine-gray.svg"
-                  width="150"
-                  alt="Alpine"
-                />
-                <img
-                  class="d-none d-dark-mode-block"
-                  src="assets/img/landing/saas-1/brands/alpine-light.svg"
-                  width="150"
-                  alt="Alpine"
-                />
+            </div>
+
+            <!-- On-Demand Apps -->
+            <div class="swiper-slide h-auto">
+              <div class="card border-0 h-100">
+                <div class="card-img-top overflow-hidden">
+                  <img
+                    class="rounded-5 rounded-end-0"
+                    src="./assets/img/landing/business-consulting/industries/mobileapps.jpg"
+                    alt="On-Demand Apps"
+                  />
+                </div>
+                <div class="card-body">
+                  <h3 class="h4 card-title">On-Demand Apps</h3>
+                  <ul class="ps-4 mb-n2">
+                    <li class="mb-2">Service booking platforms</li>
+                    <li class="mb-2">Real-time matching algorithms</li>
+                    <li class="mb-2">Payment processing systems</li>
+                    <li class="mb-2">Provider management dashboards</li>
+                  </ul>
+                </div>
               </div>
-            </a>
+            </div>
+
+            <!-- FinTech -->
+            <div class="swiper-slide h-auto">
+              <div class="card border-0 h-100">
+                <div class="card-img-top overflow-hidden">
+                  <img
+                    class="rounded-5 rounded-end-0"
+                    src="./assets/img/landing/business-consulting/industries/fintech.webp"
+                    alt="FinTech Solutions"
+                  />
+                </div>
+                <div class="card-body">
+                  <h3 class="h4 card-title">FinTech</h3>
+                  <ul class="ps-4 mb-n2">
+                    <li class="mb-2">Digital banking applications</li>
+                    <li class="mb-2">Investment platforms</li>
+                    <li class="mb-2">Payment processing solutions</li>
+                    <li class="mb-2">Financial analytics tools</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- Hotel Management -->
+            <div class="swiper-slide h-auto">
+              <div class="card border-0 h-100">
+                <div class="card-img-top overflow-hidden">
+                  <img
+                    class="rounded-5 rounded-end-0"
+                    src="./assets/img/landing/business-consulting/industries/hotel management.png"
+                    alt="Hotel Management Solutions"
+                  />
+                </div>
+                <div class="card-body">
+                  <h3 class="h4 card-title">Hotel Management</h3>
+                  <ul class="ps-4 mb-n2">
+                    <li class="mb-2">Property management systems</li>
+                    <li class="mb-2">Online booking engines</li>
+                    <li class="mb-2">Guest experience apps</li>
+                    <li class="mb-2">Revenue management tools</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
           </div>
+
+          <!-- Pagination (bullets) -->
+          <div
+            class="swiper-pagination position-relative bottom-0 mt-2 pt-4 d-lg-none"
+          ></div>
+        </div>
+
+        <!-- Read more button -->
+        <div class="text-center pt-4 mt-2 mt-lg-0 pt-lg-5">
+          <a class="btn btn-primary" href="#">View All Industries</a>
         </div>
       </section>
 
-      <!-- How we work (Steps) -->
-      <section class="overflow-hidden py-5 my-md-2 my-xl-4 my-xxl-5">
-        <div class="container py-2 py-sm-4 py-lg-5">
-          <h2 class="h1 text-center pb-3 mb-3 mb-lg-4 mt-xxl-2">
-            How does it work?
-          </h2>
-
-          <!-- Step -->
-          <div
-            class="row align-items-center position-relative pb-5 pb-lg-0 mb-1 mb-sm-2 mb-md-4 mb-lg-0"
-          >
-            <div
-              class="col-md-6 col-xl-5 offset-lg-1 order-md-2 pb-2 pb-md-0 mb-4 mb-md-0"
-              data-aos="fade-left"
-              data-aos-duration="500"
-              data-aos-offset="250"
-              data-disable-parallax-down="md"
-            >
-              <img
-                class="d-dark-mode-none"
-                src="assets/img/landing/saas-2/steps/01-light.png"
-                width="525"
-                alt="Image"
-              />
-              <img
-                class="d-none d-dark-mode-block"
-                src="assets/img/landing/saas-2/steps/01-dark.png"
-                width="525"
-                alt="Image"
-              />
-            </div>
-            <div
-              class="col-md-6 col-lg-5 col-xl-4 offset-xl-1 order-md-1"
-              data-aos="fade-right"
-              data-aos-duration="500"
-              data-aos-offset="250"
-              data-disable-parallax-down="md"
-            >
-              <div class="pe-md-4 pe-lg-0">
-                <span
-                  class="badge fs-sm bg-primary bg-opacity-10 text-primary mb-3 mb-lg-4"
-                  >Step 01</span
-                >
-                <h3 class="h2 mb-3 mb-lg-4">
-                  Connect your site to the platform using a code
-                </h3>
-                <p class="pb-1 pb-lg-0 mb-4 mb-lg-5">
-                  Nec id eget malesuada urna at sed est adipiscing auctor at
-                  massa id duis fames ut condimentum velit est, donec mauris
-                  tortor massa et viverra.
-                </p>
-                <a class="btn btn-outline-primary rounded-pill" href="#"
-                  >Get connected</a
-                >
-              </div>
-            </div>
-          </div>
-
-          <!-- Arrow -->
-          <div
-            class="d-none d-lg-flex justify-content-center"
-            data-aos="fade-in"
-            data-aos-duration="500"
-            data-aos-offset="250"
-          >
-            <svg
-              class="d-block text-primary"
-              width="339"
-              height="365"
-              viewBox="0 0 339 365"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              style="
-                margin-left: -150px;
-                margin-top: -140px;
-                margin-bottom: -108px;
-              "
-            >
-              <path
-                d="M324 291.371C120.111 291.37 240.756 58.7225 1.00032 73.2606"
-                stroke="url(#arrow1)"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-dasharray="6 6"
-              ></path>
-              <path
-                d="M337.375 290.62C338.074 290.998 338.074 292.001 337.375 292.379L328.476 297.196C327.81 297.557 327 297.074 327 296.317L327 286.683C327 285.925 327.81 285.443 328.476 285.803L337.375 290.62Z"
-                fill="currentColor"
-              ></path>
-              <defs>
-                <linearGradient
-                  id="arrow1"
-                  x1="324"
-                  y1="291.5"
-                  x2="-2.99974"
-                  y2="72.4997"
-                  gradientUnits="userSpaceOnUse"
-                >
-                  <stop offset="0" stop-color="currentColor"></stop>
-                  <stop
-                    offset="1"
-                    stop-color="currentColor"
-                    stop-opacity="0"
-                  ></stop>
-                </linearGradient>
-              </defs>
-            </svg>
-          </div>
-
-          <!-- Step -->
-          <div
-            class="row align-items-center position-relative pb-5 pb-lg-0 mb-1 mb-sm-2 mb-md-4 mb-lg-0"
-          >
-            <div
-              class="col-md-6 col-xl-5 offset-xl-1 pb-2 pb-md-0 mb-4 mb-md-0"
-              data-aos="fade-right"
-              data-aos-duration="500"
-              data-aos-offset="250"
-              data-disable-parallax-down="md"
-            >
-              <img
-                class="d-dark-mode-none"
-                src="assets/img/landing/saas-2/steps/02-light.png"
-                width="473"
-                alt="Image"
-              />
-              <img
-                class="d-none d-dark-mode-block"
-                src="assets/img/landing/saas-2/steps/02-dark.png"
-                width="473"
-                alt="Image"
-              />
-            </div>
-            <div
-              class="col-md-6 col-lg-5 col-xl-4 offset-lg-1"
-              data-aos="fade-left"
-              data-aos-duration="500"
-              data-aos-offset="250"
-              data-disable-parallax-down="md"
-            >
-              <div class="ps-md-4 ps-lg-0">
-                <span
-                  class="badge fs-sm bg-primary bg-opacity-10 text-primary mb-3 mb-lg-4"
-                  >Step 02</span
-                >
-                <h3 class="h2 mb-3 mb-lg-4">
-                  Set up important dashboard metrics
-                </h3>
-                <ul class="list-unstyled mb-0">
-                  <li class="d-flex pt-1 mt-2">
-                    <i class="ai-check-alt text-primary fs-4 mt-n1 me-2"></i>
-                    Forecasting and recommendations
-                  </li>
-                  <li class="d-flex pt-1 mt-2">
-                    <i class="ai-check-alt text-primary fs-4 mt-n1 me-2"></i>
-                    Identification of patterns, analysis
-                  </li>
-                  <li class="d-flex pt-1 mt-2">
-                    <i class="ai-check-alt text-primary fs-4 mt-n1 me-2"></i>
-                    Segmentation by various methods
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-
-          <!-- Arrow -->
-          <div
-            class="d-none d-lg-flex justify-content-center"
-            data-aos="fade-in"
-            data-aos-duration="500"
-            data-aos-offset="250"
-          >
-            <svg
-              class="d-block text-primary"
-              width="263"
-              height="275"
-              viewBox="0 0 263 275"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              style="
-                margin-top: -60px;
-                margin-left: -120px;
-                margin-bottom: -80px;
-              "
-            >
-              <path
-                d="M8.13678 249.647C7.47108 250.081 6.59001 249.602 6.59106 248.808L6.60444 238.689C6.60544 237.931 7.4158 237.45 8.08162 237.811L16.5478 242.408C17.2136 242.77 17.2512 243.712 16.6163 244.125L8.13678 249.647Z"
-                fill="currentColor"
-              ></path>
-              <path
-                d="M261.961 37.8891C216.908 65.6243 128.226 135.486 133.916 193.05C141.029 265.005 265.134 173.468 173.666 148.634C89.2542 125.715 30.9125 210.547 13.9796 236.702"
-                stroke="url(#arrow2)"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-dasharray="6 6"
-              ></path>
-              <defs>
-                <linearGradient
-                  id="arrow2"
-                  x1="13.9797"
-                  y1="234.5"
-                  x2="276.704"
-                  y2="60.1939"
-                  gradientUnits="userSpaceOnUse"
-                >
-                  <stop offset="0" stop-color="currentColor"></stop>
-                  <stop
-                    offset="1"
-                    stop-color="currentColor"
-                    stop-opacity="0"
-                  ></stop>
-                </linearGradient>
-              </defs>
-            </svg>
-          </div>
-
-          <!-- Step -->
-          <div class="row align-items-center position-relative">
-            <div
-              class="col-md-6 col-xl-5 offset-lg-1 order-md-2 d-md-flex justify-content-end pb-2 pb-md-0 mb-4 mb-md-0"
-              data-aos="fade-left"
-              data-aos-duration="500"
-              data-aos-offset="250"
-              data-disable-parallax-down="md"
-            >
-              <img
-                class="d-dark-mode-none"
-                src="assets/img/landing/saas-2/steps/03-light.png"
-                width="473"
-                alt="Image"
-              />
-              <img
-                class="d-none d-dark-mode-block"
-                src="assets/img/landing/saas-2/steps/03-dark.png"
-                width="473"
-                alt="Image"
-              />
-            </div>
-            <div
-              class="col-md-6 col-lg-5 col-xl-4 offset-xl-1 order-md-1"
-              data-aos="fade-right"
-              data-aos-duration="500"
-              data-aos-offset="250"
-              data-disable-parallax-down="md"
-            >
-              <div class="pe-md-4 pe-lg-0">
-                <span
-                  class="badge fs-sm bg-primary bg-opacity-10 text-primary mb-3 mb-lg-4"
-                  >Step 03</span
-                >
-                <h3 class="h2 mb-3 mb-lg-4">
-                  Download the data in a convenient format
-                </h3>
-                <p class="pb-1 pb-lg-0 mb-4 mb-lg-5">
-                  Bibendum velit mi, ac sed ac malesuada ultrices non lectus mi
-                  pellentesque vel at tempus cras sed a eleifend augue amet
-                  mauris, leo ac amet erat.
-                </p>
-                <a class="btn btn-outline-primary rounded-pill" href="#"
-                  >Get connected</a
-                >
-              </div>
-            </div>
-          </div>
+      <!-- Clients (Logos autoplay slider) -->
+      <section class="pb-5 pt-2 pt-sm-3 pt-md-4 pt-lg-5 my-xl-3 my-xxl-5">
+        <div class="container pb-4 mb-2 mb-lg-3">
+          <h2 class="h1 text-center">Our clients</h2>
+          <p class="text-center mb-0">
+            More than 2,000 clients using Around to analyze data
+          </p>
         </div>
-      </section>
-
-      <!-- Feature 1 (Image + Text) -->
-      <section class="bg-dark position-relative overflow-hidden py-5">
         <div
-          class="d-none d-dark-mode-block position-absolute top-0 start-0 w-100 h-100"
-          style="background-color: rgba(255, 255, 255, 0.03)"
-        ></div>
-        <div
-          class="container position-relative z-2 pt-3 pb-sm-3 pt-sm-4 py-md-5 my-lg-2 my-xl-3 my-xxl-4"
-          data-bs-theme="dark"
+          class="swiper pb-4"
+          data-swiper-options='{
+          "spaceBetween": 24,
+          "loop": true,
+          "grabCursor": false,
+          "centeredSlides": true,
+          "autoplay": {
+            "delay": 0,
+            "disableOnInteraction": false
+          },
+          "freeMode": true,
+          "speed": 10000,
+          "freeModeMomentum": false,
+          "breakpoints": {
+            "0": { "slidesPerView": 2 },
+            "400": { "slidesPerView": 3 },
+            "600": { "slidesPerView": 4 },
+            "800": { "slidesPerView": 5 },
+            "1200": { "slidesPerView": 6 },
+            "1400": { "slidesPerView": 7 },
+            "1600": { "slidesPerView": 8 }
+          }
+        }'
         >
           <div
-            class="row align-items-center py-xxl-2"
-            data-aos="fade-up"
-            data-aos-duration="600"
-            data-aos-offset="300"
-            data-disable-parallax-down="md"
+            class="swiper-wrapper"
+            style="transition-timing-function: linear !important"
           >
-            <div class="col-md-6 pb-3 pb-md-0 mb-3 mb-md-0">
-              <img
-                src="assets/img/about/product/features/01.png"
-                width="620"
-                alt="Image"
-              />
+            <div class="swiper-slide">
+              <div class="bg-gray rounded-4">
+                <img
+                  class="d-block d-dark-mode-none mx-auto"
+                  src="assets/img/landing/business-consulting/clients/01-dark.svg"
+                  width="196"
+                  alt="Logo"
+                />
+                <img
+                  class="d-none d-dark-mode-block mx-auto"
+                  src="assets/img/landing/business-consulting/clients/01-light.svg"
+                  width="196"
+                  alt="Logo"
+                />
+              </div>
             </div>
+            <div class="swiper-slide">
+              <div class="bg-gray rounded-4">
+                <img
+                  class="d-block d-dark-mode-none mx-auto"
+                  src="assets/img/landing/business-consulting/clients/02-dark.svg"
+                  width="196"
+                  alt="Logo"
+                />
+                <img
+                  class="d-none d-dark-mode-block mx-auto"
+                  src="assets/img/landing/business-consulting/clients/02-light.svg"
+                  width="196"
+                  alt="Logo"
+                />
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="bg-gray rounded-4">
+                <img
+                  class="d-block d-dark-mode-none mx-auto"
+                  src="assets/img/landing/business-consulting/clients/03-dark.svg"
+                  width="196"
+                  alt="Logo"
+                />
+                <img
+                  class="d-none d-dark-mode-block mx-auto"
+                  src="assets/img/landing/business-consulting/clients/03-light.svg"
+                  width="196"
+                  alt="Logo"
+                />
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="bg-gray rounded-4">
+                <img
+                  class="d-block d-dark-mode-none mx-auto"
+                  src="assets/img/landing/business-consulting/clients/04-dark.svg"
+                  width="196"
+                  alt="Logo"
+                />
+                <img
+                  class="d-none d-dark-mode-block mx-auto"
+                  src="assets/img/landing/business-consulting/clients/04-light.svg"
+                  width="196"
+                  alt="Logo"
+                />
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="bg-gray rounded-4">
+                <img
+                  class="d-block d-dark-mode-none mx-auto"
+                  src="assets/img/landing/business-consulting/clients/05-dark.svg"
+                  width="196"
+                  alt="Logo"
+                />
+                <img
+                  class="d-none d-dark-mode-block mx-auto"
+                  src="assets/img/landing/business-consulting/clients/05-light.svg"
+                  width="196"
+                  alt="Logo"
+                />
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="bg-gray rounded-4">
+                <img
+                  class="d-block d-dark-mode-none mx-auto"
+                  src="assets/img/landing/business-consulting/clients/06-dark.svg"
+                  width="196"
+                  alt="Logo"
+                />
+                <img
+                  class="d-none d-dark-mode-block mx-auto"
+                  src="assets/img/landing/business-consulting/clients/06-light.svg"
+                  width="196"
+                  alt="Logo"
+                />
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="bg-gray rounded-4">
+                <img
+                  class="d-block d-dark-mode-none mx-auto"
+                  src="assets/img/landing/business-consulting/clients/03-dark.svg"
+                  width="196"
+                  alt="Logo"
+                />
+                <img
+                  class="d-none d-dark-mode-block mx-auto"
+                  src="assets/img/landing/business-consulting/clients/03-light.svg"
+                  width="196"
+                  alt="Logo"
+                />
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="bg-gray rounded-4">
+                <img
+                  class="d-block d-dark-mode-none mx-auto"
+                  src="assets/img/landing/business-consulting/clients/05-dark.svg"
+                  width="196"
+                  alt="Logo"
+                />
+                <img
+                  class="d-none d-dark-mode-block mx-auto"
+                  src="assets/img/landing/business-consulting/clients/05-light.svg"
+                  width="196"
+                  alt="Logo"
+                />
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="bg-gray rounded-4">
+                <img
+                  class="d-block d-dark-mode-none mx-auto"
+                  src="assets/img/landing/business-consulting/clients/02-dark.svg"
+                  width="196"
+                  alt="Logo"
+                />
+                <img
+                  class="d-none d-dark-mode-block mx-auto"
+                  src="assets/img/landing/business-consulting/clients/02-light.svg"
+                  width="196"
+                  alt="Logo"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="swiper"
+          dir="rtl"
+          data-swiper-options='{
+          "spaceBetween": 24,
+          "loop": true,
+          "grabCursor": false,
+          "centeredSlides": true,
+          "autoplay": {
+            "delay": 0,
+            "disableOnInteraction": false
+          },
+          "freeMode": true,
+          "speed": 8500,
+          "freeModeMomentum": false,
+          "breakpoints": {
+            "0": { "slidesPerView": 2 },
+            "400": { "slidesPerView": 3 },
+            "600": { "slidesPerView": 4 },
+            "800": { "slidesPerView": 5 },
+            "1200": { "slidesPerView": 6 },
+            "1400": { "slidesPerView": 7 },
+            "1600": { "slidesPerView": 8 }
+          }
+        }'
+        >
+          <div
+            class="swiper-wrapper"
+            style="transition-timing-function: linear !important"
+          >
+            <div class="swiper-slide">
+              <div class="bg-gray rounded-4">
+                <img
+                  class="d-block d-dark-mode-none mx-auto"
+                  src="assets/img/landing/business-consulting/clients/06-dark.svg"
+                  width="196"
+                  alt="Logo"
+                />
+                <img
+                  class="d-none d-dark-mode-block mx-auto"
+                  src="assets/img/landing/business-consulting/clients/06-light.svg"
+                  width="196"
+                  alt="Logo"
+                />
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="bg-gray rounded-4">
+                <img
+                  class="d-block d-dark-mode-none mx-auto"
+                  src="assets/img/landing/business-consulting/clients/05-dark.svg"
+                  width="196"
+                  alt="Logo"
+                />
+                <img
+                  class="d-none d-dark-mode-block mx-auto"
+                  src="assets/img/landing/business-consulting/clients/05-light.svg"
+                  width="196"
+                  alt="Logo"
+                />
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="bg-gray rounded-4">
+                <img
+                  class="d-block d-dark-mode-none mx-auto"
+                  src="assets/img/landing/business-consulting/clients/04-dark.svg"
+                  width="196"
+                  alt="Logo"
+                />
+                <img
+                  class="d-none d-dark-mode-block mx-auto"
+                  src="assets/img/landing/business-consulting/clients/04-light.svg"
+                  width="196"
+                  alt="Logo"
+                />
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="bg-gray rounded-4">
+                <img
+                  class="d-block d-dark-mode-none mx-auto"
+                  src="assets/img/landing/business-consulting/clients/02-dark.svg"
+                  width="196"
+                  alt="Logo"
+                />
+                <img
+                  class="d-none d-dark-mode-block mx-auto"
+                  src="assets/img/landing/business-consulting/clients/02-light.svg"
+                  width="196"
+                  alt="Logo"
+                />
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="bg-gray rounded-4">
+                <img
+                  class="d-block d-dark-mode-none mx-auto"
+                  src="assets/img/landing/business-consulting/clients/03-dark.svg"
+                  width="196"
+                  alt="Logo"
+                />
+                <img
+                  class="d-none d-dark-mode-block mx-auto"
+                  src="assets/img/landing/business-consulting/clients/03-light.svg"
+                  width="196"
+                  alt="Logo"
+                />
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="bg-gray rounded-4">
+                <img
+                  class="d-block d-dark-mode-none mx-auto"
+                  src="assets/img/landing/business-consulting/clients/01-dark.svg"
+                  width="196"
+                  alt="Logo"
+                />
+                <img
+                  class="d-none d-dark-mode-block mx-auto"
+                  src="assets/img/landing/business-consulting/clients/01-light.svg"
+                  width="196"
+                  alt="Logo"
+                />
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="bg-gray rounded-4">
+                <img
+                  class="d-block d-dark-mode-none mx-auto"
+                  src="assets/img/landing/business-consulting/clients/04-dark.svg"
+                  width="196"
+                  alt="Logo"
+                />
+                <img
+                  class="d-none d-dark-mode-block mx-auto"
+                  src="assets/img/landing/business-consulting/clients/04-light.svg"
+                  width="196"
+                  alt="Logo"
+                />
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="bg-gray rounded-4">
+                <img
+                  class="d-block d-dark-mode-none mx-auto"
+                  src="assets/img/landing/business-consulting/clients/02-dark.svg"
+                  width="196"
+                  alt="Logo"
+                />
+                <img
+                  class="d-none d-dark-mode-block mx-auto"
+                  src="assets/img/landing/business-consulting/clients/02-light.svg"
+                  width="196"
+                  alt="Logo"
+                />
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="bg-gray rounded-4">
+                <img
+                  class="d-block d-dark-mode-none mx-auto"
+                  src="assets/img/landing/business-consulting/clients/03-dark.svg"
+                  width="196"
+                  alt="Logo"
+                />
+                <img
+                  class="d-none d-dark-mode-block mx-auto"
+                  src="assets/img/landing/business-consulting/clients/03-light.svg"
+                  width="196"
+                  alt="Logo"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CEO quote + Process steps -->
+      <section class="overflow-hidden">
+        <div class="container pb-5 pt-3 pt-md-4 pt-lg-5 my-xl-3 my-xxl-5">
+          <div class="row pb-md-3 pb-lg-4 mb-2 mb-lg-3">
+            <!-- CEO quote -->
             <div
-              class="col-md-6 col-lg-5 col-xxl-4 offset-lg-1"
-              data-aos="fade-up"
-              data-aos-duration="850"
-              data-aos-offset="200"
-              data-disable-parallax-down="md"
+              class="col-md-5 d-flex flex-column align-items-center mb-4 mb-md-0"
             >
+              <div class="position-relative" style="max-width: 416px">
+                <img
+                  class="d-block position-relative z-2"
+                  src="assets/img/landing/business-consulting/ceo.png"
+                  alt="Nicolas Black"
+                />
+                <div
+                  class="bg-primary position-absolute start-0 bottom-0 w-100"
+                  style="
+                    height: 85.4%;
+                    border-radius: 2.25rem 8rem 2.25rem 2.25rem;
+                  "
+                ></div>
+              </div>
+              <div class="text-center text-md-start pt-3 mt-3">
+                <h2 class="mb-2">Nicolas Black</h2>
+                <p class="fs-xl text-body-secondary mb-2">CEO Around Group</p>
+                <div class="position-relative pt-4" style="max-width: 500px">
+                  <div
+                    class="position-absolute top-0 start-0 w-100 text-center text-md-start ms-md-1"
+                  >
+                    <svg
+                      class="text-border"
+                      width="155"
+                      height="111"
+                      viewBox="0 0 155 111"
+                      fill="currentColor"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M125.969 38.7937C129.372 30.2345 134.734 21.7781 141.902 13.6311C144.17 11.053 144.48 7.34066 142.623 4.45316C141.18 2.18441 138.808 0.94696 136.23 0.94696C135.508 0.94696 134.786 0.99826 134.064 1.25633C118.905 5.69065 83.4811 21.4171 82.5014 71.8454C82.1407 91.2842 96.3717 107.99 114.883 109.898C125.144 110.93 135.353 107.578 142.933 100.772C150.512 93.914 154.844 84.117 154.844 73.9077C154.844 56.8922 142.778 41.9905 125.969 38.7937Z"
+                      ></path>
+                      <path
+                        d="M32.5904 109.898C42.7999 110.93 53.0092 107.578 60.5888 100.772C68.1686 93.914 72.5 84.117 72.5 73.9077C72.5 56.8922 60.4342 41.9905 43.6248 38.7937C47.0281 30.2345 52.3905 21.7781 59.5578 13.6312C61.8265 11.0531 62.1359 7.34071 60.2794 4.45321C58.8358 2.18446 56.4638 0.947006 53.8857 0.947006C53.1641 0.947006 52.4421 0.998306 51.7202 1.25638C36.5608 5.6907 1.13734 21.4172 0.157654 71.8454V72.5671C0.157654 91.6968 14.2341 107.99 32.5904 109.898Z"
+                      ></path>
+                    </svg>
+                  </div>
+                  <p class="fs-xl position-relative z-2 mb-0">
+                    The main task of our organization is
+                    <strong
+                      >to assess the state of your enterprise now and how you
+                      can achieve your goals.</strong
+                    >
+                    Self-assessment of current activities and review of
+                    processes formulate decisions to achieve the desired
+                    outcome.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Steps -->
+            <div class="col-md-7 col-lg-6 col-xxl-5 offset-lg-1 offset-xxl-2">
               <div class="ps-md-4 ps-lg-0">
-                <h2 class="mb-lg-4">
-                  Segment your audience using a variety of methods
-                </h2>
-                <p class="text-body pb-lg-2 mb-xl-4">
-                  Segmentation allows you to divide users according to a given
-                  criterion, and then for each of the groups to develop an ads
-                  and product. Bibendum velit mi, ac sed ac malesuada ultrices
-                  non lectus mi pellentesque vel at tempus cras sed a eleifend
-                  augue amet mauris, leo ac amet erat malesuada ultrices.
+                <div
+                  class="position-relative d-flex justify-content-end my-3 py-1"
+                  data-aos="fade-left"
+                  data-aos-easing="ease-out-back"
+                >
+                  <div
+                    class="btn btn-lg btn-icon btn-primary fs-xl fw-bold rounded-circle position-absolute top-50 start-0 translate-middle-y z-2 pe-none"
+                  >
+                    01
+                  </div>
+                  <div
+                    class="card border-0 ps-3"
+                    style="width: calc(100% - 1.75rem)"
+                  >
+                    <div class="card-body ps-4">
+                      <h3 class="h5 card-title pb-2 mb-1">
+                        Formulation of the problem
+                      </h3>
+                      <p class="card-text">
+                        Find aute irure dolor in reprehenderi voluptate velit
+                        esse cillum dolore eu fugiat nulla pariatur am luctus.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="position-relative d-flex justify-content-end my-3 py-1"
+                  data-aos="fade-left"
+                  data-aos-easing="ease-out-back"
+                  data-aos-delay="250"
+                >
+                  <div
+                    class="btn btn-lg btn-icon btn-primary fs-xl fw-bold rounded-circle position-absolute top-50 start-0 translate-middle-y z-2 pe-none"
+                  >
+                    02
+                  </div>
+                  <div
+                    class="card border-0 ps-3"
+                    style="width: calc(100% - 1.75rem)"
+                  >
+                    <div class="card-body ps-4">
+                      <h3 class="h5 card-title pb-2 mb-1">
+                        Assessment of the current state
+                      </h3>
+                      <p class="card-text">
+                        Risus quam quis at euismod vitae dui elementu eu in diam
+                        malesuada mattis ut urna integer erat nisi nibh.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="position-relative d-flex justify-content-end my-3 py-1"
+                  data-aos="fade-left"
+                  data-aos-easing="ease-out-back"
+                  data-aos-delay="500"
+                >
+                  <div
+                    class="btn btn-lg btn-icon btn-primary fs-xl fw-bold rounded-circle position-absolute top-50 start-0 translate-middle-y z-2 pe-none"
+                  >
+                    03
+                  </div>
+                  <div
+                    class="card border-0 ps-3"
+                    style="width: calc(100% - 1.75rem)"
+                  >
+                    <div class="card-body ps-4">
+                      <h3 class="h5 card-title pb-2 mb-1">
+                        Business plan creation
+                      </h3>
+                      <p class="card-text">
+                        A sagittis morbi massa venenatis, egestas viverra ac
+                        elit nibh tellus nisi in nec tellus mauris feugiat
+                        gravida.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="position-relative d-flex justify-content-end my-3 py-1"
+                  data-aos="fade-left"
+                  data-aos-easing="ease-out-back"
+                  data-aos-delay="700"
+                >
+                  <div
+                    class="btn btn-lg btn-icon btn-primary fs-xl fw-bold rounded-circle position-absolute top-50 start-0 translate-middle-y z-2 pe-none"
+                  >
+                    04
+                  </div>
+                  <div
+                    class="card border-0 ps-3"
+                    style="width: calc(100% - 1.75rem)"
+                  >
+                    <div class="card-body ps-4">
+                      <h3 class="h5 card-title pb-2 mb-1">
+                        Strategy implementation
+                      </h3>
+                      <p class="card-text">
+                        Elementum purus, nisl ipsum sit. Amet sit praesent proin
+                        sit cras. Leo sed praesent nunc vel nec risus.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Testimonials (Carousel) -->
+      <section
+        class="container mt-n3 mt-sm-n2 pb-5 mb-md-2 mb-lg-3 mb-xl-4 mb-xxl-5"
+      >
+        <h2 class="h1 text-center pb-3 pb-lg-4">Testimonials</h2>
+
+        <!-- Swiper slider -->
+        <div
+          class="swiper pb-1 pb-md-2 pb-lg-3 pb-xl-4"
+          data-swiper-options='{
+          "spaceBetween": 24,
+          "loop": true,
+          "autoHeight": true,
+          "pagination": {
+            "el": ".swiper-pagination",
+            "clickable": true
+          },
+          "breakpoints": {
+            "576": { "slidesPerView": 2 },
+            "992": { "slidesPerView": 3 }
+          }
+        }'
+        >
+          <div class="swiper-wrapper">
+            <!-- Item -->
+            <div class="swiper-slide">
+              <div class="card border-0 mb-4">
+                <div class="card-body">
+                  <div class="d-flex align-items-center mb-3">
+                    <img
+                      class="rounded-circle"
+                      src="assets/img/avatar/22.jpg"
+                      width="60"
+                      alt="Jane Cooper"
+                    />
+                    <div class="ps-3">
+                      <div class="h6 mb-1">Jane Cooper</div>
+                      <div class="fs-sm text-body-secondary">
+                        Medical Assistant
+                      </div>
+                    </div>
+                  </div>
+                  <p class="card-text">
+                    Sit risus metus, vel neque eu lectus duis. Vulputate
+                    facilisi at feugiat mi aenean nunc enim faucibus arcu. Diam
+                    id accumsan sit.
+                  </p>
+                </div>
+              </div>
+              <div class="card border-0">
+                <div class="card-body">
+                  <div class="d-flex align-items-center mb-3">
+                    <img
+                      class="rounded-circle"
+                      src="assets/img/avatar/25.jpg"
+                      width="60"
+                      alt="Cameron Williamson"
+                    />
+                    <div class="ps-3">
+                      <div class="h6 mb-1">Cameron Williamson</div>
+                      <div class="fs-sm text-body-secondary">
+                        Marketing Coordinator
+                      </div>
+                    </div>
+                  </div>
+                  <p class="card-text">
+                    Nam convallis maecenas leo sapien interdum id. Facilisi
+                    dictum lacinia in phasellus. Nullam id sed tempor, volutpat
+                    blandit urna sagittis, commodo vestibulum. Adipiscing
+                    dictumst nunc enim massa lacus lobortis.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Item -->
+            <div class="swiper-slide">
+              <div class="card border-0 mb-4">
+                <div class="card-body">
+                  <div class="d-flex align-items-center mb-3">
+                    <img
+                      class="rounded-circle"
+                      src="assets/img/avatar/23.jpg"
+                      width="60"
+                      alt="Wade Warren"
+                    />
+                    <div class="ps-3">
+                      <div class="h6 mb-1">Wade Warren</div>
+                      <div class="fs-sm text-body-secondary">
+                        President of Sales
+                      </div>
+                    </div>
+                  </div>
+                  <p class="card-text">
+                    Vitae tempor morbi tellus pulvinar. Ut iaculis sit tristique
+                    in turpis volutpat quam nec. Pretium eu nulla egestas
+                    ultrices. Donec in pulvinar ut fermentum a, nunc, aliquam.
+                    Integer dui dui ornare sed lacinia.
+                  </p>
+                </div>
+              </div>
+              <div class="card border-0">
+                <div class="card-body">
+                  <div class="d-flex align-items-center mb-3">
+                    <img
+                      class="rounded-circle"
+                      src="assets/img/avatar/26.jpg"
+                      width="60"
+                      alt="Leslie Alexander"
+                    />
+                    <div class="ps-3">
+                      <div class="h6 mb-1">Leslie Alexander</div>
+                      <div class="fs-sm text-body-secondary">CEO, Divi</div>
+                    </div>
+                  </div>
+                  <p class="card-text">
+                    Malesuada at ullamcorper adipiscing lobortis vestibulum.
+                    Aliquet lobortis justo arcu ut auctor porttitor amet,
+                    tortor. Justo.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Item -->
+            <div class="swiper-slide">
+              <div class="card border-0 mb-4">
+                <div class="card-body">
+                  <div class="d-flex align-items-center mb-3">
+                    <img
+                      class="rounded-circle"
+                      src="assets/img/avatar/24.jpg"
+                      width="60"
+                      alt="Esther Howard"
+                    />
+                    <div class="ps-3">
+                      <div class="h6 mb-1">Esther Howard</div>
+                      <div class="fs-sm text-body-secondary">CEO, Slack</div>
+                    </div>
+                  </div>
+                  <p class="card-text">
+                    Ante turpis leo dictum adipiscing nisl magnis elementum eu.
+                    Integer consequat sed ipsum massa egestas integer proin id.
+                  </p>
+                </div>
+              </div>
+              <div class="card border-0">
+                <div class="card-body">
+                  <div class="d-flex align-items-center mb-3">
+                    <img
+                      class="rounded-circle"
+                      src="assets/img/avatar/27.jpg"
+                      width="60"
+                      alt="Brooklyn Simmons"
+                    />
+                    <div class="ps-3">
+                      <div class="h6 mb-1">Brooklyn Simmons</div>
+                      <div class="fs-sm text-body-secondary">
+                        Marketing Coordinator
+                      </div>
+                    </div>
+                  </div>
+                  <p class="card-text">
+                    In quisque dolor, aliquam faucibus. Gravida diam ornare
+                    egestas proin quis odio suspendisse pellentesque.
+                    Condimentum risus, rutrum curabitur faucibus mi a turpis
+                    morbi. Nulla euismod dolor quis amet sed.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Item -->
+            <div class="swiper-slide">
+              <div class="card border-0 mb-4">
+                <div class="card-body">
+                  <div class="d-flex align-items-center mb-3">
+                    <img
+                      class="rounded-circle"
+                      src="assets/img/avatar/28.jpg"
+                      width="60"
+                      alt="Fannie Summers"
+                    />
+                    <div class="ps-3">
+                      <div class="h6 mb-1">Fannie Summers</div>
+                      <div class="fs-sm text-body-secondary">VP of Sales</div>
+                    </div>
+                  </div>
+                  <p class="card-text">
+                    In et dui amet amet elementum urna, dictum. Eget leo ornare
+                    bibendum a fermentum. Rutrum pellentesque ipsum cras purus
+                    ac a ullamcorper. Elit ac amet quam tellus euismod ac
+                    aliquam pharetra lectus.
+                  </p>
+                </div>
+              </div>
+              <div class="card border-0">
+                <div class="card-body">
+                  <div class="d-flex align-items-center mb-3">
+                    <img
+                      class="rounded-circle"
+                      src="assets/img/avatar/29.jpg"
+                      width="60"
+                      alt="Robert Fox"
+                    />
+                    <div class="ps-3">
+                      <div class="h6 mb-1">Robert Fox</div>
+                      <div class="fs-sm text-body-secondary">
+                        Marketing Coordinator
+                      </div>
+                    </div>
+                  </div>
+                  <p class="card-text">
+                    At felis non consequat neque in ultrices tortor purus dui.
+                    At sed fermentum, egestas amet et donec euismod risus. Nulla
+                    mauris.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pagination (bullets) -->
+          <div
+            class="swiper-pagination position-relative bottom-0 mt-2 mt-md-3 mt-lg-4 pt-4"
+          ></div>
+        </div>
+      </section>
+
+      <!-- Case studies -->
+      <section class="container pt-2 pt-sm-4 pb-5 mb-lg-3 mb-xl-4 mb-xxl-5">
+        <h2 class="h1 text-center pb-3 pb-lg-4">Recent case studies</h2>
+        <div class="row row-cols-1 row-cols-md-2 g-4">
+          <!-- Item -->
+          <div class="col">
+            <div
+              class="card bg-primary border-0 h-100 overflow-hidden pt-3 pt-xl-4 px-lg-3 px-xl-4"
+            >
+              <div class="card-body position-relative z-2 pb-0">
+                <h3 class="h4 card-title text-light">
+                  Robotics &amp; artificial intelligence
+                </h3>
+                <p class="card-text text-light opacity-80 pb-sm3 pb-md-4 mb-2">
+                  Cursus volutpat pharetra vel in. Felis ut nulla dui nec,
+                  vulputate viverra sit eget vel. Convallis diam nunc, vitae,
+                  orci, nibh quam tristique pulvinar. In semper etiam aliquam
+                  molestie arcu. Nullam id sed tempor, volutpat blandit urna
+                  sagittis, commodo vestibulum. Adipiscing dictumst nunc enim
+                  massa.
                 </p>
-                <a class="btn btn-lg btn-link px-0" href="#">
-                  Learn more
+                <a class="btn btn-lg btn-link text-light px-0" href="#">
+                  Read case study
                   <i class="ai-arrow-right ms-2"></i>
                 </a>
               </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Feature 2 (Image + Text) -->
-      <section class="container pt-5 mt-lg-2 mt-xl-4 mt-xxl-5">
-        <div
-          class="row align-items-center pt-2 pt-sm-4 pt-md-5 mt-xl-2 mt-xxl-3"
-          data-aos="fade-up"
-          data-aos-duration="600"
-          data-aos-offset="300"
-          data-disable-parallax-down="md"
-        >
-          <div
-            class="col-md-7 offset-xl-1 pb-3 pb-md-0 mb-3 mb-md-0 order-md-2"
-          >
-            <img
-              class="d-dark-mode-none"
-              src="assets/img/about/product/features/02-light.png"
-              width="744"
-              alt="Image"
-            />
-            <img
-              class="d-none d-dark-mode-block"
-              src="assets/img/about/product/features/02-dark.png"
-              width="744"
-              alt="Image"
-            />
-          </div>
-          <div
-            class="col-md-5 col-xl-4 order-md-1"
-            data-aos="fade-up"
-            data-aos-duration="850"
-            data-aos-offset="200"
-            data-disable-parallax-down="md"
-          >
-            <h2 class="mb-lg-4">Key performance indicators of audience</h2>
-            <p class="pb-1 pb-md-2 mb-xl-4">
-              You can easily identify interdependencies between different
-              indicators, identify tendencies and prevent potential difficulties
-              and problems. Nec id eget suada urna at sed est adipiscing auctor
-              massa id duis fames.
-            </p>
-            <div class="row row-cols-2">
-              <div class="col">
-                <div class="d-table bg-info text-white rounded-1 p-2 mb-3">
-                  <i class="ai-time fs-3 m-1"></i>
-                </div>
-                <h3 class="h5 mb-2">Build in minutes</h3>
-                <p class="fs-sm mb-0">
-                  Eu dignissim arcu, iaculis orci hendrerit commodo leo eget
-                  commodo ornare et.
-                </p>
-              </div>
-              <div class="col">
-                <div class="d-table bg-danger text-white rounded-1 p-2 mb-3">
-                  <i class="ai-cloud-download fs-3 m-1"></i>
-                </div>
-                <h3 class="h5 mb-2">Download data</h3>
-                <p class="fs-sm mb-0">
-                  Adipiscing in aliquam iaculis pellentesque facilisi commo
-                  consequat in ornare.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Feature 3 (Image + Text)-->
-      <section class="container pt-5 mt-lg-2 mt-xl-4 mt-xxl-5">
-        <div
-          class="row align-items-center pt-2 pt-sm-4 pt-md-5 mt-xl-2 mt-xxl-3"
-          data-aos="fade-up"
-          data-aos-duration="600"
-          data-aos-offset="300"
-          data-disable-parallax-down="md"
-        >
-          <div class="col-md-6 col-lg-5 pb-3 pb-md-0 mb-3 mb-md-0">
-            <img
-              src="assets/img/about/product/features/03.png"
-              width="526"
-              alt="Image"
-            />
-          </div>
-          <div
-            class="col-md-6 col-lg-5 col-xxl-4 offset-lg-1 offset-xxl-2"
-            data-aos="fade-up"
-            data-aos-duration="850"
-            data-aos-offset="200"
-            data-disable-parallax-down="md"
-          >
-            <div class="ps-md-4 ps-lg-0">
-              <h2 class="mb-lg-4">
-                Make visualization of data analysis results simple and clear way
-              </h2>
-              <p class="pb-2 pb-md-3 mb-xl-4">
-                Morbi et massa fames ac scelerisque sit commodo dignissim
-                faucibus vel quisque proin lectus laoreet sem adipiscing
-                sollicitudin erat massa tellus lorem enim aenean phasellus in
-                hendrerit interdum lorem proin pretium dictum urna suspendisse
-                quis risus et.
-              </p>
-              <a class="btn btn-lg btn-outline-primary rounded-pill" href="#"
-                >Start free 14-day trial</a
-              >
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Benefits -->
-      <section class="container pt-5 mt-md-3 mt-lg-2 mt-xl-4 mt-xxl-5">
-        <h2
-          class="h1 text-center pt-3 pt-sm-4 pt-lg-5 pb-3 mb-3 mb-lg-4 mt-xl-3"
-        >
-          Our benefits
-        </h2>
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
-          <!-- Item -->
-          <div class="col">
-            <div class="card card-flip">
-              <div class="card-flip-inner">
-                <div
-                  class="card-flip-front bg-secondary rounded-5 py-2 py-lg-4 px-0"
-                >
-                  <div class="card-body text-center">
-                    <svg
-                      class="d-block text-primary mb-4 mx-auto"
-                      width="40"
-                      height="40"
-                      viewBox="0 0 40 40"
-                      fill="currentColor"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M37.805 15.6567L34.6717 15.2583C34.4133 14.4633 34.095 13.6967 33.7233 12.9683L35.6583 10.4767C36.4417 9.46833 36.35 8.045 35.455 7.17833L32.83 4.55333C31.955 3.65 30.5317 3.56 29.5217 4.34167L27.0333 6.27667C26.305 5.905 25.5383 5.58667 24.7417 5.32833L24.3433 2.2C24.1933 0.945 23.1283 0 21.8667 0H18.1333C16.8717 0 15.8067 0.945 15.6567 2.195L15.2583 5.32833C14.4617 5.58667 13.695 5.90333 12.9667 6.27667L10.4767 4.34167C9.47 3.56 8.04667 3.65 7.17833 4.545L4.55333 7.16833C3.65 8.045 3.55833 9.46833 4.34167 10.4783L6.27667 12.9683C5.90333 13.6967 5.58667 14.4633 5.32833 15.2583L2.2 15.6567C0.945 15.8067 0 16.8717 0 18.1333V21.8667C0 23.1283 0.945 24.1933 2.195 24.3433L5.32833 24.7417C5.58667 25.5367 5.905 26.3033 6.27667 27.0317L4.34167 29.5233C3.55833 30.5317 3.65 31.955 4.545 32.8217L7.17 35.4467C8.04667 36.3483 9.46833 36.4383 10.4783 35.6567L12.9683 33.7217C13.6967 34.095 14.4633 34.4133 15.2583 34.67L15.6567 37.7967C15.8067 39.055 16.8717 40 18.1333 40H21.8667C23.1283 40 24.1933 39.055 24.3433 37.805L24.7417 34.6717C25.5367 34.4133 26.3033 34.095 27.0317 33.7233L29.5233 35.6583C30.5317 36.4417 31.955 36.35 32.8217 35.455L35.4467 32.83C36.35 31.9533 36.4417 30.5317 35.6583 29.5217L33.7233 27.0317C34.0967 26.3033 34.415 25.5367 34.6717 24.7417L37.7983 24.3433C39.0533 24.1933 39.9983 23.1283 39.9983 21.8667V18.1333C40 16.8717 39.055 15.8067 37.805 15.6567ZM20 28.3333C15.405 28.3333 11.6667 24.595 11.6667 20C11.6667 15.405 15.405 11.6667 20 11.6667C24.595 11.6667 28.3333 15.405 28.3333 20C28.3333 24.595 24.595 28.3333 20 28.3333Z"
-                      ></path>
-                    </svg>
-                    <h3>Support</h3>
-                    <p class="card-text">
-                      Around users and partners can count on 24/7 technical
-                      assistance, as well as the help of the technical analytics
-                      department and teams of specialized experts.
-                    </p>
-                  </div>
-                </div>
-                <div
-                  class="card-flip-back bg-primary rounded-5 py-2 py-lg-4 px-0"
-                >
-                  <div class="card-body text-center">
-                    <svg
-                      class="d-block text-white mt-2 mt-lg-n4 mb-4 mx-auto"
-                      width="32"
-                      height="32"
-                      viewBox="0 0 32 32"
-                      fill="currentColor"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M30.244 12.5253L27.7373 12.2067C27.5307 11.5707 27.276 10.9573 26.9787 10.3747L28.5267 8.38133C29.1533 7.57467 29.08 6.436 28.364 5.74267L26.264 3.64267C25.564 2.92 24.4253 2.848 23.6173 3.47333L21.6267 5.02133C21.044 4.724 20.4307 4.46933 19.7933 4.26267L19.4747 1.76C19.3547 0.756 18.5027 0 17.4933 0H14.5067C13.4973 0 12.6453 0.756 12.5253 1.756L12.2067 4.26267C11.5693 4.46933 10.956 4.72267 10.3733 5.02133L8.38133 3.47333C7.576 2.848 6.43733 2.92 5.74267 3.636L3.64267 5.73467C2.92 6.436 2.84667 7.57467 3.47333 8.38267L5.02133 10.3747C4.72267 10.9573 4.46933 11.5707 4.26267 12.2067L1.76 12.5253C0.756 12.6453 0 13.4973 0 14.5067V17.4933C0 18.5027 0.756 19.3547 1.756 19.4747L4.26267 19.7933C4.46933 20.4293 4.724 21.0427 5.02133 21.6253L3.47333 23.6187C2.84667 24.4253 2.92 25.564 3.636 26.2573L5.736 28.3573C6.43733 29.0787 7.57467 29.1507 8.38267 28.5253L10.3747 26.9773C10.9573 27.276 11.5707 27.5307 12.2067 27.736L12.5253 30.2373C12.6453 31.244 13.4973 32 14.5067 32H17.4933C18.5027 32 19.3547 31.244 19.4747 30.244L19.7933 27.7373C20.4293 27.5307 21.0427 27.276 21.6253 26.9787L23.6187 28.5267C24.4253 29.1533 25.564 29.08 26.2573 28.364L28.3573 26.264C29.08 25.5627 29.1533 24.4253 28.5267 23.6173L26.9787 21.6253C27.2773 21.0427 27.532 20.4293 27.7373 19.7933L30.2387 19.4747C31.2427 19.3547 31.9987 18.5027 31.9987 17.4933V14.5067C32 13.4973 31.244 12.6453 30.244 12.5253ZM16 22.6667C12.324 22.6667 9.33333 19.676 9.33333 16C9.33333 12.324 12.324 9.33333 16 9.33333C19.676 9.33333 22.6667 12.324 22.6667 16C22.6667 19.676 19.676 22.6667 16 22.6667Z"
-                      ></path>
-                    </svg>
-                    <div class="h3 display-4 text-white pb-1 mb-2">24/7</div>
-                    <p class="card-text text-white opacity-70">
-                      Around users and partners can count on 24/7 technical
-                      assistance, as well as the help of the technical analytics
-                      department and teams of specialized experts.
-                    </p>
-                  </div>
-                </div>
+              <div class="d-flex justify-content-end mt-sm-n5 me-n4">
+                <img
+                  src="assets/img/landing/business-consulting/case-studies/01.png"
+                  width="347"
+                  alt="Image"
+                />
               </div>
             </div>
           </div>
 
           <!-- Item -->
           <div class="col">
-            <div class="card card-flip">
-              <div class="card-flip-inner">
-                <div
-                  class="card-flip-front bg-secondary rounded-5 py-2 py-lg-4 px-0"
-                >
-                  <div class="card-body text-center">
-                    <svg
-                      class="d-block text-danger mb-4 mx-auto"
-                      width="40"
-                      height="40"
-                      viewBox="0 0 40 40"
-                      fill="currentColor"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M37.0833 13.3335H2.91669C1.31669 13.3335 0 14.6502 0 16.2502V37.0835C0 38.6835 1.31669 40.0002 2.91669 40.0002H37.0834C38.6834 40.0002 40.0001 38.6835 40.0001 37.0835V16.2502C40 14.6502 38.6833 13.3335 37.0833 13.3335ZM35 21.2502V32.0835C35 33.6835 33.7 35.0002 32.0833 35.0002H22.9167C21.3 35.0002 20 33.6835 20 32.0835V21.2502C20 19.6502 21.3 18.3335 22.9167 18.3335H32.0834C33.7 18.3335 35 19.6502 35 21.2502ZM15.4167 27.5002H6.25C5.56669 27.5002 5 26.9335 5 26.2502C5 25.5669 5.56669 25.0002 6.25 25.0002H15.4167C16.1 25.0002 16.6667 25.5669 16.6667 26.2502C16.6667 26.9335 16.1 27.5002 15.4167 27.5002ZM16.6667 31.2502C16.6667 31.9335 16.1 32.5002 15.4167 32.5002H6.25C5.56669 32.5002 5 31.9335 5 31.2502C5 30.5669 5.56669 30.0002 6.25 30.0002H15.4167C16.1 30.0002 16.6667 30.5669 16.6667 31.2502ZM15.4167 22.5002H6.25C5.56669 22.5002 5 21.9335 5 21.2502C5 20.5669 5.56669 20.0002 6.25 20.0002H15.4167C16.1 20.0002 16.6667 20.5669 16.6667 21.2502C16.6667 21.9335 16.1 22.5002 15.4167 22.5002Z"
-                      ></path>
-                      <path
-                        d="M37.0859 0H16.2526C14.6443 0 13.3359 1.30835 13.3359 2.91669V7.08339C13.3359 8.69173 14.6443 10.0001 16.2526 10.0001H37.0859C38.6943 10 40.0026 8.69165 40.0026 7.08331V2.91669C40.0026 1.30835 38.6943 0 37.0859 0Z"
-                      ></path>
-                      <path
-                        d="M5 10C7.76142 10 10 7.76142 10 5C10 2.23858 7.76142 0 5 0C2.23858 0 0 2.23858 0 5C0 7.76142 2.23858 10 5 10Z"
-                      ></path>
-                    </svg>
-                    <h3>Individual dashboard</h3>
-                    <p class="card-text">
-                      You can easily identify interdependencies between
-                      different indicators, identify tendencies and prevent
-                      potential difficulties and problems.
-                    </p>
-                  </div>
-                </div>
-                <div
-                  class="card-flip-back bg-danger rounded-5 py-2 py-lg-4 px-0"
-                >
-                  <div class="card-body text-center">
-                    <svg
-                      class="d-block text-white mt-2 mt-lg-n4 mb-4 mx-auto"
-                      width="32"
-                      height="32"
-                      viewBox="0 0 32 32"
-                      fill="currentColor"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M29.6664 10.667H2.33334C1.05335 10.667 0 11.7203 0 13.0003V29.6669C0 30.9468 1.05335 32.0002 2.33334 32.0002H29.6665C30.9465 32.0002 31.9998 30.9468 31.9998 29.6669V13.0003C31.9998 11.7203 30.9464 10.667 29.6664 10.667ZM27.9998 17.0003V25.6669C27.9998 26.9469 26.9598 28.0002 25.6665 28.0002H18.3332C17.0399 28.0002 15.9999 26.9469 15.9999 25.6669V17.0003C15.9999 15.7203 17.0399 14.667 18.3332 14.667H25.6665C26.9598 14.667 27.9998 15.7203 27.9998 17.0003ZM12.3333 22.0003H4.99997C4.45332 22.0003 3.99997 21.5469 3.99997 21.0003C3.99997 20.4536 4.45332 20.0003 4.99997 20.0003H12.3333C12.8799 20.0003 13.3333 20.4536 13.3333 21.0003C13.3333 21.5469 12.8799 22.0003 12.3333 22.0003ZM13.3333 25.0002C13.3333 25.5469 12.8799 26.0002 12.3333 26.0002H4.99997C4.45332 26.0002 3.99997 25.5469 3.99997 25.0002C3.99997 24.4536 4.45332 24.0003 4.99997 24.0003H12.3333C12.8799 24.0003 13.3333 24.4536 13.3333 25.0002ZM12.3333 18.0003H4.99997C4.45332 18.0003 3.99997 17.5469 3.99997 17.0003C3.99997 16.4537 4.45332 16.0003 4.99997 16.0003H12.3333C12.8799 16.0003 13.3333 16.4537 13.3333 17.0003C13.3333 17.5469 12.8799 18.0003 12.3333 18.0003Z"
-                      ></path>
-                      <path
-                        d="M29.6639 0H12.9974C11.7107 0 10.6641 1.04667 10.6641 2.33334V5.66667C10.6641 6.95334 11.7107 8.00001 12.9974 8.00001H29.6639C30.9506 7.99994 31.9973 6.95327 31.9973 5.66661V2.33334C31.9973 1.04667 30.9506 0 29.6639 0Z"
-                      ></path>
-                      <path
-                        d="M3.99997 7.99994C6.2091 7.99994 7.99994 6.2091 7.99994 3.99997C7.99994 1.79085 6.2091 0 3.99997 0C1.79085 0 0 1.79085 0 3.99997C0 6.2091 1.79085 7.99994 3.99997 7.99994Z"
-                      ></path>
-                    </svg>
-                    <div class="h3 display-4 text-white pb-1 mb-2">136</div>
-                    <p class="card-text text-white opacity-70">
-                      You can easily identify interdependencies between
-                      different indicators, identify tendencies and prevent
-                      potential difficulties and problems.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Item -->
-          <div class="col">
-            <div class="card card-flip">
-              <div class="card-flip-inner">
-                <div
-                  class="card-flip-front bg-secondary rounded-5 py-2 py-lg-4 px-0"
-                >
-                  <div class="card-body text-center">
-                    <svg
-                      class="d-block text-info mb-4 mx-auto"
-                      width="40"
-                      height="40"
-                      viewBox="0 0 40 40"
-                      fill="currentColor"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M1.11125 25.5903H5.55542C6.16903 25.5903 6.66667 26.0876 6.66667 26.7012V37.8124C6.66667 38.426 6.16903 38.9237 5.55542 38.9237H1.11125C0.49764 38.9237 0 38.426 0 37.8124V26.7012C0 26.0876 0.49764 25.5903 1.11125 25.5903Z"
-                      ></path>
-                      <path
-                        d="M12.2202 16.7012H16.6648C17.2784 16.7012 17.776 17.1988 17.776 17.8124V37.8124C17.776 38.426 17.2784 38.9237 16.6648 38.9237H12.2202C11.6066 38.9237 11.1094 38.426 11.1094 37.8124V17.8124C11.1094 17.1988 11.6066 16.7012 12.2202 16.7012Z"
-                      ></path>
-                      <path
-                        d="M23.33 21.146H27.7746C28.3882 21.146 28.8854 21.6436 28.8854 22.2572V37.8127C28.8854 38.4263 28.3882 38.9239 27.7746 38.9239H23.33C22.7164 38.9239 22.2188 38.4263 22.2188 37.8127V22.2572C22.2188 21.6436 22.7164 21.146 23.33 21.146Z"
-                      ></path>
-                      <path
-                        d="M34.4472 14.479H38.8914C39.505 14.479 40.0026 14.9766 40.0026 15.5903V37.8123C40.0026 38.4259 39.505 38.9236 38.8914 38.9236H34.4472C33.8336 38.9236 33.3359 38.4259 33.3359 37.8123V15.5903C33.3359 14.9766 33.8336 14.479 34.4472 14.479Z"
-                      ></path>
-                      <path
-                        d="M36.6667 1.146C34.8267 1.14803 33.3354 2.63932 33.3333 4.47933C33.3378 4.84228 33.4021 5.20199 33.5238 5.54378L27.9614 8.85026C27.2314 8.07593 26.1731 7.70076 25.1184 7.84196C24.0633 7.98315 23.1413 8.62362 22.6404 9.56274L17.7344 7.13273C17.7584 6.98991 17.7726 6.84587 17.7779 6.70142C17.7804 5.35213 16.9694 4.13468 15.7235 3.6167C14.4775 3.09912 13.0424 3.38354 12.0882 4.33732C11.1336 5.2911 10.8484 6.72583 11.3656 7.97217L5.00163 12.7215C4.49707 12.4208 3.9209 12.2605 3.33333 12.2572C1.49251 12.2572 0 13.7493 0 15.5906C0 17.4314 1.49251 18.9239 3.33333 18.9239C5.17415 18.9239 6.66667 17.4314 6.66667 15.5906C6.66382 15.1894 6.58813 14.7926 6.44328 14.4187L12.8707 9.62174C14.128 10.3228 15.6962 10.1173 16.7301 9.11556L22.3092 11.8788C22.6811 13.5353 24.2399 14.647 25.9273 14.459C27.6147 14.271 28.8908 12.844 28.8888 11.146C28.8888 11.0614 28.87 10.9816 28.8639 10.8986L34.9137 7.302C35.4382 7.63363 36.0457 7.81063 36.6667 7.81266C38.5075 7.81266 40 6.32015 40 4.47933C40 2.63851 38.5075 1.146 36.6667 1.146Z"
-                      ></path>
-                    </svg>
-                    <h3>Reliable data</h3>
-                    <p class="card-text">
-                      Thanks to our platform, developed using advanced data
-                      management methods, data quality reaches 100%, which is
-                      20% better than other platforms.
-                    </p>
-                  </div>
-                </div>
-                <div class="card-flip-back bg-info rounded-5 py-2 py-lg-4 px-0">
-                  <div class="card-body text-center">
-                    <svg
-                      class="d-block text-white mt-2 mt-lg-n4 mb-4 mx-auto"
-                      width="32"
-                      height="32"
-                      viewBox="0 0 32 32"
-                      fill="currentColor"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M0.888997 20.4722H4.44434C4.93522 20.4722 5.33333 20.87 5.33333 21.3608V30.2498C5.33333 30.7407 4.93522 31.1388 4.44434 31.1388H0.888997C0.398112 31.1388 0 30.7407 0 30.2498V21.3608C0 20.87 0.398112 20.4722 0.888997 20.4722Z"
-                      ></path>
-                      <path
-                        d="M9.7793 13.3608H13.335C13.8258 13.3608 14.224 13.759 14.224 14.2498V30.2498C14.224 30.7407 13.8258 31.1388 13.335 31.1388H9.7793C9.28841 31.1388 8.89062 30.7407 8.89062 30.2498V14.2498C8.89062 13.759 9.28841 13.3608 9.7793 13.3608Z"
-                      ></path>
-                      <path
-                        d="M18.6702 16.9165H22.2259C22.7168 16.9165 23.1146 17.3146 23.1146 17.8055V30.2498C23.1146 30.7407 22.7168 31.1388 22.2259 31.1388H18.6702C18.1794 31.1388 17.7812 30.7407 17.7812 30.2498V17.8055C17.7812 17.3146 18.1794 16.9165 18.6702 16.9165V16.9165Z"
-                      ></path>
-                      <path
-                        d="M27.5531 11.5835H31.1084C31.5993 11.5835 31.9974 11.9816 31.9974 12.4725V30.2502C31.9974 30.7411 31.5993 31.1392 31.1084 31.1392H27.5531C27.0622 31.1392 26.6641 30.7411 26.6641 30.2502V12.4725C26.6641 11.9816 27.0622 11.5835 27.5531 11.5835V11.5835Z"
-                      ></path>
-                      <path
-                        d="M29.3333 0.916504C27.8613 0.918132 26.6683 2.11117 26.6667 3.58317C26.6702 3.87353 26.7217 4.1613 26.819 4.43473L22.3691 7.07991C21.7852 6.46045 20.9385 6.16032 20.0947 6.27327C19.2507 6.38623 18.513 6.8986 18.1123 7.6499L14.1875 5.70589C14.2067 5.59163 14.2181 5.4764 14.2223 5.36084C14.2243 4.28141 13.5755 3.30745 12.5788 2.89307C11.582 2.479 10.4339 2.70654 9.67057 3.46956C8.9069 4.23258 8.67871 5.38037 9.09245 6.37744L4.0013 10.1769C3.59766 9.93636 3.13672 9.8081 2.66667 9.8055C1.19401 9.8055 0 10.9992 0 12.4722C0 13.9448 1.19401 15.1388 2.66667 15.1388C4.13932 15.1388 5.33333 13.9448 5.33333 12.4722C5.33105 12.1512 5.27051 11.8338 5.15462 11.5347L10.2965 7.6971C11.3024 8.25797 12.557 8.09359 13.3841 7.29215L17.8473 9.50277C18.1449 10.828 19.3919 11.7173 20.7419 11.5669C22.0918 11.4165 23.1126 10.2749 23.111 8.9165C23.111 8.84879 23.096 8.78499 23.0911 8.71859L27.931 5.84131C28.3506 6.10661 28.8366 6.24821 29.3333 6.24984C30.806 6.24984 32 5.05583 32 3.58317C32 2.11051 30.806 0.916504 29.3333 0.916504V0.916504Z"
-                      ></path>
-                    </svg>
-                    <div class="h3 display-4 text-white pb-1 mb-2">100%</div>
-                    <p class="card-text text-white opacity-70">
-                      Thanks to our platform, developed using advanced data
-                      management methods, data quality reaches 100%, which is
-                      20% better than other platforms.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Tools-->
-      <section
-        class="container overflow-hidden py-5 my-md-3 my-lg-2 my-xl-4 my-xxl-5"
-      >
-        <div class="row align-items-center my-2 py-2 py-sm-4 py-lg-5 my-xxl-2">
-          <div
-            class="col-md-5 text-center text-md-start pe-md-5 pe-lg-0 pe-xxl-4 ps-xl-5 mb-5 mb-md-0"
-          >
-            <h2 class="h1 pb-3 pb-xl-2 mb-lg-4 mb-xl-5">
-              Join Around with your favorite tools that you use daily and keep
-              things on track
-            </h2>
-            <a class="btn btn-outline-primary rounded-pill" href="#"
-              >See all integrations</a
+            <div
+              class="card bg-primary bg-opacity-10 border-0 h-100 overflow-hidden pt-3 pt-xl-4 px-lg-3 px-xl-4"
             >
-          </div>
-          <div class="col-md-7 col-lg-6 offset-lg-1">
-            <div class="position-relative mx-auto" style="max-width: 510px">
-              <img
-                class="d-block d-dark-mode-none"
-                src="assets/img/landing/saas-2/tools/circle-gray-1.png"
-                style="animation: rotate-cw 100s linear infinite"
-                alt="Circle"
-              />
-              <img
-                class="d-none d-dark-mode-block"
-                src="assets/img/landing/saas-2/tools/circle-light-1.png"
-                style="animation: rotate-cw 100s linear infinite"
-                alt="Circle"
-              />
-              <img
-                class="d-block d-dark-mode-none position-absolute top-0 start-0"
-                src="assets/img/landing/saas-2/tools/circle-gray-2.png"
-                style="animation: rotate-ccw 50s linear infinite"
-                alt="Circle"
-              />
-              <img
-                class="d-none d-dark-mode-block position-absolute top-0 start-0"
-                src="assets/img/landing/saas-2/tools/circle-light-2.png"
-                style="animation: rotate-ccw 50s linear infinite"
-                alt="Circle"
-              />
-              <img
-                class="position-absolute top-0 start-0 z-2"
-                src="assets/img/landing/saas-2/tools/icon-1.png"
-                data-aos="fade"
-                data-aos-duration="600"
-                data-aos-offset="250"
-                data-aos-delay="1200"
-                alt="Icon"
-              />
-              <img
-                class="position-absolute top-0 start-0 z-2"
-                src="assets/img/landing/saas-2/tools/icon-2.png"
-                data-aos="fade"
-                data-aos-duration="600"
-                data-aos-offset="250"
-                data-aos-delay="450"
-                alt="Icon"
-              />
-              <img
-                class="position-absolute top-0 start-0 z-2"
-                src="assets/img/landing/saas-2/tools/icon-3.png"
-                data-aos="fade"
-                data-aos-duration="600"
-                data-aos-offset="250"
-                data-aos-delay="600"
-                alt="Icon"
-              />
-              <img
-                class="position-absolute top-0 start-0 z-2"
-                src="assets/img/landing/saas-2/tools/icon-4.png"
-                data-aos="fade"
-                data-aos-duration="600"
-                data-aos-offset="250"
-                data-aos-delay="750"
-                alt="Icon"
-              />
-              <img
-                class="position-absolute top-0 start-0 z-2"
-                src="assets/img/landing/saas-2/tools/icon-5.png"
-                data-aos="fade"
-                data-aos-duration="600"
-                data-aos-offset="250"
-                data-aos-delay="900"
-                alt="Icon"
-              />
-              <img
-                class="position-absolute top-0 start-0 z-2"
-                src="assets/img/landing/saas-2/tools/icon-6.png"
-                data-aos="fade"
-                data-aos-duration="600"
-                data-aos-offset="250"
-                data-aos-delay="1050"
-                alt="Icon"
-              />
-              <img
-                class="position-absolute top-0 start-0 z-2"
-                src="assets/img/landing/saas-2/tools/icon-7.png"
-                data-aos="zoom-in"
-                data-aos-duration="600"
-                data-aos-offset="250"
-                alt="Icon"
-              />
-              <img
-                class="position-absolute top-0 start-0 z-2"
-                src="assets/img/landing/saas-2/tools/icon-8.png"
-                data-aos="zoom-in"
-                data-aos-duration="600"
-                data-aos-offset="250"
-                data-aos-delay="150"
-                alt="Icon"
-              />
-              <img
-                class="position-absolute top-0 start-0 z-2"
-                src="assets/img/landing/saas-2/tools/icon-9.png"
-                data-aos="zoom-in"
-                data-aos-duration="600"
-                data-aos-offset="250"
-                data-aos-delay="300"
-                alt="Icon"
-              />
+              <div class="card-body position-relative z-2 pb-0">
+                <h3 class="h4 card-title text-primary">
+                  Toothbrush from natural eco materials
+                </h3>
+                <p class="card-text text-primary pb-sm3 pb-md-4 mb-2">
+                  Cursus volutpat pharetra vel in. Felis ut nulla dui nec,
+                  vulputate viverra sit eget vel. Convallis diam nunc, vitae,
+                  orci, nibh quam tristique pulvinar. In semper etiam aliquam
+                  molestie arcu. Nullam id sed tempor, volutpat blandit urna
+                  sagittis, commodo vestibulum. Adipiscing dictumst nunc enim
+                  massa.
+                </p>
+                <a class="btn btn-lg btn-link px-0" href="#">
+                  Read case study
+                  <i class="ai-arrow-right ms-2"></i>
+                </a>
+              </div>
+              <div class="d-flex justify-content-end mt-n4 mt-sm-n5 me-n4">
+                <img
+                  src="assets/img/landing/business-consulting/case-studies/02.png"
+                  width="291"
+                  alt="Image"
+                />
+              </div>
             </div>
+          </div>
+        </div>
+
+        <!-- More button -->
+        <div
+          class="text-center my-2 mt-sm-3 mt-lg-0 pt-4 pb-1 pb-sm-3 pb-md-4 pt-lg-5"
+        >
+          <a class="btn btn-outline-primary" href="#">Read all case studies</a>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section class="bg-primary py-5" data-bs-theme="dark">
+        <div class="container pt-lg-2 pt-xl-4 pt-xxl-5 pb-1 pb-sm-3">
+          <div class="row pt-sm-3 pt-md-4">
+            <div class="col-md-6 col-xl-5 offset-xl-1">
+              <h2 class="display-3">
+                Ready to take your business to the next level?
+              </h2>
+            </div>
+            <div class="col-md-6 col-lg-5 col-xl-4 offset-lg-1">
+              <p class="text-body fs-xl pb-4 mb-2 mb-lg-3">
+                Massa velitienes semper faucibus tristique id nibh elementum, id
+                eu aliquamd diam mi tempus at laciniarty scelerisques augue at
+                morbi. Arcu sit orcirs, risus mattissit laoreet.
+              </p>
+              <div class="input-group">
+                <span class="input-group-text text-body-secondary">
+                  <i class="ai-mail"></i>
+                </span>
+                <input
+                  class="form-control"
+                  type="email"
+                  placeholder="Enter your email"
+                />
+                <button class="btn btn-warning" type="button">
+                  Book a call
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="d-none d-md-block text-center mt-n5">
+            <svg
+              class="text-warning ms-lg-5"
+              width="171"
+              height="97"
+              viewBox="0 0 171 97"
+              fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M169.319 54.333C162.404 55.9509 155.712 58.0764 149.09 60.6764L149.07 60.6761C148.967 60.7158 148.863 60.7554 148.76 60.7951C147.3 61.3811 148.325 63.4238 149.672 63.2067C154.548 62.4134 159.994 59.8725 164.87 59.0792C148.278 73.1339 129.684 89.2549 107.779 92.6402C85.6981 96.0539 65.5665 86.7839 56.8768 66.9865C70.9662 55.0671 79.2106 35.6614 79.0299 17.6457C78.9484 10.3157 76.1485 -3.36373 65.7068 1.21851C55.8557 5.53146 52.0466 22.5213 50.5736 31.7739C48.7364 43.2858 49.7593 55.5291 53.8643 66.2014C52.787 67.0812 51.6907 67.8989 50.5755 68.6546C40.6328 75.3851 27.1039 78.8929 16.4487 72.0362C2.91045 63.3259 1.93984 44.9485 1.56902 30.4091C1.54778 29.6265 0.359869 29.6092 0.360624 30.3915C0.322634 44.0809 0.835929 59.065 10.5664 69.6857C18.5722 78.4182 30.4315 79.7753 41.3346 75.9924C46.2437 74.2834 50.7739 71.7557 54.8581 68.6348C59.9738 80.2586 68.9965 89.6956 82.2735 93.7393C113.474 103.223 141.744 83.0494 164.903 63.697L161.901 71.0334C161.267 72.5887 163.76 73.2736 164.393 71.7389C165.986 67.8713 167.569 63.9933 169.152 60.1359C169.288 60.0247 169.695 58.6127 169.821 58.491C170.122 57.1161 169.152 60.1359 169.851 58.4169C170.189 57.6087 170.517 56.79 170.855 55.9818C171.248 54.9994 170.185 54.1192 169.319 54.333ZM54.3624 59.8578C51.4872 49.1623 51.6051 37.5841 54.2025 26.8039C55.5185 21.3369 57.4405 15.8066 60.1572 10.8541C61.2311 8.89354 62.5139 6.77134 64.2307 5.31421C69.4231 0.902277 74.3649 4.80357 75.8002 10.4446C80.5272 28.9489 70.1806 51.6898 55.8431 64.5114C55.2971 63.0109 54.793 61.4698 54.3624 59.8578Z"
+              ></path>
+            </svg>
           </div>
         </div>
       </section>
     </main>
 
     <!-- Footer -->
-    <footer class="footer bg-secondary pt-4 pb-2 pb-md-5 pt-sm-5">
-      <div class="container-fluid pb-1 pb-md-0 px-md-5">
-        <div
-          class="bg-dark rounded-5 position-relative overflow-hidden w-100 py-5 px-3 px-sm-4 px-xl-5 mx-auto"
-          style="max-width: 1660px"
-          data-bs-theme="dark"
-        >
-          <div
-            class="position-absolute top-50 start-50 translate-middle"
-            style="width: 1664px"
-          >
-            <img
-              src="assets/img/landing/web-studio/footer-wave.png"
-              alt="Wave"
-            />
-          </div>
-          <div
-            class="container position-relative z-2 pt-md-3 pt-lg-4 pt-xl-5 pb-2"
-          >
-            <div class="row pb-2">
-              <div class="col-lg-4 col-xxl-3 pb-2 pb-lg-0 mb-4 mb-lg-0">
-                <div class="navbar-brand text-light py-0 me-0 pb-1 mb-3">
-                  <span class="text-primary me-2">
-                    <a class="navbar-brand pe-sm-3" href="index.html">
-                      <span class="text-primary me-2">
-                        <img
-                          src="./assets/app-icons/logo.png"
-                          class="img-fluid"
-                          style="max-width: 150px"
-                          alt="logo"
-                        />
-                      </span>
-                    </a>
-                  </span>
-                </div>
-                <p class="text-body fs-sm mb-4">
-                  Empowering your business with smart, scalable, and
-                  future-ready technology.
-                </p>
-              </div>
-              <div
-                class="col-sm-4 col-lg-2 offset-lg-1 offset-xl-2 offset-xxl-3 mb-4 mb-sm-0"
-              >
-                <h6 class="fw-bold">Company</h6>
-                <ul class="nav flex-column fs-sm">
-                  <li class="nav-item">
-                    <a class="nav-link fw-normal px-0 py-1" href="./index.html"
-                      >Home</a
-                    >
-                  </li>
-
-                  <li class="nav-item">
-                    <a class="nav-link fw-normal px-0 py-1" href="./about.html"
-                      >About</a
-                    >
-                  </li>
-                  <li class="nav-item">
-                    <a
-                      class="nav-link fw-normal px-0 py-1"
-                      href="./portfoilo.html"
-                      >Portfolio</a
-                    >
-                  </li>
-                  <li class="nav-item">
-                    <a
-                      class="nav-link fw-normal px-0 py-1"
-                      href="./contact.html"
-                      >Contact</a
-                    >
-                  </li>
-                </ul>
-              </div>
-              <div class="col-sm-4 col-lg-2 mb-4 mb-sm-0">
-                <h6 class="fw-bold">Support</h6>
-                <ul class="nav flex-column fs-sm">
-                  <li class="nav-item">
-                    <a
-                      class="nav-link fw-normal px-0 py-1"
-                      href="./contact.html"
-                      >Help center</a
-                    >
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link fw-normal px-0 py-1" href="./terms.html"
-                      >Terms of service</a
-                    >
-                  </li>
-                  <li class="nav-item">
-                    <a
-                      class="nav-link fw-normal px-0 py-1"
-                      href="./privacy-policy.html"
-                      >Privacy policy</a
-                    >
-                  </li>
-                </ul>
-              </div>
-              <div class="col-sm-4 col-lg-3 col-xl-2">
-                <h6 class="fw-bold">Contact us</h6>
-                <ul class="nav flex-column fs-sm">
-                  <li class="nav-item">
-                    <a
-                      class="nav-link fw-normal px-0 py-1"
-                      href="mailto:email@example.com"
-                      >techvivanta.app@gmail.com</a
-                    >
-                  </li>
-                  <li class="nav-item">
-                    <a
-                      class="nav-link fw-normal px-0 py-1"
-                      href="tel:+15262200444"
-                      >+91 79902 69840</a
-                    >
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div
-              class="d-sm-flex align-items-center justify-content-between pt-4 pt-md-5 mt-2 mt-md-0 mt-lg-2 mt-xl-4"
+    <footer class="footer pt-lg-5 pt-4 pb-5">
+      <div class="container pt-3 mt-md-2 mt-lg-3">
+        <div class="row gy-md-5 gy-4 mb-md-5 mb-4 pb-lg-2">
+          <div class="col-lg-3">
+            <a
+              class="navbar-brand d-inline-flex align-items-center mb-lg-4 mb-3"
+              href="index.html"
             >
-              <div class="d-flex justify-content-center order-sm-2 me-md-n2">
-                <a
-                  class="btn btn-icon btn-sm btn-secondary btn-instagram rounded-circle mx-2"
-                  href="https://www.instagram.com/techvivanta/"
-                  aria-label="Instagram"
+              <span class="text-primary flex-shrink-0 me-2">
+                <svg
+                  version="1.1"
+                  width="35"
+                  height="32"
+                  viewBox="0 0 36 33"
+                  xmlns="http://www.w3.org/2000/svg"
                 >
-                  <i class="ai-instagram"></i>
-                </a>
-                <a
-                  class="btn btn-icon btn-sm btn-secondary btn-github rounded-circle mx-2"
-                  href="https://github.com/techvivanta"
-                  aria-label="Facebook"
-                >
-                  <i class="ai-github"></i>
-                </a>
-                <a
-                  class="btn btn-icon btn-sm btn-secondary btn-linkedin rounded-circle mx-2"
-                  href="https://www.linkedin.com/company/tech-vivanta?trk=public_jobs_topcard-org-name"
-                  aria-label="LinkedIn"
-                >
-                  <i class="ai-linkedin"></i>
-                </a>
-              </div>
-              <p
-                class="nav fs-sm order-sm-1 text-center text-sm-start pt-4 pt-sm-0 mb-0 me-4"
+                  <path
+                    fill="currentColor"
+                    d="M35.6,29c-1.1,3.4-5.4,4.4-7.9,1.9c-2.3-2.2-6.1-3.7-9.4-3.7c-3.1,0-7.5,1.8-10,4.1c-2.2,2-5.8,1.5-7.3-1.1c-1-1.8-1.2-4.1,0-6.2l0.6-1.1l0,0c0.6-0.7,4.4-5.2,12.5-5.7c0.5,1.8,2,3.1,3.9,3.1c2.2,0,4.1-1.9,4.1-4.2s-1.8-4.2-4.1-4.2c-2,0-3.6,1.4-4,3.3H7.7c-0.8,0-1.3-0.9-0.9-1.6l5.6-9.8c2.5-4.5,8.8-4.5,11.3,0L35.1,24C36,25.7,36.1,27.5,35.6,29z"
+                  ></path>
+                </svg>
+              </span>
+              <span class="text-nav">Around</span>
+            </a>
+            <p
+              class="mb-4 pb-lg-1 fs-xs text-body-secondary"
+              style="max-width: 306px"
+            >
+              The agency with extensive experience that creates marketing
+              strategies for B2B and B2C companies.
+            </p>
+            <div class="d-flex mt-n3 ms-n3">
+              <a
+                class="btn btn-secondary btn-icon btn-sm btn-facebook rounded-circle mt-3 ms-3"
+                href="#"
+                aria-label="Facebook"
               >
-                <span class="text-body-secondary"
-                  >&copy; All rights reserved. Made by</span
-                >
-                <a
-                  class="nav-link fw-normal p-0 ms-1"
-                  href="https://createx.studio/"
-                  target="_blank"
-                  rel="noopener"
-                  >TechVivanta</a
-                >
-              </p>
+                <i class="ai-facebook"></i>
+              </a>
+              <a
+                class="btn btn-secondary btn-icon btn-sm btn-instagram rounded-circle mt-3 ms-3"
+                href="#"
+                aria-label="Instagram"
+              >
+                <i class="ai-instagram"></i>
+              </a>
+              <a
+                class="btn btn-secondary btn-icon btn-sm btn-linkedin rounded-circle mt-3 ms-3"
+                href="#"
+                aria-label="LinkedIn"
+              >
+                <i class="ai-linkedin"></i>
+              </a>
             </div>
           </div>
+          <div class="col-xl-8 offset-xl-1 col-lg-9">
+            <div class="row row-cols-sm-4 row-cols-1">
+              <div class="col">
+                <ul class="nav flex-column mb-0">
+                  <li class="nav-item mb-2">
+                    <a class="nav-link p-0" href="#">Services</a>
+                  </li>
+                  <li class="nav-item mb-2">
+                    <a class="nav-link p-0" href="#">Industries</a>
+                  </li>
+                  <li class="nav-item mb-2">
+                    <a class="nav-link p-0" href="#">Clients</a>
+                  </li>
+                  <li class="nav-item mb-2">
+                    <a class="nav-link p-0" href="#">Reviews</a>
+                  </li>
+                  <li class="nav-item mb-2">
+                    <a class="nav-link p-0" href="#">Case studies</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="col">
+                <ul class="nav flex-column mb-0">
+                  <li class="nav-item mb-2">
+                    <a class="nav-link p-0" href="#">Contacts</a>
+                  </li>
+                  <li class="nav-item mb-2">
+                    <a class="nav-link p-0" href="#">Help center</a>
+                  </li>
+                  <li class="nav-item mb-2">
+                    <a class="nav-link p-0" href="#">Privacy policy</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="col">
+                <ul class="nav flex-column mb-0">
+                  <li class="nav-item mb-2">
+                    <a class="nav-link p-0" href="#">About</a>
+                  </li>
+                  <li class="nav-item mb-2">
+                    <a class="nav-link p-0" href="#">Careers</a>
+                  </li>
+                  <li class="nav-item mb-2">
+                    <a class="nav-link p-0" href="#">News &amp; insights</a>
+                  </li>
+                  <li class="nav-item mb-2">
+                    <a class="nav-link p-0" href="#">Industry forecasts</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="col">
+                <ul class="nav flex-column mb-0">
+                  <li class="nav-item mb-2">
+                    <a class="nav-link p-0" href="mailto:+15262200444"
+                      >+&nbsp;1&nbsp;526&nbsp;220&nbsp;0444</a
+                    >
+                  </li>
+                  <li class="nav-item mb-2">
+                    <a class="nav-link p-0" href="mailto:+15262200444"
+                      >+&nbsp;1&nbsp;526&nbsp;220&nbsp;0000</a
+                    >
+                  </li>
+                  <li class="nav-item mb-2">
+                    <a class="text-primary fw-semibold p-0" href="#"
+                      >example@gmail.com</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="nav fs-sm text-body-secondary">
+          &copy; All rights reserved. Made by
+          <a
+            class="nav-link fw-normal p-0 ms-1"
+            href="https://createx.studio/"
+            target="_blank"
+            rel="noopener"
+            >Createx Studio</a
+          >
         </div>
       </div>
     </footer>
@@ -1671,28 +2174,83 @@
       </svg>
       <i class="ai-arrow-up"></i>
     </a>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const counters = document.querySelectorAll(".counter");
+        let animationStarted = false;
 
+        function startCounterAnimation() {
+          if (animationStarted) return;
+
+          counters.forEach((counter) => {
+            const target = parseFloat(counter.getAttribute("data-target"));
+            const duration = 2000; // 2 seconds
+            const steps = 60; // 60 frames
+            const stepValue = target / steps;
+            let current = 0;
+            let stepCount = 0;
+
+            const timer = setInterval(() => {
+              current += stepValue;
+              stepCount++;
+
+              if (stepCount >= steps) {
+                current = target;
+                clearInterval(timer);
+
+                // Format final display
+                if (target === 99.8) {
+                  counter.innerText = "99.8%";
+                } else if (counter.getAttribute("data-target") === "30") {
+                  counter.innerText = "30%";
+                } else {
+                  counter.innerText = Math.round(current) + "+";
+                }
+              } else {
+                // Format during animation
+                if (target === 99.8) {
+                  counter.innerText = current.toFixed(1) + "%";
+                } else if (counter.getAttribute("data-target") === "30") {
+                  counter.innerText = Math.round(current) + "%";
+                } else {
+                  counter.innerText = Math.round(current);
+                }
+              }
+            }, duration / steps);
+          });
+
+          animationStarted = true;
+        }
+
+        // Intersection Observer to trigger animation on scroll
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting && !animationStarted) {
+                startCounterAnimation();
+              }
+            });
+          },
+          {
+            threshold: 0.5,
+            rootMargin: "0px 0px -100px 0px",
+          }
+        );
+
+        // Observe the section container
+        const statsSection = document.querySelector(".bg-light.rounded-5");
+        if (statsSection) {
+          observer.observe(statsSection);
+        }
+      });
+    </script>
     <!-- Vendor scripts: JS libraries and plugins -->
     <script src="assets/vendor/parallax-js/dist/parallax.min.js"></script>
-    <script src="assets/vendor/jarallax/dist/jarallax.min.js"></script>
     <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-    <script src="assets/vendor/lightgallery/lightgallery.min.js"></script>
-    <script src="assets/vendor/lightgallery/plugins/fullscreen/lg-fullscreen.min.js"></script>
-    <script src="assets/vendor/lightgallery/plugins/zoom/lg-zoom.min.js"></script>
-
-    <!-- Vendor scripts: JS libraries and plugins -->
-    <script src="assets/vendor/parallax-js/dist/parallax.min.js"></script>
     <script src="assets/vendor/aos/dist/aos.js"></script>
 
     <!-- Bootstrap + Theme scripts -->
     <script src="assets/js/theme.min.js"></script>
-
-    <!-- Customizer -->
-    <script src="assets/js/customizer.min.js"></script>
-
-    <script src="assets/js/theme-switcher.js"></script>
-
-    <!-- custom nav button -->
 
     <script src="assets/js/customNavButton.js"></script>
   </body>
