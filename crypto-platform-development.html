@@ -201,7 +201,10 @@
 
     <!-- Page wrapper -->
     <main class="page-wrapper">
-      <header data-bs-theme="dark" class="navbar navbar-expand-lg fixed-top bg-dark">
+      <header
+        data-bs-theme="dark"
+        class="navbar navbar-expand-lg fixed-top bg-dark"
+      >
         <div class="container">
           <!-- Navbar brand (Logo) -->
           <a class="navbar-brand pe-sm-3" href="./index.html">
@@ -241,7 +244,7 @@
               style="--ar-scroll-height: 520px"
             >
               <li class="nav-item">
-                <a class="nav-link  " href="./index.html">Home</a>
+                <a class="nav-link" href="./index.html">Home</a>
               </li>
               <li class="nav-item dropdown">
                 <a
@@ -368,7 +371,7 @@
                   </div>
                 </div>
               </li>
-              
+
               <li class="nav-item">
                 <a class="nav-link" href="./about.html">About</a>
               </li>
@@ -376,7 +379,7 @@
                 <a class="nav-link" href="./portfoilo.html">Portfolio</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="./contact.html">Hire Devloper</a>
+                <a class="nav-link" href="./contact.html">Hire Developer</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="./contact.html">Contact</a>
@@ -384,13 +387,12 @@
             </ul>
             <div class="d-lg-none p-3 mt-n3">
               <a
-                class="btn btn-primary btn-sm fs-sm order-lg-3  border-0 rounded-pill animated-contact-btn"
+                class="btn btn-primary btn-sm fs-sm order-lg-3 border-0 rounded-pill animated-contact-btn"
                 href="./contact.html"
                 id="contactButton"
               >
                 Buy now
               </a>
-            
             </div>
           </nav>
         </div>
@@ -964,85 +966,23 @@
           <div class="col-md-7 col-lg-6">
             <div class="card border-0 bg-secondary py-1 p-lg-4">
               <div class="card-body">
-                <div
-                  class="swiper"
-                  data-swiper-options='{
-              "spaceBetween": 30,
-              "loop": true,
-              "navigation": {
-                "prevEl": "#prev-testimonial",
-                "nextEl": "#next-testimonial"
-              }
-            }'
-                >
+                <div class="swiper">
                   <div class="swiper-wrapper">
                     <!-- Item -->
-                    <div class="swiper-slide">
-                      <p class="lead text-dark pb-3 mb-3">
-                        “Tech Vivanta transformed our blockchain vision into a
-                        reality. Their expertise in crypto exchange development
-                        and smart contract implementation helped us launch
-                        faster with zero security flaws.”
-                      </p>
-                      <div class="d-flex align-items-center">
-                        <img
-                          class="rounded-circle"
-                          src="assets/img/avatar/30.jpg"
-                          width="60"
-                          alt="Sophie Allen"
-                        />
-                        <div class="ps-3">
-                          <h3 class="h4 mb-0">Sophie Allen</h3>
-                          <div class="fs-lg text-body-secondary">
-                            CEO, BitNex Exchange
-                          </div>
-                        </div>
-                      </div>
-                    </div>
 
                     <!-- Item -->
                     <div class="swiper-slide">
                       <p class="lead text-dark pb-3 mb-3">
-                        “We partnered with Tech Vivanta to build a DeFi
+                        “We partnered with Tech Vivanta to build a Onewave
                         platform, and their blockchain architecture ensured
                         unmatched scalability and transparency. A truly
                         professional team for Web3 innovation.”
                       </p>
                       <div class="d-flex align-items-center">
-                        <img
-                          class="rounded-circle"
-                          src="assets/img/avatar/31.jpg"
-                          width="60"
-                          alt="David Chen"
-                        />
                         <div class="ps-3">
-                          <h3 class="h4 mb-0">David Chen</h3>
+                          <h3 class="h4 mb-0">Vinod Khute</h3>
                           <div class="fs-lg text-body-secondary">
-                            Founder, Yieldify DeFi
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <!-- Item -->
-                    <div class="swiper-slide">
-                      <p class="lead text-dark pb-3 mb-3">
-                        “The NFT marketplace we built with Tech Vivanta exceeded
-                        expectations — from UI design to blockchain integration.
-                        Their dedication and technical depth made all the
-                        difference.”
-                      </p>
-                      <div class="d-flex align-items-center">
-                        <img
-                          class="rounded-circle"
-                          src="assets/img/avatar/32.jpg"
-                          width="60"
-                          alt="Maria Gonzales"
-                        />
-                        <div class="ps-3">
-                          <h3 class="h4 mb-0">Maria Gonzales</h3>
-                          <div class="fs-lg text-body-secondary">
-                            Product Lead, ArtMint
+                            Founder, OneWave
                           </div>
                         </div>
                       </div>
@@ -1053,26 +993,6 @@
             </div>
 
             <!-- Slider control buttons -->
-            <div
-              class="d-flex justify-content-center justify-content-md-end pt-4"
-            >
-              <button
-                class="btn btn-icon btn-sm btn-outline-primary rounded-circle me-3"
-                type="button"
-                id="prev-testimonial"
-                aria-label="Prev"
-              >
-                <i class="ai-arrow-left"></i>
-              </button>
-              <button
-                class="btn btn-icon btn-sm btn-outline-primary rounded-circle"
-                type="button"
-                id="next-testimonial"
-                aria-label="Next"
-              >
-                <i class="ai-arrow-right"></i>
-              </button>
-            </div>
           </div>
 
           <!-- CTA -->
@@ -1667,6 +1587,5 @@
     <!-- Customizer -->
     <script src="assets/js/customizer.min.js"></script>
     <script src="assets/js/customNavButton.js"></script>
-
   </body>
 </html>
