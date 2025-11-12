@@ -1,3 +1,5 @@
+const emailAddressSmtp = "hiren.techvivanta@gmail.com"
+
 document.addEventListener("DOMContentLoaded", () => {
   /* -------------------------
      Step & Progress Handling
@@ -41,10 +43,10 @@ document.addEventListener("DOMContentLoaded", () => {
       const serviceName = card
         .querySelector("p.text-center:last-child")
         .innerText.trim();
-      
+
       checkbox.checked = !checkbox.checked;
       card.classList.toggle("selected", checkbox.checked);
-      
+
       if (checkbox.checked) {
         selectedServices.push(serviceName);
       } else {
@@ -139,12 +141,12 @@ document.addEventListener("DOMContentLoaded", () => {
         if (errorDiv) errorDiv.remove();
       }
     };
-    
+
     const showError = (el, message) => {
       if (el) {
         el.classList.add("is-invalid");
         valid = false;
-        
+
         let errorDiv = el.parentElement.querySelector(".invalid-feedback");
         if (!errorDiv) {
           errorDiv = document.createElement("div");
@@ -160,27 +162,26 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!nameInput.value.trim() || !/^[a-zA-Z\s]{2,50}$/.test(nameInput.value.trim())) {
       showError(nameInput, "Name must be 2-50 characters and contain only letters");
     }
-    
+
     if (!company.value.trim() || company.value.trim().length < 2 || company.value.trim().length > 100) {
       showError(company, "Company name must be 2-100 characters");
     }
-    
+
     if (!email.value.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim())) {
       showError(email, "Please enter a valid email address");
     }
-    
+
     if (!phone.value.trim() || !/^[0-9]{7,15}$/.test(phone.value.trim())) {
       showError(phone, "Phone number must be 7-15 digits");
     }
-    
+
     if (!country.value.trim() || country.value.trim().length < 2) {
       showError(country, "Please enter your country");
     }
-    
+
     if (!budget.value.trim() || !/^[0-9]+(\.[0-9]{1,2})?$/.test(budget.value.trim())) {
       showError(budget, "Please enter a valid budget amount");
     }
-
     return valid;
   };
 
@@ -210,10 +211,10 @@ document.addEventListener("DOMContentLoaded", () => {
   if (form) {
     form.addEventListener("input", checkStepValidity);
     form.addEventListener("change", checkStepValidity);
-  }
+  };
 
   /* -------------------------
-     Step Navigation
+     Step Navigation and Submission
   ------------------------- */
   if (form) {
     form.addEventListener("submit", (e) => {
@@ -228,65 +229,46 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (currentStep === steps.length) {
       if (validateForm()) {
-        const formData = {
-          services: selectedServices,
-          stage: selectedStage,
-          description: textarea.value.trim(),
-          files: uploadedFiles.map((f) => ({
-            name: f.name,
-            size: f.size,
-            type: f.type
-          })),
-          name: nameInput.value.trim(),
-          company: company.value.trim(),
-          email: email.value.trim(),
-          phone: phone.value.trim(),
-          country: country.value.trim(),
-          budget: budget.value.trim(),
-        };
+        // Build mail body and subject for mailto link
+        let body = "";
+        body += "Name: " + nameInput.value.trim() + "%0D%0A";
+        body += "Company: " + company.value.trim() + "%0D%0A";
+        body += "Email: " + email.value.trim() + "%0D%0A";
+        body += "Phone: " + phone.value.trim() + "%0D%0A";
+        body += "Country: " + country.value.trim() + "%0D%0A";
+        body += "Budget: " + budget.value.trim() + "%0D%0A";
+        body += "Services: " + selectedServices.join(", ") + "%0D%0A";
+        body += "Project Stage: " + selectedStage + "%0D%0A";
+        body += "Project Description: " + textarea.value.trim() + "%0D%0A";
+        if (uploadedFiles && uploadedFiles.length > 0) {
+          body += "Uploaded Files: " + uploadedFiles.map(f => f.name).join(", ") + "%0D%0A";
+        }
 
-        console.log("=== FORM SUBMISSION DATA ===");
-        console.log("Selected Services:", formData.services);
-        console.log("Project Stage:", formData.stage);
-        console.log("Project Description:", formData.description);
-        console.log("Uploaded Files:", formData.files);
-        console.log("Contact Information:", {
-          name: formData.name,
-          company: formData.company,
-          email: formData.email,
-          phone: formData.phone,
-          country: formData.country,
-          budget: formData.budget
+        const subject = "Contact Form Submission";
+        const mailtoUrl = `mailto:${emailAddressSmtp}?subject=${encodeURIComponent(subject)}&body=${body}`;
+
+        window.location.href = mailtoUrl;
+
+        // Reset form after "sending"
+        if (form) form.reset();
+        selectedServices = [];
+        selectedStage = "";
+        if (textarea) textarea.value = "";
+        uploadedFiles = [];
+        if (fileList) fileList.innerHTML = "";
+        serviceCards.forEach(card => {
+          card.classList.remove("selected");
+          const checkbox = card.querySelector("input[type='checkbox']");
+          if (checkbox) checkbox.checked = false;
         });
-        console.log("Complete Form Data:", formData);
-
-        alert("🎉 Form submitted successfully! Check console for all submitted data.");
-
-        setTimeout(() => {
-          if (form) form.reset();
-          
-          selectedServices = [];
-          selectedStage = "";
-          if (textarea) textarea.value = "";
-          uploadedFiles = [];
-          if (fileList) fileList.innerHTML = "";
-          
-          serviceCards.forEach(card => {
-            card.classList.remove("selected");
-            const checkbox = card.querySelector("input[type='checkbox']");
-            if (checkbox) checkbox.checked = false;
-          });
-          
-          stageCards.forEach(card => {
-            card.classList.remove("selected");
-            const radio = card.querySelector("input[type='radio']");
-            if (radio) radio.checked = false;
-          });
-          
-          currentStep = 1;
-          updateSteps();
-          checkStepValidity();
-        }, 100);
+        stageCards.forEach(card => {
+          card.classList.remove("selected");
+          const radio = card.querySelector("input[type='radio']");
+          if (radio) radio.checked = false;
+        });
+        currentStep = 1;
+        updateSteps();
+        checkStepValidity();
       }
     } else if (!nextBtn.disabled) {
       currentStep++;
@@ -298,7 +280,6 @@ document.addEventListener("DOMContentLoaded", () => {
   prevBtn.addEventListener("click", (e) => {
     e.preventDefault();
     e.stopPropagation();
-    
     if (currentStep > 1) {
       currentStep--;
       updateSteps();
