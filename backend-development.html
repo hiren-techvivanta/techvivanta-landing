@@ -519,12 +519,22 @@
         data-jarallax
         data-speed="0.65"
       >
+        <video
+          class="position-absolute top-0 start-0 w-100 h-100 object-fit-cover"
+          autoplay
+          loop
+          muted
+          playsinline
+        >
+          <source src="./assets/video/Backend_bgvideo.mp4" type="video/mp4" />
+        </video>
+
+        
         <div
-          class="jarallax-img"
-          style="
-            background-image: url(./assets/img/landing/backend/hero/bg.jpg);
-          "
+          class="position-absolute top-0 start-0 w-100 h-100 "
+          style="background: rgba(0,0,0,0.4);"
         ></div>
+       
         <div class="container-fluid position-relative z-2 py-5 my-md-3 my-lg-5">
           <div class="row pb-3 pt-4 pt-sm-5">
             <div class="col-md-9 col-lg-7 col-xl-6 col-xxl-5 offset-lg-1 pt-5">
@@ -1734,7 +1744,7 @@
     </main>
 
     <!-- Footer -->
-  <footer class="footer bg-secondary pt-4 pb-2 pb-md-5 pt-sm-5">
+    <footer class="footer bg-secondary pt-4 pb-2 pb-md-5 pt-sm-5">
       <div class="container-fluid pb-1 pb-md-0 px-md-5">
         <div
           class="bg-dark rounded-5 position-relative overflow-hidden w-100 py-5 px-3 px-sm-4 px-xl-5 mx-auto"
