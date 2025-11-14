@@ -1,7 +1,39 @@
 {
-  "name": "Around",
-  "short_name": "Around",
+  "name": "TechVivanta",
+  "short_name": "TechVivanta",
+  "description": "TechVivanta delivers innovative digital solutions including web, mobile app, AI, and blockchain development — empowering businesses with secure, scalable, and future-ready technology.",
+  "start_url": "/index.html",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#ffffff",
+  "theme_color": "#007bff",
   "icons": [
+    {
+      "src": "assets/app-icons/icon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/app-icons/icon-48x48.png",
+      "sizes": "48x48",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/app-icons/icon-72x72.png",
+      "sizes": "72x72",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/app-icons/icon-96x96.png",
+      "sizes": "96x96",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/app-icons/icon-144x144.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    },
     {
       "src": "assets/app-icons/icon-192x192.png",
       "sizes": "192x192",
@@ -13,7 +45,36 @@
       "type": "image/png"
     }
   ],
-  "theme_color": "#34a853",
-  "background_color": "#ffffff",
-  "display": "standalone"
+  "categories": [
+    "technology",
+    "software",
+    "development",
+    "business",
+    "AI",
+    "blockchain"
+  ],
+  "shortcuts": [
+    {
+      "name": "Contact TechVivanta",
+      "short_name": "Contact",
+      "url": "/contact.html",
+      "icons": [
+        {
+          "src": "assets/app-icons/icon-96x96.png",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "View Portfolio",
+      "short_name": "Portfolio",
+      "url": "/portfolio.html",
+      "icons": [
+        {
+          "src": "assets/app-icons/icon-96x96.png",
+          "sizes": "96x96"
+        }
+      ]
+    }
+  ]
 }

@@ -1,7 +1,4 @@
-/**
- * Switch between light and dark themes (color modes)
- * Copyright 2023 Createx Studio
- */
+
 
 (() => {
   'use strict'
